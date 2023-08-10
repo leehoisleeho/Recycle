@@ -1,0 +1,12 @@
+{
+  "component": true,
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTitleText": "我的订单",
+  "navigationBarTextStyle": "black",
+
+  "usingComponents": {
+    "t-tabs": "tdesign-miniprogram/tabs/tabs",
+    "t-tab-panel": "tdesign-miniprogram/tab-panel/tab-panel"
+  }
+}

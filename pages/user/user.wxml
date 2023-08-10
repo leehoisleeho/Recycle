@@ -1,0 +1,47 @@
+<view class="container">
+  <!-- 头部 -->
+  <view class="header">
+    <view class="userImg">
+      <image src="../../static/img/userImg.png" mode="widthFix" />
+    </view>
+    <view class="nickName">
+      微信用户
+    </view>
+  </view>
+  <!-- 功能区 -->
+  <view class="ribbon">
+    <view class="item">
+      <image src="../../static/img/address.png" alt="" mode="widthFix"/>
+      <text>地址管理</text>
+    </view>
+    <view class="item">
+      <image src="../../static/img/dingdan.png" alt="" mode="widthFix"/>
+      <text>回收明细</text>
+    </view>
+    <view class="item">
+      <image src="../../static/img/jifen.png" alt="" mode="widthFix"/>
+      <text>积分商城</text>
+    </view>
+    <view class="item">
+      <image src="../../static/img/myfabu.png" alt="" mode="widthFix"/>
+      <text>我的发布</text>
+    </view>
+    <view class="item">
+      <image src="../../static/img/fankui.png" alt="" mode="widthFix"/>
+      <text>意见反馈</text>
+    </view>
+    <view class="item">
+      <image src="../../static/img/guanyu.png" alt="" mode="widthFix"/>
+      <text>关于我们</text>
+    </view>
+    <view class="item">
+      <image src="../../static/img/zhaomu.png" alt="" mode="widthFix"/>
+      <text>招募合伙人</text>
+    </view>
+    <view class="item">
+      <image src="../../static/img/userOrder.png" alt="" mode="widthFix"/>
+      <text>一键举报</text>
+    </view>
+  </view>
+  <t-footer text="{{text}}" class="footer"></t-footer>
+</view>

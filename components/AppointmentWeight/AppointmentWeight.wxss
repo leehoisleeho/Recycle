@@ -1,0 +1,12 @@
+/* components/AppointmentWeight/AppointmentWeight.wxss */
+.box{
+  padding: 10rpx;
+}
+.cell{
+  --td-cell-title-font-size:30rpx;
+  --td-cell-note-font-size:28rpx;
+  --td-cell-line-height:20rpx;
+  --td-cell-border-right-space:20rpx;
+  --td-cell-description-font-size:22rpx;
+  --td-cell-vertical-padding:20rpx;
+}

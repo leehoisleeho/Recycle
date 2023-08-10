@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "AppointmentWeight": "/components/AppointmentWeight/AppointmentWeight",
+    "AppointmentTime": "/components/AppointmentTime/AppointmentTime",
+    "AppointmentAddress": "/components/AppointmentAddress/AppointmentAddress",
+    "UpdataImg": "/components/UpdataImg/UpdataImg",
+    "t-radio": "tdesign-miniprogram/radio/radio",
+    "t-radio-group": "tdesign-miniprogram/radio-group/radio-group",
+    "t-button": "tdesign-miniprogram/button/button",
+    "tui-drawer": "/components/tui-drawer/tui-drawer"
+  }
+}

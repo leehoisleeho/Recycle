@@ -1,0 +1,18 @@
+<!--components/AppointmentWeight/AppointmentWeight.wxml-->
+<view class="box">
+  <t-cell class="cell" title="预约时间" note="{{weightText}}"  description='{{description}}' required bind:click="onTitlePicker" />
+    <t-picker 
+    visible="{{weightVisible}}"
+    title="预约时间" 
+    cancelBtn="取消" 
+    confirmBtn="确认" 
+    bindchange="onPickerChange"
+    bindpick="onColumnChange"
+    bindcancel="onPickerCancel"
+    value="{{areaValue}}"
+    >
+    <t-picker-item options="{{day}}"></t-picker-item>
+    <t-picker-item options="{{defaultTime}}" wx:if="{{show}}"></t-picker-item>
+    <t-picker-item options="{{time}}" wx:if="{{!show}}"></t-picker-item>
+    </t-picker>
+</view>

@@ -1,0 +1,4 @@
+/* components/UpdataImg/UpdataImg.wxss */
+.container{
+  padding: 0 20rpx;
+}

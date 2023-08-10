@@ -1,0 +1,7 @@
+.tabs{
+  box-shadow: rgba(172, 172, 172, 0.2) 0px 7px 29px 0px;
+  --td-tab-font-size:26rpx;
+  --td-tab-item-active-color:#34a853;
+  --td-tab-item-tag-active-bg:rgba(172, 172, 172, 0.2)
+}
+

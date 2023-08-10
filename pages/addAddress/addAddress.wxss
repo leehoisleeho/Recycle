@@ -1,0 +1,13 @@
+/* pages/addAddress/addAddress.wxss */
+.container{
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+.subBtn{
+  position: absolute;
+  bottom: 200rpx;
+  width: 700rpx;
+  left: 50%;
+  transform: translate(-350rpx);
+}

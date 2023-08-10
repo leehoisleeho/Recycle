@@ -1,0 +1,85 @@
+/**index.wxss**/
+.tui-banner-swiper {
+	position: relative;
+}
+.tui-swiper-item {
+	width: 100%;
+	color: #FFFFFF;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 34rpx;
+	font-weight: 600;
+}
+
+.tui-banner__height {
+	height: 360rpx;
+}
+
+.tui-bg__primary {
+	background-color: rgba(0, 0, 0, .8);
+}
+
+.tui-bg__green {
+	background-color: #07c160;
+}
+
+.tui-bg__white {
+	background-color: #F2F2F2;
+	color: #000;
+}
+.tui-notice-bar{
+  background-color: #fff;
+  color: #000;
+  font-size: 28rpx;
+  padding: 20rpx 30rpx;
+  margin-bottom: 20rpx;
+  border-radius: 20rpx;
+  box-shadow: 0 0 10rpx rgba(0,0,0,.1);
+}
+.list{
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  width: 660rpx;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40rpx 20rpx;
+  border-radius: 20rpx;
+}
+.listBox{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 90rpx;
+}
+.listTitle{
+  font-size: 32rpx;
+  color: #292929;
+  padding-left: 30rpx;
+  margin-top: 40rpx;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+}
+.listTitle>image{
+  height: 60rpx;
+  margin-right: 15rpx;
+}
+.list_1{
+  display: flex;
+  align-items: center;
+  
+}
+.list_1>text{
+  font-size: 32rpx;
+  color: rgb(70, 70, 70);
+}
+.list_1>image{
+  height: 100rpx;
+  margin-right: 25rpx;
+}
+.banner{
+  padding: 20rpx;
+}

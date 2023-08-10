@@ -1,0 +1,4 @@
+<!--components/UpdataImg/UpdataImg.wxml-->
+<view class="container">
+  <t-upload media-type="{{['image']}}" files="{{originFiles}}" gridConfig="{{gridConfig}}" bind:success="handleSuccess" bind:remove="handleRemove" bind:click="handleClick" />
+</view>

@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTitleText": "我的",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "t-footer": "tdesign-miniprogram/footer/footer"
+  }
+}

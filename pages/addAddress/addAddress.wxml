@@ -1,0 +1,13 @@
+<!--pages/addAddress/addAddress.wxml-->
+<view class="container">
+  <t-input label="联系人" placeholder="请输入文字"></t-input>
+  <t-input label="电话" placeholder="请输入手机号码">
+    <t-button slot="suffix" theme="primary" size="extra-small" variant="outline"> 获取手机号码 </t-button>
+  </t-input>
+  <t-cell title="地址" note="{{note}}" bind:click="showCascader" arrow />
+  <t-input label="详细地址" placeholder="如3号楼2单元202"> </t-input>
+  <view class="subBtn">
+    <t-button theme="primary" size="large" block>新增地址</t-button>
+  </view>
+  <t-cascader visible="{{visible}}" value="{{value}}" options="{{options}}" title="请选择地址" bind:change="onChange" bind:pick="onPick" />
+</view>

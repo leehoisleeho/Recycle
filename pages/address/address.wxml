@@ -1,0 +1,17 @@
+<view class="container">
+  <view class="addressList">
+    <Empty msg="{{msg}}" wx:if="{{show}}"></Empty>
+    <view class="item" wx:for="{{addressList}}" wx:key="index" wx:if="{{!show}}">
+      <view class="item_img">
+        <image src="/static/img/addressIcon.png" mode="widthFix"></image>
+      </view>
+      <view class="info">
+        <view>{{item.name}} {{item.phone}}</view>
+        <view>{{item.addressName}}</view>
+      </view>
+    </view>   
+  </view>
+  <view class="addAddress">
+    <t-button theme="primary" size="large" block  bindtap="toaddAddress">新增地址</t-button>
+  </view>
+</view>

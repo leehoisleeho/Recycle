@@ -1,0 +1,17 @@
+<!--components/AppointmentWeight/AppointmentWeight.wxml-->
+<view class="box">
+  <t-cell class="cell" title="预约重量" note="{{weightText}}"  description='{{description}}' required bind:click="onTitlePicker" />
+    <t-picker 
+    visible="{{weightVisible}}"  
+    data-key="city" 
+    title="预约重量" 
+    cancelBtn="取消" 
+    confirmBtn="确认" 
+    bindchange="onPickerChange"
+    bindpick="onColumnChange"
+    bindcancel="onPickerCancel"
+    value='{{areaValue}}'
+    >
+    <t-picker-item options="{{weightList}}"></t-picker-item>
+    </t-picker>
+</view>

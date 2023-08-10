@@ -1,0 +1,6 @@
+<view class="container">
+  <view class="box">
+    <image src="/static/img/kaifazhong.png" mode="widthFix" class="img"/>
+    <text>开发中...</text>
+  </view>
+</view>

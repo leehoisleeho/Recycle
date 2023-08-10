@@ -1,0 +1,8 @@
+<view class="container">
+  <t-tabs defaultValue="{{0}}" bind:change="onTabsChange" bind:click="onTabsClick" t-class="custom-tabs" theme='tag' class="tabs">
+    <t-tab-panel label="未接单" value="0" />
+    <t-tab-panel label="已接单" value="1" />
+    <t-tab-panel label="已完成" value="2" />
+    <t-tab-panel label="已取消" value="3" />
+  </t-tabs>
+</view>

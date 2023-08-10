@@ -1,0 +1,24 @@
+
+.box{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding:100rpx 0;
+}
+
+.item{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 400rpx;
+}
+.item > .img{
+  width: 300rpx;
+}
+.content{
+  color: #999;
+  margin-top: 30rpx;
+  font-size: 22rpx;
+}

@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/order/order",
+    "pages/user/user",
+    "pages/alliance/alliance",
+    "pages/recyclingForm/recyclingForm",
+    "components/AppointmentWeight/AppointmentWeight",
+    "pages/address/address",
+    "pages/addAddress/addAddress"
+  ],
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/static/img/home.png",
+        "selectedIconPath": "/static/img/home_active.png"
+      },
+      {
+        "pagePath": "pages/alliance/alliance",
+        "text": "商家联盟",
+        "iconPath": "/static/img/alliance.png",
+        "selectedIconPath": "/static/img/alliance_active.png"
+      },
+      {
+        "pagePath": "pages/order/order",
+        "text": "订单",
+        "iconPath": "/static/img/order.png",
+        "selectedIconPath": "/static/img/order_active.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "/static/img/user.png",
+        "selectedIconPath": "/static/img/user_active.png"
+      }
+    ],
+    "selectedColor": "#34a853",
+    "color": "#86909c"
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "垃圾回收",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

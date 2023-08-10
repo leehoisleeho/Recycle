@@ -1,0 +1,7 @@
+<!--components/Empty/Empty.wxml-->
+<view class="box">
+  <view class="item">
+    <image src="/static/img/EmptyIcon.png" mode="widthFix" class="img"/>
+    <view class="content">{{msg}}</view>
+  </view>
+</view>

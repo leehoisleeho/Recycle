@@ -1,0 +1,50 @@
+.addressList{
+  height: calc(100vh - 200rpx);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border: 1px solid white;
+  overflow-y:scroll;
+  
+}
+.container{
+  height: 100vh;
+  position: relative;
+}
+.item{
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  width: 680rpx;
+  margin: 20rpx auto;
+  background: white;
+  border-radius: 20rpx;
+  display: flex;
+  align-items: center;
+  padding-right: 30rpx;
+  
+}
+.item_img>image{
+  width: 60rpx;
+  margin: 0 30rpx;
+  opacity: 0.8;
+}
+
+.info{
+  height: 130rpx;
+  display: flex;
+  padding: 20rpx 0;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+.info>view:nth-child(1){
+  font-size: 30rpx;
+  font-weight: 600;
+}
+.info>view:nth-child(2){
+  font-size: 26rpx;
+  color: #666;
+}
+.addAddress{
+  height: 180rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 100rpx;
+}
