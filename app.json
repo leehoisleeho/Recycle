@@ -8,7 +8,8 @@
     "pages/recyclingForm/recyclingForm",
     "components/AppointmentWeight/AppointmentWeight",
     "pages/address/address",
-    "pages/addAddress/addAddress"
+    "pages/addAddress/addAddress",
+    "pages/orderDetails/orderDetails"
   ],
   "tabBar": {
     "list": [
@@ -46,5 +47,8 @@
     "navigationBarTitleText": "垃圾回收",
     "navigationBarTextStyle": "black"
   },
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "requiredPrivateInfos":[
+    "getFuzzyLocation"
+  ]
 }

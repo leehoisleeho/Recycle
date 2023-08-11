@@ -14,7 +14,7 @@
     回收品类
   </view>
   <view class="listBox">
-    <view class="list">
+    <view class="list" bindtap="toRecyclingFrom">
       <view class="list_1">
         <image src="../../static/img/test_1.png" mode="heightFix" />
         <text>废纸</text>

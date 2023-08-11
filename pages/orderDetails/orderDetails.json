@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "订单详情",
+  "usingComponents": {
+    "t-divider": "tdesign-miniprogram/divider/divider",
+    "t-image": "tdesign-miniprogram/image/image",
+    "t-image-viewer": "tdesign-miniprogram/image-viewer/image-viewer",
+    "t-toast": "tdesign-miniprogram/toast/toast",
+    "t-icon": "tdesign-miniprogram/icon/icon"
+  }
+}

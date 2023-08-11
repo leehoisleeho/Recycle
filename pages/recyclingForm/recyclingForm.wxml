@@ -59,8 +59,9 @@
   </view>
   <!-- 提交 -->
   <view class="sub">
-    <t-button theme="primary" size="large" block>提交订单</t-button>
+    <t-button theme="primary" size="large" block bindtap='sub'>提交订单</t-button>
   </view>
+  <!-- 免责申明 -->
   <tui-drawer mode="bottom" visible="{{visible}}">
     <view class="d-container">
       <view class="statementInfo">

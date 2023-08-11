@@ -7,5 +7,11 @@ Component({
     onTabsClick(event) {
       console.log(`Click tab, tab-panel value is ${event.detail.value}.`);
     },
+
+    toDetails(){
+      wx.navigateTo({
+        url: '../orderDetails/orderDetails',
+      })
+    }
   },
 });

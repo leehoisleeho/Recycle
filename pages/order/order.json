@@ -7,6 +7,9 @@
 
   "usingComponents": {
     "t-tabs": "tdesign-miniprogram/tabs/tabs",
-    "t-tab-panel": "tdesign-miniprogram/tab-panel/tab-panel"
+    "t-tab-panel": "tdesign-miniprogram/tab-panel/tab-panel",
+    "t-divider": "tdesign-miniprogram/divider/divider",
+    "t-icon": "tdesign-miniprogram/icon/icon",
+    "Empty":"/components/Empty/Empty"
   }
 }

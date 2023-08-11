@@ -1,4 +1,11 @@
+import { storeBindingsBehavior } from 'mobx-miniprogram-bindings'
+import { store } from '../../store/store'
 Component({
+  behaviors: [storeBindingsBehavior],
+  storeBindings: {
+    store:store,
+    actions: ['setWeight'] // 将 store 中的 increment 方法绑定为 setData
+  },
   data: {
     weightText:'10Kg-20Kg',
     weightVisible:false,
@@ -16,6 +23,7 @@ Component({
     },
     //点击确认
     onPickerChange(e) {
+      this.setWeight(e.detail.value[0])
       this.setData({
         weightText:e.detail.value[0],
         areaValue:e.detail.value

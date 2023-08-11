@@ -4,4 +4,62 @@
   --td-tab-item-active-color:#34a853;
   --td-tab-item-tag-active-bg:rgba(172, 172, 172, 0.2)
 }
+.itemBox{
+  width: 700rpx;
+  margin: 20rpx auto;
+  border-radius: 20rpx;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.title{
+  display: flex;
+  align-items: center;
+  padding: 0 20rpx ;
+  padding-top: 25rpx;
+}
+.title > image{
+  width: 63rpx;
+  margin-right: 20rpx;
+}
+.title > text{
+  font-size: 27rpx;
+  color: rgb(58, 58, 58);
+  font-weight: 600;
+}
+.itemList{
+  padding: 0 20rpx;
+}
+.todetails{
+  padding-bottom: 25rpx;
+  padding-right: 25rpx;
+  padding-left: 25rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.itemList_1{
+  font-size: 27rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  align-items: flex-start;
 
+}
+.itemList_1>text:nth-child(1){
+  margin-left: 20rpx;
+  color: rgb(41, 41, 41);
+  display: block;
+  width: 20%;
+}
+.itemList_1>text:nth-child(2){
+  margin-left: 25rpx;
+  color: rgb(97, 97, 97);
+  font-weight: 400;
+  width: 80%;
+}
+.todetails>text:nth-child(1){
+  font-size: 27rpx;
+  color: #fabc08;
+  font-weight: 600;
+}
+.todetails>text:nth-child(2){
+  font-size: 27rpx;
+  color: rgb(119, 119, 119)
+}

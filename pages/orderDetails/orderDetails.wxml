@@ -1,0 +1,83 @@
+<!--pages/orderDetails/orderDetails.wxml-->
+<view class='container'>
+  <view class="header"></view>
+  <!-- 用户信息 -->
+  <view class="userInfo">
+    <view class="userInfo_item">
+      <view class="state">
+        <text class="state_1">商家接单中</text>
+        <!-- <text class="state_2">上门中</text>
+        <text class="state_3">取消</text>
+        <text class="state_4">完成</text> -->
+      </view>
+    </view>
+    <t-divider content="" />
+    <view class="userInfo_1">
+      <view class="userInfo_1_item">
+        <text>联系人:</text>
+        <text>哈利波特他爹</text>
+      </view>
+      <view class="userInfo_1_item">
+        <text>回收地址:</text>
+        <text>云南省红河哈尼彝族自治州蒙自市红竺园B区联8-1</text>
+      </view>
+      <view class="userInfo_1_item">
+        <text>联系电话:</text>
+        <text>18608735101</text>
+      </view>
+    </view>
+  </view>
+  <!-- 信息 -->
+  <view class="Info">
+    <view class="Info_title">
+      信息
+    </view>
+    <t-divider content="" />
+    <view class="userInfo_1">
+      <view class="userInfo_1_item">
+        <text>订单编号:</text>
+        <text>532522198709290015</text>
+      </view>
+      <view class="userInfo_1_item">
+        <text>下单时间:</text>
+        <text>2023-08-11 11:30:34</text>
+      </view>
+      <view class="userInfo_1_item">
+        <text>回收类型:</text>
+        <text>废纸</text>
+      </view>
+      <view class="userInfo_1_item_img">
+        <text>图片</text>
+        <t-toast id="t-toast" />
+        <view class="userInfo_1_item_img_box" bindtap="onClick">
+          <image src="/static/img/myfabu.png" mode="widthFix" />
+          <image src="/static/img/myfabu.png" mode="widthFix" />
+          <image src="/static/img/myfabu.png" mode="widthFix" />
+          <t-image-viewer closeBtn="{{closeBtn}}" showIndex="{{showIndex}}" visible="{{visible}}" images="{{images}}" bind:close="onClose" initial-index="{{index}}" bind:change="onChange"></t-image-viewer>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 回收员信息 -->
+  <view class="workerInfo">
+    <view class="Info_title">
+      联系回收员
+    </view>
+    <t-divider content="" />
+    <view class="worker">
+      <view class="worker_item_1">
+        <image src="/static/img/workerIcon.png" mode="heightFix" />
+        <view class="workerInfo_1">
+          <text>哈利波特</text>
+          <text>18608735101</text>
+        </view>
+      </view>
+      <view class="worker_item_2">
+        <t-icon name="call" size="48rpx" bind:click="onIconTap" />
+      </view>
+    </view>
+  </view>
+  <view class="btnBox">
+    <button type="warn">取消订单</button>
+  </view>
+</view>
