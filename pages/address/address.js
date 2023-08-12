@@ -11,12 +11,13 @@ Page({
     this.getPageData()
     this.storeBindings = createStoreBindings(this, {
       store,
-      actions: ["setaddress"],
+      actions: ["setAddress","setaddressId"],
     });
   },
   async getPageData(){
     let  AddressList = await api.getAddressList()
     AddressList = AddressList.data.data
+    console.log(AddressList)
     this.setData({
       addressList:AddressList
     })
@@ -37,11 +38,12 @@ Page({
   },
   // 选择地址后 返回表单页面
   toFrom(e){
-    let info = e.currentTarget.dataset.info
-    this.setaddress(info)
-    console.log(info)
-    // wx.navigateBack({
-    //   delta: 1 // 返回的页面数，1 表示返回到前一个页面
-    // });
+    let address = e.currentTarget.dataset.info.address
+    let addressId = e.currentTarget.dataset.info.id
+    this.setAddress(address)
+    this.setaddressId(addressId)
+    wx.navigateBack({
+      delta: 1 // 返回的页面数，1 表示返回到前一个页面
+    });
   }
 });

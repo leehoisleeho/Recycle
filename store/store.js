@@ -7,6 +7,7 @@ export const store = observable({
   weight: '',
   address: '',
   time:'',
+  addressId:'',
   setWeight: action(async function (value) { 
     this.weight = value;
   }),
@@ -15,6 +16,9 @@ export const store = observable({
   }),
   setAddress:action(function(value){
     this.address = value
+  }),
+  setaddressId:action(async function (value) { 
+    this.addressId = value
   }),
   // 新增地址
   info:'',
@@ -29,7 +33,5 @@ export const store = observable({
   setAdd:action(async function (value) { 
     this.add = value
   }),
-  setaddress:action(async function (value) { 
-    this.address = value
-  }),
+
 });

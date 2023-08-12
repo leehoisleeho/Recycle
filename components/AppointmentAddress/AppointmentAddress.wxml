@@ -1,4 +1,4 @@
 <!--components/AppointmentWeight/AppointmentWeight.wxml-->
 <view class="box">
-  <t-cell class="cell" title="回收地址" note="请选择地址"  description='{{description}}' required bind:click="ToAddress" />
+  <t-cell class="cell" title="回收地址" note="{{address}}"  description='{{description}}' required bind:click="ToAddress" />
 </view>

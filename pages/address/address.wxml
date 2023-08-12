@@ -1,7 +1,7 @@
 <view class="container">
   <view class="addressList">
     <Empty msg="{{msg}}" wx:if="{{show}}"></Empty>
-    <view class="item" wx:for="{{addressList}}" wx:key="index" wx:if="{{!show}}" bindtap="toFrom" data-info="{{item.address}}">
+    <view class="item" wx:for="{{addressList}}" wx:key="index" wx:if="{{!show}}" bindtap="toFrom" data-info="{{item}}">
       <view class="item_img">
         <image src="/static/img/addressIcon.png" mode="widthFix"></image>
       </view>

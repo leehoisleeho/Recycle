@@ -56,7 +56,15 @@ const api = {
       method: "POST",
       data: params,
     });
-  }
+  },
+  // 提交订单
+  submitOrder:(params)=>{
+    return http({
+      url: "/api/rubbish/order/addOrder",
+      method: "POST",
+      data: params,
+    });
+  },
 }
 
 // 倒出接口
