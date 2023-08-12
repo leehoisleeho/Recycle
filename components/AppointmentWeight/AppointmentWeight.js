@@ -7,11 +7,11 @@ Component({
     actions: ['setWeight'] // 将 store 中的 increment 方法绑定为 setData
   },
   data: {
-    weightText:'10Kg-20Kg',
+    weightText:'请选择重量',
     weightVisible:false,
     description:'请确保回收物品不被浸湿',
     weightList: [
-      { label: '默认10Kg-20Kg', value: '10Kg - 20Kg' },
+      { label: '10Kg-20Kg', value: '10Kg - 20Kg' },
       { label: '10kg-25kg', value: '10kg - 25kg' },
       { label: '25kg-50kg', value: '25kg - 50kg' },
       { label: '50kg-100kg', value: '50kg - 100kg' },

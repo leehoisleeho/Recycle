@@ -1,42 +1,26 @@
 import api from '../../API/api'
+import { createStoreBindings } from "mobx-miniprogram-bindings";
+import { store } from "../../store/store";
 Page({
   data: {
-    addressList: [{
-        addressName: '云南省红河州蒙自市崇文街4号',
-        name: '张三',
-        phone: '12345678910'
-      },
-      {
-        addressName: '云南省红河州蒙自市崇文街4号',
-        name: '张三',
-        phone: '12345678910'
-      },
-      {
-        addressName: '云南省红河州蒙自市崇文街4号',
-        name: '张三',
-        phone: '12345678910'
-      },
-    ],
+    addressList: [],
     msg:'什么内容都没有，请新增地址。',
-    show:true
+    show:false
   },
   onLoad(options) {
-    
-  },
-  getPageData(){
-    api.getAddressList().then(res=>{
-      console.log(res)
-    })
-  },
-  onReady() {
-
-  },
-  onShow() {
     this.getPageData()
+    this.storeBindings = createStoreBindings(this, {
+      store,
+      actions: ["setaddress"],
+    });
+  },
+  async getPageData(){
+    let  AddressList = await api.getAddressList()
+    AddressList = AddressList.data.data
     this.setData({
-      addressList:[]
+      addressList:AddressList
     })
-    if (this.data.addressList.length == 0) {
+    if(this.data.addressList.length === 0){
       this.setData({
         show:true
       })
@@ -46,15 +30,18 @@ Page({
       })
     }
   },
-  onHide() {
-
-  },
-  onUnload() {
-
-  },
   toaddAddress() {
     wx.navigateTo({
       url: '../addAddress/addAddress',
     })
+  },
+  // 选择地址后 返回表单页面
+  toFrom(e){
+    let info = e.currentTarget.dataset.info
+    this.setaddress(info)
+    console.log(info)
+    // wx.navigateBack({
+    //   delta: 1 // 返回的页面数，1 表示返回到前一个页面
+    // });
   }
 });

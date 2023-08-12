@@ -1,51 +1,34 @@
+const app = getApp()
+import { storeBindingsBehavior } from "mobx-miniprogram-bindings";
+import { store } from "../../store/store";
 Component({
+  behaviors: [storeBindingsBehavior],
   data: {
     confirmBtn: {
-      content: '确定',
-      variant: 'base'
-    },
-    dialogKey: '',
-    showConfirm: false,
-    showWarnConfirm: false,
-    showTooLongBtnContent: false,
-    showMultiBtn: false,
-    content:`
-      姓名:李浩
-      地址：蒙自市红竺园B区联8-1
-      电话：18608735101
-    `,
-    multiBtnList: [{
-        content: '次要按钮',
-        theme: 'light'
-      },
-      {
-        content: '次要按钮',
-        theme: 'light'
-      },
-      {
-        content: '主要按钮',
-        theme: 'primary'
-      },
-    ],
+      content: '确认提交',
+    }
   },
-  properties: {
-    
+  storeBindings: {
+    store,
+    fields: {
+      // numA: () => store.numA,
+      // numB: (store) => store.numB,
+      // sum: "sum",
+      info:()=> store.info,
+      isDialog:()=>store.isDialog,
+      add:()=>store.add
+    }
   },
   methods: {
-    showDialog(e) {
-      const {
-        key
-      } = e.currentTarget.dataset;
+    confirm(){
+      this.data.add.addAddress(this.data.info).then(res=>{
+        wx.navigateTo({
+          url: '../../pages/address/address',
+        })
+      })
       this.setData({
-        [key]: true,
-        dialogKey: key
-      });
+        isDialog:false
+      })
     },
-    closeDialog() {
-      this.data;
-      this.setData({
-        isDialog: false
-      });
-    },
-  },
+  }
 });

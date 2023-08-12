@@ -1,3 +1,12 @@
 .wrapper {
   margin-bottom: 32rpx;
-}/* components/Dialog/Dialog.wxss */
+}
+.content-container{
+  display: flex;
+  flex-direction: column;
+}
+.content-container >view{
+  margin-top: 10rpx;
+  color: #666;
+  line-height: 1.6em;
+}

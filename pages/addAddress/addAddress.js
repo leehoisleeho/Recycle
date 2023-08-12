@@ -10,6 +10,12 @@ const data = {
   }, ],
 };
 import api from "../../API/api";
+import {
+  createStoreBindings
+} from "mobx-miniprogram-bindings";
+import {
+  store
+} from "../../store/store";
 Page({
   data: {
     options: data.areaList,
@@ -19,6 +25,12 @@ Page({
     mobile: "",
     address: "",
     detailAddress: ""
+  },
+  onLoad() {
+    this.storeBindings = createStoreBindings(this, {
+      store,
+      actions: ["setinfo", "setIsDialog","setAdd"],
+    });
   },
   handleInputChange(e) {
     // 取出实时的变量值
@@ -37,15 +49,16 @@ Page({
   // 判断名字,手机号,地址,详细地址是否为空
   judge(data) {
     if (data.name && data.mobile && data.address && data.detailAddress) {
-      // 调用添加地址接口
-      // api.addAddress({
-      //   linkman:data.name,
-      //   mobile:data.mobile,
-      //   address:data.address+data.detailAddress,
-      //   is_default:0
-      // }).then(res=>{
-      //   console.log(res)
-      // })
+      let info = {
+        linkman: data.name,
+        mobile: data.mobile,
+        address: data.address + data.detailAddress,
+        is_default: 0
+      }
+      this.setinfo(info)
+      this.setIsDialog(true)
+      //调用添加地址接口
+      this.setAdd(api)
     } else if (data.name === '') {
       wx.showToast({
         title: '请输入姓名',
@@ -89,7 +102,7 @@ Page({
       detailAddress: this.data.detailAddress
     });
   },
-  onShow(){
-    console.log(this)
+  onShow() {
+
   }
 });

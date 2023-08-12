@@ -14,7 +14,10 @@ Page({
       address: "address",
       time: "time",
       id:undefined,
-      CategoryInfo:null
+      CategoryInfo:null,
+      imgurl:'',
+      categorylist:[],
+      isShow:false
     },
   },
   data: {
@@ -22,18 +25,22 @@ Page({
     visible: false,
   },
   onLoad(options){
-    let id = 6
+    let id = options.id
     this.setData({
       id
     })
     this.getPageData()
   },
   async getPageData(){
-    const data = await api.getCategoryInfo({category_id:this.data.id})
-    console.log(data.data.data)
-
+    let  data = await api.getCategoryInfo({category_id:this.data.id})
+    data = data.data.data
+    let imgurl = 'http://recycleapi.haochentech.ltd' + data.list[0].image
+    let categorylist = data.list[0].categorylist
     this.setData({
-      CategoryInfo:data
+      CategoryInfo:data,
+      imgurl:imgurl,
+      categorylist:categorylist,
+      isShow:true
     })
   },
   onChange(event) {
@@ -54,8 +61,12 @@ Page({
       visible: false,
     });
   },
+  // 判断要上传的值是不是为空
+
   // 提交
   sub() {
     console.log(this.data.weight)
+    console.log(this.data.time)
+    console.log(this.data.address)
   }
 });

@@ -15,5 +15,21 @@ export const store = observable({
   }),
   setAddress:action(function(value){
     this.address = value
-  })
+  }),
+  // 新增地址
+  info:'',
+  isDialog:'',
+  add:'',
+  setinfo: action(async function (value) { 
+    this.info = value
+  }),
+  setIsDialog:action(async function (value) { 
+    this.isDialog = value
+  }),
+  setAdd:action(async function (value) { 
+    this.add = value
+  }),
+  setaddress:action(async function (value) { 
+    this.address = value
+  }),
 });

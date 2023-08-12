@@ -6,7 +6,7 @@ import {
 } from '../../store/store'
 Component({
   data: {
-    timeText: '尽快上门',
+    timeText: '请预约时间',
     timeVisible: false,
     description: '服务时间:09:00-22:00',
     show: true,
