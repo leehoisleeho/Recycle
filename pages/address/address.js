@@ -1,3 +1,4 @@
+import api from '../../API/api'
 Page({
   data: {
     addressList: [{
@@ -20,17 +21,22 @@ Page({
     show:true
   },
   onLoad(options) {
-
+    
+  },
+  getPageData(){
+    api.getAddressList().then(res=>{
+      console.log(res)
+    })
   },
   onReady() {
 
   },
   onShow() {
+    this.getPageData()
     this.setData({
       addressList:[]
     })
     if (this.data.addressList.length == 0) {
-
       this.setData({
         show:true
       })

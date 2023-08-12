@@ -1,8 +1,8 @@
 <!--components/AppointmentWeight/AppointmentWeight.wxml-->
 <view class="box">
-  <t-cell class="cell" title="预约时间" note="{{weightText}}"  description='{{description}}' required bind:click="onTitlePicker" />
+  <t-cell class="cell" title="预约时间" note="{{timeText}}"  description='{{description}}' required bind:click="onTitlePicker" />
     <t-picker 
-    visible="{{weightVisible}}"
+    visible="{{timeVisible}}"
     title="预约时间" 
     cancelBtn="取消" 
     confirmBtn="确认" 

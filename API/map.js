@@ -13,11 +13,10 @@ const map = {
           });
         },
         fail(err) {
-          reject("开发环境不用管这个");
+          reject(err);
         },
       });
     });
   },
 };
-
 export default map;

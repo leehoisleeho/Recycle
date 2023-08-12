@@ -1,12 +1,12 @@
 <!-- index.wxml -->
-<view>
+<view wx:if="{{isIndex}}">
   <!-- 轮播图 -->
   <view class="banner">
-    <t-swiper current="{{current}}" autoplay="{{autoplay}}" duration="{{duration}}" interval="{{interval}}" navigation="{{ { type: 'dots' } }}" list="{{swiperList}}" bind:click="onTap" bind:change="onChange" bind:image-load="onImageLoad">
+    <t-swiper current="{{current}}" autoplay="{{autoplay}}" duration="{{duration}}" interval="{{interval}}" navigation="{{ { type: 'dots' } }}" list="{{swiperList}}" bind:click="onTap" bind:change="onChange">
     </t-swiper>
   </view>
   <!-- 通知 -->
-  <t-notice-bar visible="{{visible}}" marquee="{{marquee2}}" prefixIcon="sound" content="这里是一个重要的通知">
+  <t-notice-bar visible="{{visible}}" marquee="{{marquee2}}" prefixIcon="sound" content="{{importantNotice}}">
   </t-notice-bar>
   <!-- 列表 -->
   <view class="listTitle">
@@ -14,46 +14,10 @@
     回收品类
   </view>
   <view class="listBox">
-    <view class="list" bindtap="toRecyclingFrom">
+    <view class="list" bindtap="toRecyclingFrom" data-id="{{item.id}}" wx:for="{{categoryList}}" wx:key="index">
       <view class="list_1">
-        <image src="../../static/img/test_1.png" mode="heightFix" />
-        <text>废纸</text>
-      </view>
-      <view>
-        <t-icon name="chevron-right" size="24" />
-      </view>
-    </view>
-    <view class="list">
-      <view class="list_1">
-        <image src="../../static/img/shuliaoIcon_1.png" mode="heightFix" />
-        <text>塑料</text>
-      </view>
-      <view>
-        <t-icon name="chevron-right" size="24" />
-      </view>
-    </view>
-    <view class="list">
-      <view class="list_1">
-        <image src="../../static/img/jinshuIcon_1.png" mode="heightFix" />
-        <text>金属</text>
-      </view>
-      <view>
-        <t-icon name="chevron-right" size="24" />
-      </view>
-    </view>
-    <view class="list">
-      <view class="list_1">
-        <image src="../../static/img/pingziIcon.png" mode="heightFix" />
-        <text>瓶类</text>
-      </view>
-      <view>
-        <t-icon name="chevron-right" size="24" />
-      </view>
-    </view>
-    <view class="list">
-      <view class="list_1">
-        <image src="../../static/img/qitaIcon_1.png" mode="heightFix" />
-        <text>其他垃圾</text>
+        <image src="{{'http://recycleapi.haochentech.ltd'+ item.image }}" mode="heightFix" />
+        <text>{{item.title}}</text>
       </view>
       <view>
         <t-icon name="chevron-right" size="24" />

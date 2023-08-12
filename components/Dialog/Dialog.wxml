@@ -1,0 +1,10 @@
+<!--components/Dialog/Dialog.wxml-->
+<t-dialog
+  visible="{{isDialog}}"
+  title="确认信息"
+  content="{{content}}"
+  confirm-btn="{{ confirmBtn }}"
+  cancel-btn="取消"
+  bind:confirm="closeDialog"
+  bind:cancel="closeDialog"
+/>

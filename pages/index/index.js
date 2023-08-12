@@ -1,26 +1,14 @@
 // index.js
-// 获取应用实例
-const app = getApp();
-const imageCdn = 'https://tdesign.gtimg.com/miniprogram/images';
-const swiperList = [
-  `${imageCdn}/swiper1.png`,
-  `${imageCdn}/swiper2.png`,
-  `${imageCdn}/swiper1.png`,
-  `${imageCdn}/swiper2.png`,
-  `${imageCdn}/swiper1.png`,
-];
-import{ storeBindingsBehavior }from'mobx-miniprogram-bindings'
-import{ store }from'../../store/store'
-Component({
-  // behavior 绑定
-  behaviors:[storeBindingsBehavior],
+const imageCdn = "http://recycleapi.haochentech.ltd";
+import api from "../../API/api";
+Page({
   data: {
-    someData:'...',
+    importantNotice: "",
     current: 0,
     autoplay: false,
     duration: 500,
     interval: 5000,
-    swiperList,
+    swiperList:null,
     visible: true,
     marquee1: {
       speed: 80,
@@ -32,39 +20,44 @@ Component({
       loop: -1,
       delay: 0,
     },
+    categoryList:null,
+    isIndex:false
   },
-  storeBindings:{
-    store:store,
-    fields:{
-      numA:()=> store.numA,
-      numB:(store)=> store.numB,
-      sum:'sum'
-    },
-    actions:{
-      buttonTap:'update'
-    },
+  onLoad() {
+    this.getPageData()
   },
-  methods: {
-    toRecyclingFrom() {
-      wx.navigateTo({
-        url: '../recyclingForm/recyclingForm',
-      })
-    },
-    onTap(e) {
-      const {
-        index
-      } = e.detail;
-      console.log(index);
-    },
-    onChange(e) {
-      const {
-        current,
-        source
-      } = e.detail;
-      console.log(current, source);
-    },
-    onImageLoad(e) {
+  // 获取页面所有数据 
+  async getPageData() {
+    // 获取重要通知接口
+    let importantNotice = await api.getImportantNotice()
+    // 获取首页轮播图接口
+    let swiperList = await api.getSwiperList()
+    // 获取列表品类列表接口
+    let categoryList = await api.getCategoryList()
+    console.log(categoryList.data.data)
+    // 循环列表 设置录播图
+    let list = swiperList.data.data
+    let SwiperList = []
+    list.forEach(item=>{
+      SwiperList.push(`${imageCdn}`+ item.images)
+    })
+    this.setData({
+      isIndex:true,
+      importantNotice:importantNotice.data.data.notice,
+      categoryList:categoryList.data.data,
+      swiperList:SwiperList
+    })
+  },
 
-    },
+  toRecyclingFrom(e) {
+    let id = e.currentTarget.dataset.id
+    wx.navigateTo({
+      url: "../recyclingForm/recyclingForm?id="+id,
+      
+    });
   },
+  // 点击轮播图
+  onTap(e) {},
+  // 滑动轮播图
+  onChange(e) {},
 });

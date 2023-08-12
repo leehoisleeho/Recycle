@@ -9,6 +9,11 @@ export const store = observable({
   time:'',
   setWeight: action(async function (value) { 
     this.weight = value;
+  }),
+  setTime:action(function(value){
+    this.time = value
+  }),
+  setAddress:action(function(value){
+    this.address = value
   })
-
 });
