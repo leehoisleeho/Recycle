@@ -46,6 +46,14 @@
         <text>回收类型:</text>
         <text>废纸</text>
       </view>
+      <view class="userInfo_1_item">
+        <text>预约重量:</text>
+        <text>废纸</text>
+      </view>
+      <view class="userInfo_1_item">
+        <text>预约时间:</text>
+        <text>废纸</text>
+      </view>
       <view class="userInfo_1_item_img">
         <text>图片</text>
         <t-toast id="t-toast" />

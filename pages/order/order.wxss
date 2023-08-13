@@ -63,3 +63,18 @@
   font-size: 27rpx;
   color: rgb(119, 119, 119)
 }
+.state_1{
+  color: #1e80ff;
+  font-weight: 600;
+}
+.state_2{
+  color:#34a853;
+  font-weight: 600;
+}
+.state_3{
+  color: #f53f3f;
+  font-weight: 600;
+}
+.container{
+  padding-bottom: 50rpx;
+}
