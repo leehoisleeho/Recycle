@@ -32,7 +32,7 @@
         {
           "name": "",
           "pathName": "pages/recyclingForm/recyclingForm",
-          "query": "",
+          "query": "id=6",
           "launchMode": "default",
           "scene": null
         },

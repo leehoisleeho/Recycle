@@ -1,0 +1,11 @@
+.wrapper {
+  margin-bottom: 32rpx;
+}
+.content-container{
+  display: flex;
+  flex-direction: column;
+}
+.content-container >view{
+  color: #666;
+  line-height: 1.6em;
+}

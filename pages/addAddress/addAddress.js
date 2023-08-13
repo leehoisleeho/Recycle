@@ -53,7 +53,10 @@ Page({
         linkman: data.name,
         mobile: data.mobile,
         address: data.address + data.detailAddress,
-        is_default: 0
+        is_default: 0,
+        province_id:2670,
+        city_id:2761,
+        area_id:2764
       }
       this.setinfo(info)
       this.setIsDialog(true)

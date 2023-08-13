@@ -1,21 +1,9 @@
-import {
-  storeBindingsBehavior
-} from "mobx-miniprogram-bindings";
+import { createStoreBindings } from "mobx-miniprogram-bindings";
 import {
   store
 } from "../../store/store";
 import api from '../../API/api'
 Page({
-  behaviors: [storeBindingsBehavior],
-  storeBindings: {
-    store,
-    fields: {
-      weight: "weight",
-      address: "address",
-      time: "time",
-      addressId:'addressId'
-    },
-  },
   data: {
     current: 1,
     visible: false,
@@ -27,6 +15,11 @@ Page({
     category_id: null
   },
   onLoad(options) {
+    this.storeBindings = createStoreBindings(this, {
+      store,
+      fields: ["weight", "address", "time", "addressId","isDialog"],
+      actions: ["setIsDialog"],
+    });
     let id = options.id
     this.setData({
       id: id,
@@ -67,19 +60,17 @@ Page({
     });
   },
   // 判断要上传的值是不是为空
-
+  judge(){
+    if(this.data.weight&this.data.time&this.data.this.addressId&this.data.address){
+      console.log('全部值不为空')
+    }
+  },
   // 提交
   sub() {
-    console.log(this.data.weight)
-    console.log(this.data.time)
-    console.log(this.data.address)
-    api.submitOrder({
-      category_id: this.data.id,
-      weight: this.data.weight,
-      appointment_time: this.data.time,
-      address_id:17
-    }).then(res => {
-      console.log(res)
-    })
+    console.log("weight:" + this.data.weight)
+    console.log("time:" + this.data.time)
+    console.log("address:" + this.data.address)
+    console.log("id:" + this.data.addressId)
+    this.setIsDialog(true)
   }
 });

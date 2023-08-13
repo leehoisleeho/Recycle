@@ -7,6 +7,7 @@
     "t-radio": "tdesign-miniprogram/radio/radio",
     "t-radio-group": "tdesign-miniprogram/radio-group/radio-group",
     "t-button": "tdesign-miniprogram/button/button",
-    "tui-drawer": "/components/tui-drawer/tui-drawer"
+    "tui-drawer": "/components/tui-drawer/tui-drawer",
+    "DialogForm": "/components/DialogForm/DialogForm"
   }
 }

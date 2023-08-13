@@ -40,7 +40,7 @@ Page({
   toFrom(e){
     let address = e.currentTarget.dataset.info.address
     let addressId = e.currentTarget.dataset.info.id
-    this.setAddress(address)
+    this.setAddress(address.substring(12))
     this.setaddressId(addressId)
     wx.navigateBack({
       delta: 1 // 返回的页面数，1 表示返回到前一个页面

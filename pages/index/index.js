@@ -24,6 +24,7 @@ Page({
     isIndex:false
   },
   onLoad() {
+    
     this.getPageData()
   },
   // 获取页面所有数据 
@@ -34,7 +35,7 @@ Page({
     let swiperList = await api.getSwiperList()
     // 获取列表品类列表接口
     let categoryList = await api.getCategoryList()
-    console.log(categoryList.data.data)
+
     // 循环列表 设置录播图
     let list = swiperList.data.data
     let SwiperList = []

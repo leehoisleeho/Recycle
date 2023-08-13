@@ -1,5 +1,6 @@
 <!--pages/recyclingForm/recyclingForm.wxml-->
 <view class="container" wx:if="{{isShow}}">
+  <DialogForm></DialogForm>
   <view class="header">
     <image src="{{imgurl}}" mode="widthFix" />
     <text>今日指导价：{{CategoryInfo.guidePriceMin}}元-{{CategoryInfo.guidePriceMax}}元/kg</text>

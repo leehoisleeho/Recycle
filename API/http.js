@@ -13,6 +13,7 @@ async function http(param) {
     title: '加载中', // 加载提示的文本
     mask: false // 是否显示透明蒙层，防止用户操作 
   });
+  wx.hideTabBar()
   const data = await getuserInfo()
   const token = data.userinfo.token
   const id = data.area.id
@@ -28,6 +29,7 @@ async function http(param) {
       success(res){
         resolve(res)
         wx.hideLoading()
+        wx.showTabBar()
       },
       fail(err){
         reject(err)
