@@ -1,4 +1,6 @@
-import { createStoreBindings } from "mobx-miniprogram-bindings";
+import {
+  createStoreBindings
+} from "mobx-miniprogram-bindings";
 import {
   store
 } from "../../store/store";
@@ -17,8 +19,8 @@ Page({
   onLoad(options) {
     this.storeBindings = createStoreBindings(this, {
       store,
-      fields: ["weight", "address", "time", "addressId","isDialog_form"],
-      actions: ["setIsDialog_form","setCategoryType"],
+      fields: ["weight", "address", "time", "addressId", "isDialog_form"],
+      actions: ["setIsDialog_form", "setCategoryType"],
     });
     let id = options.id
     this.setData({
@@ -61,20 +63,46 @@ Page({
     });
   },
   // 判断要上传的值是不是为空
-  judge(){
-    if(this.data.weight&this.data.time&this.data.this.addressId&this.data.address){
-      console.log('全部值不为空')
-    }
-  },
-  isShowDialog(){
-    this.setIsDialog_form(true)
-  },
-  // 提交
-  submit() {
+  judge() {
     console.log("weight:" + this.data.weight)
     console.log("time:" + this.data.time)
     console.log("address:" + this.data.address)
     console.log("id:" + this.data.addressId)
-    
+    // this.setIsDialog_form(true)
+    if(!this.data.weight){
+      wx.showToast({
+        title: '请选择重量',
+        icon:"error"
+      })
+    }else if(!this.data.time){
+      wx.showToast({
+        title: '请选择预约时间',
+        icon:"error"
+      })
+    }else if(this.data.address === '请选择地址'){
+      wx.showToast({
+        title: '请选择预地址',
+        icon:"error"
+      })
+    }else{
+      this.setIsDialog_form(true)
+    }
+  },
+  isShowDialog() {
+    this.judge()
+  },
+  // 提交
+  submit() {
+    api.submitOrder({
+      category_id:this.data.category_id,
+      weight:this.data.weight,
+      appointment_time:this.data.time,
+      address_id:this.data.addressId
+    }).then(res=>{
+      wx.showToast({
+        title: '提交成功',
+        icon:'success'
+      })
+    })
   }
 });
