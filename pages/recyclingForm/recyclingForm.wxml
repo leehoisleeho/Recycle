@@ -1,6 +1,6 @@
 <!--pages/recyclingForm/recyclingForm.wxml-->
 <view class="container" wx:if="{{isShow}}">
-  <DialogForm></DialogForm>
+  <DialogForm bind:submit='submit'></DialogForm>
   <view class="header">
     <image src="{{imgurl}}" mode="widthFix" />
     <text>今日指导价：{{CategoryInfo.guidePriceMin}}元-{{CategoryInfo.guidePriceMax}}元/kg</text>
@@ -40,7 +40,7 @@
   </view>
   <!-- 提交 -->
   <view class="sub">
-    <t-button theme="primary" size="large" block bindtap='sub'>提交订单</t-button>
+    <t-button theme="primary" size="large" block bindtap='isShowDialog'>提交订单</t-button>
   </view>
   <!-- 免责申明 -->
   <tui-drawer mode="bottom" visible="{{visible}}">

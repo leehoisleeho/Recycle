@@ -17,8 +17,8 @@ Page({
   onLoad(options) {
     this.storeBindings = createStoreBindings(this, {
       store,
-      fields: ["weight", "address", "time", "addressId","isDialog"],
-      actions: ["setIsDialog"],
+      fields: ["weight", "address", "time", "addressId","isDialog_form"],
+      actions: ["setIsDialog_form","setCategoryType"],
     });
     let id = options.id
     this.setData({
@@ -32,6 +32,7 @@ Page({
       category_id: this.data.id
     })
     data = data.data.data
+    this.setCategoryType(data.list[0].title)
     let imgurl = 'http://recycleapi.haochentech.ltd' + data.list[0].image
     let categorylist = data.list[0].categorylist
     this.setData({
@@ -65,12 +66,15 @@ Page({
       console.log('全部值不为空')
     }
   },
+  isShowDialog(){
+    this.setIsDialog_form(true)
+  },
   // 提交
-  sub() {
+  submit() {
     console.log("weight:" + this.data.weight)
     console.log("time:" + this.data.time)
     console.log("address:" + this.data.address)
     console.log("id:" + this.data.addressId)
-    this.setIsDialog(true)
+    
   }
 });

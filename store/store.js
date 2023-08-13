@@ -8,6 +8,8 @@ export const store = observable({
   address: '请选择地址',
   time:'',
   addressId:'',
+  isDialog_form:false,
+  CategoryType:'',
   setWeight: action(async function (value) { 
     this.weight = value;
   }),
@@ -20,9 +22,15 @@ export const store = observable({
   setaddressId:action(async function (value) { 
     this.addressId = value
   }),
+  setIsDialog_form:action(function (value) { 
+    this.isDialog_form = value
+  }),
+  setCategoryType:action(function (value) { 
+    this.CategoryType = value
+  }),
   // 新增地址
   info:'',
-  isDialog:'',
+  isDialog:false,
   add:'',
   setinfo: action(async function (value) { 
     this.info = value

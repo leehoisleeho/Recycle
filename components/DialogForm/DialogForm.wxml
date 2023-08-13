@@ -1,12 +1,19 @@
 <!--components/Dialog/Dialog.wxml-->
-<t-dialog visible="{{isDialog}}" title="确认信息" confirm-btn="{{ confirmBtn }}" bind:confirm="confirm">
+<t-dialog 
+  visible="{{isDialog_form}}" 
+  title="订单信息确认" 
+  confirm-btn="{{ confirmBtn }}" 
+  bind:confirm="confirm"
+  cancel-btn="取消"
+  bind:cancel="closeDialog"
+  >
   <scroll-view slot="content" scroll-y class="long-content">
     <view class="content-container">
-      <view>回收品类：{{info.linkman}}</view>
-      <view>预约重量：{{info.linkman}}</view>
-      <view>预约时间：{{info.mobile}}</view>
-      <view>地址：{{info.address}}</view>
-      <view>确认即同意《免责声明》</view>
+      <view>回收品类:{{CategoryType}}</view>
+      <view>预约重量:{{weight}}</view>
+      <view>预约时间:{{time}}</view>
+      <view>地址:{{address}}</view>
+      <view>确认即同意:<text style="color: #ea4335;">《上门回收免责声明》</text></view>
     </view>
   </scroll-view>
 </t-dialog>
