@@ -29,7 +29,7 @@ async function http(param) {
       success(res){
         resolve(res)
         wx.hideLoading()
-        wx.showTabBar()
+        
       },
       fail(err){
         reject(err)
