@@ -1,34 +1,32 @@
-const app = getApp()
-import { storeBindingsBehavior } from "mobx-miniprogram-bindings";
-import { store } from "../../store/store";
+import {
+  createStoreBindings
+} from 'mobx-miniprogram-bindings'
+import {
+  store
+} from '../../store/store'
 Component({
-  behaviors: [storeBindingsBehavior],
   data: {
     confirmBtn: {
       content: '确认提交',
     }
   },
-  storeBindings: {
-    store,
-    fields: {
-      // numA: () => store.numA,
-      // numB: (store) => store.numB,
-      // sum: "sum",
-      info:()=> store.info,
-      isDialog:()=>store.isDialog,
-      add:()=>store.add
-    }
+  attached() {
+    // 组件被添加到页面时执行的操作
+    this.storeBindings = createStoreBindings(this, {
+      store,
+      fields: ["info", "isDialog"],
+      actions: ["setIsDialog"],
+    });
   },
   methods: {
-    confirm(){
-      this.data.add.addAddress(this.data.info).then(res=>{
-        wx.navigateTo({
-          url: '../../pages/address/address',
-        })
-      })
-      this.setData({
-        isDialog:false
-      })
+    closeDialog() {
+      this.setIsDialog(false)
+    },
+    async confirm() {
+      this.setIsDialog(false)
+      let res = await this.triggerEvent('submit')
+      
+      // 
     },
   }
 });

@@ -26,7 +26,7 @@ Page({
         "isDialog_form",
         "imgUrlList",
       ],
-      actions: ["setIsDialog_form", "setCategoryType"],
+      actions: ["setIsDialog_form", "setCategoryType","setAddress"],
     });
     let id = options.id;
     this.setData({
@@ -140,7 +140,6 @@ Page({
       return this.updataImg(item.url);
     });
     const results = await Promise.all(promises); // 等待所有图片请求完成
-    console.log(results);
     api.submitOrder({
       category_id: this.data.category_id,
       weight: this.data.weight,
@@ -148,13 +147,10 @@ Page({
       address_id: this.data.addressId,
       image: this.data.imgStr,
     }).then(res => {
-      wx.showToast({
-        title: '提交成功',
-        icon: 'success'
-      })
-      wx.switchTab({
+      wx.reLaunch({
         url: '/pages/order/order',
       })
+      this.setAddress('请选择地址')
     })
   },
 });

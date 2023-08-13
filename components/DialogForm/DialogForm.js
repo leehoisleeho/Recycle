@@ -16,7 +16,7 @@ Component({
   },
   methods: {
     //确认
-    confirm(){
+    async confirm(){
       this.setIsDialog_form(false)
       this.triggerEvent('submit')
     },

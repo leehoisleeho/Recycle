@@ -1,5 +1,5 @@
 <!--components/Dialog/Dialog.wxml-->
-<t-dialog visible="{{isDialog}}" title="确认信息" confirm-btn="{{ confirmBtn }}" bind:confirm="confirm">
+<t-dialog visible="{{isDialog}}" title="确认信息" confirm-btn="{{ confirmBtn }}" bind:confirm="confirm" cancel-btn="取消" bind:cancel="closeDialog">
   <scroll-view slot="content" scroll-y class="long-content">
     <view class="content-container">
       <view>姓名：{{info.linkman}}</view>

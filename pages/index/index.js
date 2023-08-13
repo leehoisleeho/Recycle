@@ -24,7 +24,6 @@ Page({
     isIndex:false
   },
   onLoad() {
-    
     this.getPageData()
   },
   // 获取页面所有数据 
@@ -35,7 +34,6 @@ Page({
     let swiperList = await api.getSwiperList()
     // 获取列表品类列表接口
     let categoryList = await api.getCategoryList()
-
     // 循环列表 设置录播图
     let list = swiperList.data.data
     let SwiperList = []
@@ -54,7 +52,6 @@ Page({
     let id = e.currentTarget.dataset.id
     wx.navigateTo({
       url: "../recyclingForm/recyclingForm?id="+id,
-      
     });
   },
   // 点击轮播图

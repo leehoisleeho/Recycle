@@ -29,7 +29,8 @@ Page({
   onLoad() {
     this.storeBindings = createStoreBindings(this, {
       store,
-      actions: ["setinfo", "setIsDialog","setAdd"],
+      fields: ["isDialog"],
+      actions: ["setinfo", "setIsDialog", "setAdd"],
     });
   },
   handleInputChange(e) {
@@ -47,46 +48,17 @@ Page({
   },
   onPick(e) {},
   // 判断名字,手机号,地址,详细地址是否为空
-  judge(data) {
-    if (data.name && data.mobile && data.address && data.detailAddress) {
-      let info = {
-        linkman: data.name,
-        mobile: data.mobile,
-        address: data.address + data.detailAddress,
-        is_default: 0,
-        province_id:2670,
-        city_id:2761,
-        area_id:2764
-      }
-      this.setinfo(info)
-      this.setIsDialog(true)
-      //调用添加地址接口
-      this.setAdd(api)
-    } else if (data.name === '') {
-      wx.showToast({
-        title: '请输入姓名',
-        icon: 'none',
-        duration: 2000
-      })
-    } else if (data.mobile === '') {
-      wx.showToast({
-        title: '请输入手机号',
-        icon: 'none',
-        duration: 2000
-      })
-    } else if (data.address === '') {
-      wx.showToast({
-        title: '请选择省市区',
-        icon: 'none',
-        duration: 2000
-      })
-    } else if (data.detailAddress === '') {
-      wx.showToast({
-        title: '请输入详细地址',
-        icon: 'none',
-        duration: 2000
-      })
-    }
+  async submit() {
+    const res = await api.addAddress({
+      linkman: this.data.name,
+      mobile: this.data.mobile,
+      address: this.data.address + this.data.detailAddress,
+      province_id: 2670,
+      city_id: 2761,
+      area_id: 2764,
+      is_default: 0,
+    })
+    wx.navigateBack()
   },
   onChange(e) {
     const {
@@ -97,15 +69,43 @@ Page({
       address: selectedOptions.map((item) => item.label).join(""),
     });
   },
-  add() {
-    this.judge({
-      name: this.data.name,
-      mobile: this.data.mobile,
-      address: this.data.address,
-      detailAddress: this.data.detailAddress
-    });
-  },
-  onShow() {
-
+  showDialog() {
+    if (this.data.name && this.data.mobile && this.data.address && this.data.detailAddress) {
+      let info = {
+        linkman: this.data.name,
+        mobile: this.data.mobile,
+        address: this.data.address + this.data.detailAddress,
+        is_default: 0,
+        province_id: 2670,
+        city_id: 2761,
+        area_id: 2764
+      }
+      this.setinfo(info)
+      this.setIsDialog(true)
+    } else if (this.data.name === '') {
+      wx.showToast({
+        title: '请输入姓名',
+        icon: 'error',
+        duration: 2000
+      })
+    } else if (this.data.mobile === '') {
+      wx.showToast({
+        title: '请输入手机号',
+        icon: 'error',
+        duration: 2000
+      })
+    } else if (this.data.address === '') {
+      wx.showToast({
+        title: '请选择省市区',
+        icon: 'error',
+        duration: 2000
+      })
+    } else if (this.data.detailAddress === '') {
+      wx.showToast({
+        title: '请输入详细地址',
+        icon: 'error',
+        duration: 2000
+      })
+    }
   }
 });

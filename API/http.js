@@ -1,5 +1,4 @@
 const Base_URL = "http://recycleapi.haochentech.ltd";
-const app = getApp()
 import getuserInfo from './getuserInfo';
 /**
  * @param {Object} 
@@ -29,7 +28,7 @@ async function http(param) {
       success(res){
         resolve(res)
         wx.hideLoading()
-        
+        wx.showTabBar() 
       },
       fail(err){
         reject(err)
