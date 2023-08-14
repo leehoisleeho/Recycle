@@ -1,15 +1,17 @@
+import getuserInfo from '../../API/getuserInfo'
 Page({
   data: {
     text: 'Copyright © 浩辰科技开发',
+    userId:''
   },
   onLoad(options) {
-
+    this.getPageData()
   },
   onReady() {
-
+    
   },
   onShow() {
-
+    
   },
   onHide() {
 
@@ -23,6 +25,7 @@ Page({
     toOrderList 去到订单页面
     makePhoneCall 点击拨打电话
     showDevelopment 提示开发中
+    getPageData 获取页面所属数据
   */
   toFeedback() {
     wx.navigateTo({
@@ -48,6 +51,15 @@ Page({
     wx.showToast({
       title: '开发中敬请期待',
       icon:"none"
+    })
+  },
+  getPageData(){
+    console.log(123)
+    getuserInfo().then(res=>{
+      console.log(res.data.data.userinfo.id)
+      this.setData({
+        userId:res.data.data.userinfo.id
+      })
     })
   }
 });

@@ -55,3 +55,8 @@
   margin-top: 15rpx;
   color: rgb(85, 85, 85);
 }
+.header>text{
+  font-size: 25rpx;
+  margin-top: 15rpx;
+  color: #999;
+}

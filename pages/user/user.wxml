@@ -7,6 +7,7 @@
     <view class="nickName">
       微信用户
     </view>
+    <!-- <text>用户ID:{{userId}}</text> -->
   </view>
   <!-- 功能区 -->
   <view class="ribbon">
