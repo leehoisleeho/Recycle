@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+    fileList: [],
   },
 
   /**
@@ -62,5 +62,23 @@ Page({
    */
   onShareAppMessage() {
 
-  }
+  },
+
+  /** 下面是外部引入的方法 **/
+  /* 上传图片的方法 */
+  handleAdd(e) {
+    const { fileList } = this.data;
+    const { files } = e.detail;
+    this.setData({
+      fileList: [...fileList, ...files], // 此时设置了 fileList 之后才会展示选择的图片
+    });
+  },
+  handleRemove(e) {
+    const { index } = e.detail;
+    const { fileList } = this.data;
+    fileList.splice(index, 1);
+    this.setData({
+      fileList,
+    });
+  },
 })

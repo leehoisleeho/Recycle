@@ -13,3 +13,10 @@
 .item{
   padding-right: 30rpx;
 }
+.wrapper{
+  padding: 0 25rpx;
+}
+.btnBox_1{
+  width: 700rpx;
+  margin: 100rpx auto;
+}

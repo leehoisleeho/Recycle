@@ -1,6 +1,9 @@
 {
   "navigationBarTitleText": "意见反馈",
   "usingComponents": {
-    "t-input": "tdesign-miniprogram/input/input"
+    "t-input": "tdesign-miniprogram/input/input",
+    "t-textarea": "tdesign-miniprogram/textarea/textarea",
+    "t-upload": "tdesign-miniprogram/upload/upload",
+    "t-button": "tdesign-miniprogram/button/button"
   }
 }
