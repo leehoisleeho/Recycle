@@ -4,13 +4,13 @@
     <image src="../../static/img/fankui.png" mode="widthFix" />
   </view>
   <view class="item">
-    <t-input label="联系号码" placeholder="请输入文字" type='number'></t-input>
-    <t-textarea t-class="external-class" label="意见反馈" placeholder="请输入文字" disableDefaultPadding="{{true}}" />
+    <t-input label="联系号码" placeholder="请输入文字" type='number' value="{{inputval}}" bind:change="inputchange" ></t-input>
+    <t-textarea t-class="external-class" label="意见反馈" placeholder="请输入文字" disableDefaultPadding="{{true}}" bind:change="textareachange" value="{{textareaVal}}"/>
   </view>
   <view class="wrapper">
     <t-upload mediaType="{{['video','image']}}" max="{{1}}" files="{{fileList}}" bind:add="handleAdd" bind:remove="handleRemove"></t-upload>
   </view>
   <view class="btnBox_1">
-    <t-button theme="primary" size="large" block>提交</t-button>
+    <t-button theme="primary" size="large" block bindtap="submit">提交</t-button>
   </view>
 </view>
