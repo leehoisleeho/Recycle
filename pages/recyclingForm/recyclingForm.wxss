@@ -13,8 +13,9 @@
   color: #34a853;
 }
 .header > image{
-  width: 180rpx;
+  width: 90rpx;
   opacity: 0.8;
+  margin-bottom: 30rpx;
 }
 
 .itme_list{

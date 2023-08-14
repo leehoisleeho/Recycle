@@ -77,7 +77,7 @@
   color: rgb(70, 70, 70);
 }
 .list_1>image{
-  height: 100rpx;
+  height: 80rpx;
   margin-right: 25rpx;
 }
 .banner{

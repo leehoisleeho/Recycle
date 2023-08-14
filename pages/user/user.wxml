@@ -40,7 +40,7 @@
       <text>招募合伙人</text>
     </view>
     <view class="item">
-      <image src="../../static/img/userOrder.png" alt="" mode="widthFix"/>
+      <image src="../../static/img/userOrder.png" alt="" mode="widthFix" bindtap="makePhoneCall" />
       <text>一键举报</text>
     </view>
   </view>
