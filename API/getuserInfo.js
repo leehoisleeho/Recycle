@@ -9,7 +9,7 @@ async function getuserInfo() {
   // 发送 res.code 到后台换取 openId, sessionKey, unionId
   return new Promise((resolve, reject) => {
     wx.request({
-      url: 'http://recycleapi.haochentech.ltd/api/user/jscode2session',
+      url: 'https://recycleapi.hellochange.online/api/user/jscode2session',
       method: 'GET',
       data: {
         js_code: code.code,
@@ -17,10 +17,10 @@ async function getuserInfo() {
         lng: data.longitude,
       },
       success: (res) => {
-        resolve(res.data.data)
+        resolve(res)
       },
       fail: (err) => {
-        reject(err)
+        reject("userInfo失败")
       }
     });
   })

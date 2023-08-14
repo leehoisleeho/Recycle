@@ -1,0 +1,15 @@
+/* pages/feedback/feedback.wxss */
+.title > image{
+  width: 100rpx;
+  margin-right: 20rpx;
+  color: #666;
+}
+.title{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50rpx 0;
+}
+.item{
+  padding-right: 30rpx;
+}

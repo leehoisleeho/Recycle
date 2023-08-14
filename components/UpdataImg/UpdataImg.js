@@ -6,7 +6,6 @@ import {
 } from "../../store/store";
 
 Component({
-
   data: {
     // 本地存临时图片的数组
     originFiles: [],

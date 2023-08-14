@@ -9,7 +9,8 @@
     "components/AppointmentWeight/AppointmentWeight",
     "pages/address/address",
     "pages/addAddress/addAddress",
-    "pages/orderDetails/orderDetails"
+    "pages/orderDetails/orderDetails",
+    "pages/feedback/feedback"
   ],
   "tabBar": {
     "list": [
@@ -41,9 +42,7 @@
     "selectedColor": "#34a853",
     "color": "#86909c"
   },
-  "usingComponents":{
-    
-  },
+  "usingComponents": {},
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
@@ -51,7 +50,9 @@
     "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json",
-  "requiredPrivateInfos": ["getFuzzyLocation"],
+  "requiredPrivateInfos": [
+    "getFuzzyLocation"
+  ],
   "permission": {
     "scope.userFuzzyLocation": {
       "desc": "小程序将要获取你的位置"

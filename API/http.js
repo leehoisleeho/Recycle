@@ -1,4 +1,4 @@
-const Base_URL = "http://recycleapi.haochentech.ltd";
+const Base_URL = "https://recycleapi.hellochange.online";
 import getuserInfo from './getuserInfo';
 /**
  * @param {Object} 
@@ -13,9 +13,12 @@ async function http(param) {
     mask: false // 是否显示透明蒙层，防止用户操作 
   });
   wx.hideTabBar()
-  const data = await getuserInfo()
-  const token = data.userinfo.token
-  const id = data.area.id
+  // console.log(1)
+  // const data = await getuserInfo()
+  // const token = data.userinfo.token
+  // const id = data.area.id
+  let token = wx.getStorageSync("token")
+  let id = wx.getStorageSync("id")
   return new Promise((resolve, reject) => {
     wx.request({
       url: Base_URL + param.url,

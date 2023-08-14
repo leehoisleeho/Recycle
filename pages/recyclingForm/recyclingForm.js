@@ -2,7 +2,7 @@ import { createStoreBindings } from "mobx-miniprogram-bindings";
 import { store } from "../../store/store";
 import api from "../../API/api";
 import getuserInfo from "../../API/getuserInfo";
-const updataUrl = "http://recycleapi.haochentech.ltd/api/common/upload";
+const updataUrl = "https://recycleapi.hellochange.online/api/common/upload";
 Page({
   data: {
     current: 1,
@@ -26,7 +26,7 @@ Page({
         "isDialog_form",
         "imgUrlList",
       ],
-      actions: ["setIsDialog_form", "setCategoryType","setAddress"],
+      actions: ["setIsDialog_form", "setCategoryType","setAddress","setImgUrlList"],
     });
     let id = options.id;
     this.setData({
@@ -41,7 +41,7 @@ Page({
     });
     data = data.data.data;
     this.setCategoryType(data.list[0].title);
-    let imgurl = "http://recycleapi.haochentech.ltd" + data.list[0].image;
+    let imgurl = "https://recycleapi.hellochange.online" + data.list[0].image;
     let categorylist = data.list[0].categorylist;
     this.setData({
       CategoryInfo: data,
@@ -102,9 +102,8 @@ Page({
       title: "上传图片", // 加载提示的文本
       mask: false, // 是否显示透明蒙层，防止用户操作
     });
-    const data = await getuserInfo();
-    const token = data.userinfo.token;
-    const id = data.area.id;
+    let token = wx.getStorageSync("token")
+    let id = wx.getStorageSync("id")
     return new Promise((resolve, reject) => {
       wx.uploadFile({
         url: updataUrl,
@@ -118,7 +117,12 @@ Page({
           resolve("ok")
           let data = JSON.parse(res.data);
           let url = data.data.fullurl;
-          let imgStr = that.data.imgStr + "," + url;
+          let imgStr = that.data.imgStr
+          if(imgStr === ""){
+            imgStr = url
+          }else{
+            imgStr = imgStr + ',' + url
+          }
           that.setData({
             imgStr,
           });
@@ -150,6 +154,8 @@ Page({
       wx.reLaunch({
         url: '/pages/order/order',
       })
+      // 重置全局数据
+      this.setImgUrlList([])
       this.setAddress('请选择地址')
     })
   },

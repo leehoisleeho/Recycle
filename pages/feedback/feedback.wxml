@@ -1,0 +1,12 @@
+<!--pages/feedback/feedback.wxml-->
+<view class="container">
+  <view class="title">
+    <image src="../../static/img/fankui.png" mode="widthFix"/>
+    <!-- <text>意见反馈</text> -->
+  </view>
+  <view class="item">
+    <t-input label="联系号码" placeholder="请输入文字" type='number'></t-input>
+  </view>
+  
+
+</view>

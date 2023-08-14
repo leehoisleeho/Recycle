@@ -1,9 +1,11 @@
 {
   "component": true,
+  "navigationBarTitleText": "首页",
   "usingComponents": {
     "t-icon": "tdesign-miniprogram/icon/icon",
     "t-notice-bar": "tdesign-miniprogram/notice-bar/notice-bar",
     "t-swiper": "tdesign-miniprogram/swiper/swiper",
     "t-swiper-nav": "tdesign-miniprogram/swiper-nav/swiper-nav"
   }
+
 }

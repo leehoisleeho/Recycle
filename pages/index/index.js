@@ -1,5 +1,5 @@
 // index.js
-const imageCdn = "http://recycleapi.haochentech.ltd";
+const imageCdn = "https://recycleapi.hellochange.online";
 import api from "../../API/api";
 Page({
   data: {

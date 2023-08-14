@@ -16,7 +16,7 @@
   <view class="listBox">
     <view class="list" bindtap="toRecyclingFrom" data-id="{{item.id}}" wx:for="{{categoryList}}" wx:key="index">
       <view class="list_1">
-        <image src="{{'http://recycleapi.haochentech.ltd'+ item.image }}" mode="heightFix" />
+        <image src="{{'https://recycleapi.hellochange.online'+ item.image }}" mode="heightFix" />
         <text>{{item.title}}</text>
       </view>
       <view>

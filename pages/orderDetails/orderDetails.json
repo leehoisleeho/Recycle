@@ -5,6 +5,8 @@
     "t-image": "tdesign-miniprogram/image/image",
     "t-image-viewer": "tdesign-miniprogram/image-viewer/image-viewer",
     "t-toast": "tdesign-miniprogram/toast/toast",
-    "t-icon": "tdesign-miniprogram/icon/icon"
+    "t-icon": "tdesign-miniprogram/icon/icon",
+    "t-dialog": "tdesign-miniprogram/dialog/dialog",
+    "t-input": "tdesign-miniprogram/input/input"
   }
 }

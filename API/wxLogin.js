@@ -5,7 +5,7 @@ function wxLogin(){
         resolve(res)
       },
       fail: (err) => {
-        reject(err)
+        reject('123')
       }
     });
   })

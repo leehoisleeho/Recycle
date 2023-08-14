@@ -65,7 +65,22 @@ const api = {
       data: params,
     });
   },
+  // 获取订单详情
+  getOrderDetails:(params)=>{
+    return http({
+      url: "/api/rubbish/order/orderDetail",
+      method: "POST",
+      data: params,
+    });
+  },
+  // 取消订单
+  cancelOrder:(params)=>{
+    return http({
+      url: "/api/rubbish/order/cancelOrder",
+      method: "POST",
+      data: params,
+    });
+  }
 }
-
 // 倒出接口
 export default api;

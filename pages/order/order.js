@@ -1,26 +1,31 @@
 import api  from "../../API/api";
-
 Page({
   //点击
   onTabsClick(event) {
+    this.setData({
+      isShow:false
+    })
     let index = Number(event.detail.value)
+    console.log(event.detail.label)
+    console.log("index=" + event.detail.value)
     if(index===0){
       // 全部
       this.getPageDate()
     }else if(index===1){
       // 上门
-      this.getPageDate("0")
+      this.getPageDate(0)
     }else if(index===2){
-      // 完成
-      
-    }else if(index===3){
       // 取消
-      
+      this.getPageDate(2)
+    }else if(index===3){
+      // 完成
+      this.getPageDate(1)
     }
   },
-  toDetails() {
+  toDetails(e) {
+    let id = e.currentTarget.dataset.id
     wx.navigateTo({
-      url: "../orderDetails/orderDetails",
+      url: "../orderDetails/orderDetails?id="+id,
     });
   },
   data:{
@@ -50,11 +55,11 @@ Page({
     this.getPageDate()
   },
   // 获取页面数据
-  async getPageDate(){
+  async getPageDate(val=""){
     let orderList = await api.getOrderList({
-      
+      status:Number(val)
     })
-    orderList = orderList.data.data.data
+    orderList = orderList.data.data.data.reverse()
     console.log(orderList)
     if(orderList.length == 0 ){
       this.setData({

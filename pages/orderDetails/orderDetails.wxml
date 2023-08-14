@@ -1,29 +1,30 @@
 <!--pages/orderDetails/orderDetails.wxml-->
 <view class='container'>
-  <view class="header"></view>
+  <view class="header">
+    <image src="../../static/img/dingdan.png" mode="widthFix" />
+  </view>
   <!-- 用户信息 -->
   <view class="userInfo">
     <view class="userInfo_item">
       <view class="state">
-        <text class="state_1">商家接单中</text>
-        <!-- <text class="state_2">上门中</text>
-        <text class="state_3">取消</text>
-        <text class="state_4">完成</text> -->
+        <text class="state_2" wx:if="{{details.status_text==='上门中'}}">上门中,请耐心等待...</text>
+        <text class="state_3" wx:if="{{details.status_text==='已取消'}}">取消</text>
+        <text class="state_4" wx:if="{{details.status_text==='已完成'}}">完成</text>
       </view>
     </view>
     <t-divider content="" />
     <view class="userInfo_1">
       <view class="userInfo_1_item">
         <text>联系人:</text>
-        <text>哈利波特他爹</text>
+        <text>{{details.address.linkman}}</text>
       </view>
       <view class="userInfo_1_item">
         <text>回收地址:</text>
-        <text>云南省红河哈尼彝族自治州蒙自市红竺园B区联8-1</text>
+        <text>{{details.address.address}}</text>
       </view>
       <view class="userInfo_1_item">
         <text>联系电话:</text>
-        <text>18608735101</text>
+        <text>{{details.address.mobile}}</text>
       </view>
     </view>
   </view>
@@ -36,32 +37,31 @@
     <view class="userInfo_1">
       <view class="userInfo_1_item">
         <text>订单编号:</text>
-        <text>532522198709290015</text>
-      </view>
-      <view class="userInfo_1_item">
-        <text>下单时间:</text>
-        <text>2023-08-11 11:30:34</text>
-      </view>
-      <view class="userInfo_1_item">
-        <text>回收类型:</text>
-        <text>废纸</text>
-      </view>
-      <view class="userInfo_1_item">
-        <text>预约重量:</text>
-        <text>废纸</text>
+        <text>{{details.out_trade_no}}</text>
       </view>
       <view class="userInfo_1_item">
         <text>预约时间:</text>
-        <text>废纸</text>
+        <text>{{details.appointment_time}}</text>
+      </view>
+      <view class="userInfo_1_item">
+        <text>回收类型:</text>
+        <text>{{details.category.title}}</text>
+      </view>
+      <view class="userInfo_1_item">
+        <text>预约重量:</text>
+        <text>{{details.weight}}</text>
+      </view>
+      <view class="userInfo_1_item">
+        <text>下单时间:</text>
+        <text>{{details.createtime}}</text>
       </view>
       <view class="userInfo_1_item_img">
         <text>图片</text>
+        <view class="imglist" wx:if="{{details.image.length == 0}}">暂无图片</view>
         <t-toast id="t-toast" />
-        <view class="userInfo_1_item_img_box" bindtap="onClick">
-          <image src="/static/img/myfabu.png" mode="widthFix" />
-          <image src="/static/img/myfabu.png" mode="widthFix" />
-          <image src="/static/img/myfabu.png" mode="widthFix" />
-          <t-image-viewer closeBtn="{{closeBtn}}" showIndex="{{showIndex}}" visible="{{visible}}" images="{{images}}" bind:close="onClose" initial-index="{{index}}" bind:change="onChange"></t-image-viewer>
+        <view class="userInfo_1_item_img_box" bindtap="onClick" wx:if="{{details.image.length !== 0}}">
+          <image src="{{item}}" mode="widthFix" wx:for="{{details.image}}" wx:key="index" />
+          <t-image-viewer closeBtn="{{closeBtn}}" showIndex="{{showIndex}}" visible="{{visible}}" images="{{details.image}}" bind:close="onClose" initial-index="{{index}}" bind:change="onChange"></t-image-viewer>
         </view>
       </view>
     </view>
@@ -85,7 +85,10 @@
       </view>
     </view>
   </view>
-  <view class="btnBox">
-    <button type="warn">取消订单</button>
+  <t-dialog visible="{{showTextAndTitleWithInput}}" title="取消" content="确认取消当前订单吗？" confirm-btn="确定取消" cancel-btn="取消" bind:confirm="onConfirm" bind:cancel="closeDialog">
+    <t-input bind:change="InputChange" value="{{reason}}" borderless class="dialog-input" clearable slot="content" placeholder="取消原因(选填)" placeholder-class="placeholder" />
+  </t-dialog>
+  <view class="btnBox" wx:if="{{details.status_text==='上门中'}}">
+    <button type="warn" bind:tap="showDialog">取消订单</button>
   </view>
 </view>
