@@ -10,7 +10,8 @@
     "pages/address/address",
     "pages/addAddress/addAddress",
     "pages/orderDetails/orderDetails",
-    "pages/feedback/feedback"
+    "pages/feedback/feedback",
+    "pages/addressList/addressList"
   ],
   "tabBar": {
     "list": [

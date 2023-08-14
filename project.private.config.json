@@ -91,6 +91,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/addressList/addressList",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

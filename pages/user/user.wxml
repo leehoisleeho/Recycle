@@ -11,23 +11,23 @@
   <!-- 功能区 -->
   <view class="ribbon">
     <view class="item">
-      <image src="../../static/img/address.png" alt="" mode="widthFix"/>
+      <image src="../../static/img/address.png" alt="" mode="widthFix" bindtap="toAddressList"/>
       <text>地址管理</text>
     </view>
     <view class="item">
-      <image src="../../static/img/dingdan.png" alt="" mode="widthFix"/>
+      <image src="../../static/img/dingdan.png" alt="" mode="widthFix" bindtap="toOrderList"/>
       <text>回收明细</text>
     </view>
     <view class="item">
-      <image src="../../static/img/jifen.png" alt="" mode="widthFix"/>
+      <image src="../../static/img/jifen.png" alt="" mode="widthFix" bindtap="showDevelopment"/>
       <text>积分商城</text>
     </view>
     <view class="item">
-      <image src="../../static/img/myfabu.png" alt="" mode="widthFix"/>
+      <image src="../../static/img/myfabu.png" alt="" mode="widthFix" bindtap="showDevelopment"/>
       <text>我的发布</text>
     </view>
     <view class="item">
-      <image src="../../static/img/fankui.png" alt="" mode="widthFix"/>
+      <image src="../../static/img/fankui.png" alt="" mode="widthFix" bindtap="toFeedback"/>
       <text>意见反馈</text>
     </view>
     <view class="item">
