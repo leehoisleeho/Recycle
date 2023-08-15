@@ -35,6 +35,14 @@ Page({
     });
     this.getPageData();
   },
+  // 页面写着的时候 重置store
+  onUnload() {
+    this.setAddress('请选择地址')
+  },
+  /**
+   * getPageData 获取页面数据
+   * 
+   */
   async getPageData() {
     let data = await api.getCategoryInfo({
       category_id: this.data.id,

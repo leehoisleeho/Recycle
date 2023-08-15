@@ -3,6 +3,11 @@ const imageCdn = "https://recycleapi.hellochange.online";
 import api from "../../API/api";
 Page({
   data: {
+    /**
+     * categoryList 回收品类数组列表
+     * isIndex 加载时 隐藏页面
+     * 
+    */
     importantNotice: "",
     current: 0,
     autoplay: false,
@@ -24,8 +29,18 @@ Page({
     isIndex:false
   },
   onLoad() {
+    
+  },
+  onShow(){
     this.getPageData()
   },
+
+  /**方法
+   * getPageData 获取页面加载所需数据
+   * toRecyclingFrom 去预约订单页面
+   * onTap 点击轮播图触发
+   * onChange 滑动轮播图触发
+   */
   // 获取页面所有数据 
   async getPageData() {
     // 获取重要通知接口
@@ -47,7 +62,6 @@ Page({
       swiperList:SwiperList
     })
   },
-
   toRecyclingFrom(e) {
     let id = e.currentTarget.dataset.id
     wx.navigateTo({
