@@ -5,8 +5,11 @@ import {
   store
 } from "../../store/store";
 import api from "../../API/api";
-import getuserInfo from "../../API/getuserInfo";
+import {
+  judge
+} from '../../utils/util'
 const updataUrl = "https://recycleapi.hellochange.online/api/common/upload";
+
 Page({
   data: {
     current: 1,
@@ -16,7 +19,7 @@ Page({
     imgurl: "",
     categorylist: [],
     isShow: true,
-    category_id: null,
+    category_id:"",
     imgStr: "",
     /** 显示更多数据
      * isMore 是否显示查看更多
@@ -25,7 +28,7 @@ Page({
      * isDonw 上下箭头的现实
      */
     isMore: false,
-    list:[],
+    list: [],
     moreHeight: 0,
     isDonw: true,
     /** 品类选择数据
@@ -38,10 +41,7 @@ Page({
     recyclingTypeValue: [],
     description: '回收的品类',
     recyclingTypeValue: [],
-    recyclingTypes: [{
-      label: '北京市',
-      value: '2'
-    }, ],
+    recyclingTypes: [],
   },
   onLoad(options) {
     this.storeBindings = createStoreBindings(this, {
@@ -147,33 +147,55 @@ Page({
     });
   },
   // 判断要上传的值是不是为空
-  judge() {
-    if (!this.data.weight) {
-      wx.showToast({
-        title: "请选择重量",
-        icon: "error",
-      });
-    } else if (!this.data.time) {
-      wx.showToast({
-        title: "请选择预约时间",
-        icon: "error",
-      });
-    } else if (!this.data.category_id) {
-      wx.showToast({
-        title: "请选择回收品类",
-        icon: "error",
-      });
-    }else if (this.data.address === "请选择地址") {
-      wx.showToast({
-        title: "请选择预地址",
-        icon: "error",
-      });
-    } else {
-      this.setIsDialog_form(true);
-    }
-  },
+  // judge() {
+  //   if (!this.data.weight) {
+  //     wx.showToast({
+  //       title: "请选择重量",
+  //       icon: "error",
+  //     });
+  //   } else if (!this.data.time) {
+  //     wx.showToast({
+  //       title: "请选择预约时间",
+  //       icon: "error",
+  //     });
+  //   } else if (!this.data.category_id) {
+  //     wx.showToast({
+  //       title: "请选择回收品类",
+  //       icon: "error",
+  //     });
+  //   } else if (this.data.address === "请选择地址") {
+  //     wx.showToast({
+  //       title: "请选择预地址",
+  //       icon: "error",
+  //     });
+  //   } else {
+  //     this.setIsDialog_form(true);
+  //   }
+  // },
   isShowDialog() {
-    this.judge()
+    console.log(this.data.category_id)
+    let arr = [
+      {
+        field:this.data.category_id,
+        msg:'请选择品类'
+      },
+      {
+        field:this.data.weight,
+        msg:'请选择重量'
+      },
+      {
+        field:this.data.time,
+        msg:'请选择时间'
+      },
+      {
+        field:this.data.address,
+        msg:'请选择地址'
+      }
+    ]
+    let res = judge(arr)
+    if(res===1){
+      this.setIsDialog_form(true)
+    }
   },
   // 上传图片方法 并且拼接字符串
   async updataImg(files) {
