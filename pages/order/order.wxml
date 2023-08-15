@@ -7,7 +7,7 @@
   </t-tabs>
   <view wx:if="{{isShow}}">
     <Empty msg="没有新的订单" wx:if="{{isEmpty}}"></Empty>
-    <view class="itemBox" wx:if="{{!isEmpty}}" wx:for="{{orderList}}" wx:key="index">
+    <view class="itemBox" wx:if="{{!isEmpty}}" wx:for="{{orderList}}" wx:key="index" bindtap="toDetails" data-id="{{item.id}}">
       <view class="item" >
         <view class="title">
           <image src="/static/img/logo.jpg" mode="widthFix" />
@@ -43,7 +43,7 @@
         <t-divider />
         <view class="todetails">
           <text>请保存电话畅通,方便回收员联系</text>
-          <text bindtap="toDetails" data-id="{{item.id}}">点击查看详情</text>
+          <text >点击查看详情</text>
         </view>
       </view>
     </view>

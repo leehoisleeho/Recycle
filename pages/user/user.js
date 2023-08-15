@@ -19,14 +19,16 @@ Page({
   onUnload() {
 
   },
-  /* 方法 
-    toFeedback 去到Feedback页面
-    toAddressList 去到我的地址列表
-    toOrderList 去到订单页面
-    makePhoneCall 点击拨打电话
-    showDevelopment 提示开发中
-    getPageData 获取页面所属数据
-  */
+  /** 方法
+   * toFeedback 去到Feedback页面
+   * toAddressList 去到我的地址列表
+   * toOrderList 去到订单页面
+   * makePhoneCall 点击拨打电话
+   * showDevelopment 提示开发中
+   * getPageData 获取页面所属数据
+   * 
+   * 
+  */ 
   toFeedback() {
     wx.navigateTo({
       url: '/pages/feedback/feedback',
@@ -54,12 +56,10 @@ Page({
     })
   },
   getPageData(){
-    console.log(123)
     getuserInfo().then(res=>{
-      console.log(res.data.data.userinfo.id)
       this.setData({
         userId:res.data.data.userinfo.id
       })
     })
-  }
+  },
 });

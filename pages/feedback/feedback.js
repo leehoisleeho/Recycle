@@ -1,4 +1,9 @@
 // pages/feedback/feedback.js
+import api from '../../API/api'
+import {
+  judge,
+  validate
+} from '../../utils/util'
 Page({
   /**
    * 页面的初始数据
@@ -8,7 +13,7 @@ Page({
     inputval: '',
     textareaVal: '',
     imgUpdatUrl: 'https://recycleapi.hellochange.online/api/common/upload',
-    imgStr:""
+    imgStr: ""
   },
 
   /**
@@ -66,9 +71,18 @@ Page({
   onShareAppMessage() {
 
   },
-  /* 上传图片的方法 
+  /** 方法
+   * handleAdd 添加图片
+   * handleRemove 删除图片
+   * updataImg 图片上传到服务器
+   * inputchange 监听input数据变化
+   * textareachange 监听textarea数据变化
+   * submit 提交
+   * judge 判断表单所需数据是否为空
+   * onblur input失去焦点
+   * validate 判断是否是正确的电话号码
+   * */
 
-  */
   handleAdd(e) {
     const {
       fileList
@@ -139,26 +153,51 @@ Page({
       inputval: e.detail.value
     })
   },
+  onblur() {
+    if (!validate(this.data.inputval)) {
+      wx.showToast({
+        title: '请输入正确的电话号码',
+        icon: 'error'
+      })
+      this.setData({
+        inputval: ''
+      })
+    }
+  },
   /* textarea */
   textareachange(e) {
     this.setData({
       textareaVal: e.detail.value
     })
   },
-  /* 提交 
-  
-  */
   async submit() {
+    let input = this.data.inputval
+    let text = this.data.textareaVal
+    let imgStr = this.data.imgStr
     let list = this.data.fileList;
     const promises = list.map((item) => {
       return this.updataImg(item.url);
     });
     const results = await Promise.all(promises); // 等待所有图片请求完成
-    let input = this.data.inputval
-    let text = this.data.textareaVal
-    let imgStr = this.data.imgStr
-    console.log(input)
-    console.log(text)
-    console.log(imgStr)
-  }
+    let judgeArr = [{
+        field: input,
+        msg: '联系号码不能为空'
+      },
+      {
+        field: text,
+        msg: '意见反馈不能为空'
+      },
+    ]
+    let code = judge(judgeArr)
+    if (code !== 0) {
+      let res = await api.submitFeedBack({
+        content: text,
+        images: imgStr,
+        mobile: input
+      })
+      wx.switchTab({
+        url: '/pages/user/user',
+      })
+    }
+  },
 })

@@ -1,6 +1,25 @@
 import api  from "../../API/api";
 Page({
-  //点击
+  data:{
+    orderList : [],
+    isEmpty:null,
+    isShow:false,
+  },
+  onShow() {
+    this.setData({
+      isShow:false
+    })
+    this.getPageDate(0)
+  },
+  /**
+   * 
+   * onTabsClick 切换顶部导航栏触发的函数
+   * toDetails 去订单详情页
+   * formatTimestamp 时间戳 转成 时间
+   * padZero 补零
+   * getPageDate 获取订单数据
+   * 
+   */
   onTabsClick(event) {
     this.setData({
       isShow:false
@@ -10,16 +29,16 @@ Page({
     console.log("index=" + event.detail.value)
     if(index===0){
       // 全部
-      this.getPageDate()
+      this.getPageDate(index)
     }else if(index===1){
       // 上门
-      this.getPageDate(0)
+      this.getPageDate(index)
     }else if(index===2){
       // 取消
-      this.getPageDate(2)
+      this.getPageDate(index)
     }else if(index===3){
       // 完成
-      this.getPageDate(1)
+      this.getPageDate(index)
     }
   },
   toDetails(e) {
@@ -28,16 +47,9 @@ Page({
       url: "../orderDetails/orderDetails?id="+id,
     });
   },
-  data:{
-    orderList : [],
-    isEmpty:null,
-    isShow:false,
-  },
-  // 补零函数
   padZero(num) {
     return num < 10 ? '0' + num : num;
   },
-  // 时间戳转换
   formatTimestamp(timestamp) {
     const date = new Date(timestamp * 1000); // 转换为毫秒
     const year = date.getFullYear();
@@ -48,16 +60,9 @@ Page({
     const seconds = this.padZero(date.getSeconds());
     return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
   },
-  onShow() {
-    this.setData({
-      isShow:false
-    })
-    this.getPageDate()
-  },
-  // 获取页面数据
-  async getPageDate(val=""){
+  async getPageDate(index){
     let orderList = await api.getOrderList({
-      status:Number(val)
+      status:index
     })
     orderList = orderList.data.data.data.reverse()
     console.log(orderList)

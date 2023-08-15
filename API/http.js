@@ -22,18 +22,18 @@ async function http(param) {
   return new Promise((resolve, reject) => {
     wx.request({
       url: Base_URL + param.url,
-      method:param.method,
-      header:{
+      method: param.method,
+      header: {
         token,
-        areaid:id
+        areaid: id
       },
-      data:param.data,
-      success(res){
+      data: param.data,
+      success(res) {
         resolve(res)
         wx.hideLoading()
-        wx.showTabBar() 
+        wx.showTabBar()
       },
-      fail(err){
+      fail(err) {
         reject(err)
         wx.showToast({
           title: err,
@@ -44,4 +44,4 @@ async function http(param) {
     })
   })
 }
-export default  http ;
+export default http;

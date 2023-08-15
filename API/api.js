@@ -80,7 +80,15 @@ const api = {
       method: "POST",
       data: params,
     });
-  }
+  },
+  // 提交意见反馈
+  submitFeedBack:(params)=>{
+    return http({
+      url: "/api/rubbish/Suggestion/addSuggestion",
+      method: "POST",
+      data: params,
+    });
+  },
 }
 // 倒出接口
 export default api;
