@@ -1,14 +1,15 @@
 <view class="container">
-  <t-tabs defaultValue="{{0}}"  bind:click="onTabsClick" t-class="custom-tabs" theme='tag' class="tabs">
+  <t-tabs value="{{tabsIndex}}" default-value="{{defaultIndex}}" bind:click="onTabsClick" t-class="custom-tabs" theme='tag' class="tabs" sticky>
     <t-tab-panel label="全部" value="0" />
-    <t-tab-panel label="上门中" value="1" />
-    <t-tab-panel label="已取消" value="2" />
-    <t-tab-panel label="已完成" value="3" />
+    <t-tab-panel label="待服务" value="1" />
+    <t-tab-panel label="上门中" value="2" />
+    <t-tab-panel label="已取消" value="3" />
+    <t-tab-panel label="已完成" value="4" />
   </t-tabs>
   <view wx:if="{{isShow}}">
     <Empty msg="没有新的订单" wx:if="{{isEmpty}}"></Empty>
     <view class="itemBox" wx:if="{{!isEmpty}}" wx:for="{{orderList}}" wx:key="index" bindtap="toDetails" data-id="{{item.id}}">
-      <view class="item" >
+      <view class="item">
         <view class="title">
           <image src="/static/img/logo.jpg" mode="widthFix" />
           <text>废预清订单信息</text>
@@ -18,9 +19,10 @@
           <view class="itemList_1">
             <text>订单状态:</text>
             <text>
-              <text class="state_1" wx:if="{{item.status_text === '上门中'}}">上门中</text>
-              <text class="state_2" wx:if="{{item.status_text === '完成'}}">完成</text>
+              <text class="state_1" wx:if="{{item.status_text === '待接单'}}">待接单</text>
+              <text class="state_2" wx:if="{{item.status_text === '上门中'}}">上门中</text>
               <text class="state_3" wx:if="{{item.status_text === '已取消'}}">取消</text>
+              <text class="state_4" wx:if="{{item.status_text === '完成'}}">完成</text>
             </text>
           </view>
           <view class="itemList_1">
@@ -43,10 +45,9 @@
         <t-divider />
         <view class="todetails">
           <text>请保存电话畅通,方便回收员联系</text>
-          <text >点击查看详情</text>
+          <text>点击查看详情</text>
         </view>
       </view>
     </view>
   </view>
-
 </view>

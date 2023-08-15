@@ -13,7 +13,8 @@
     "pages/feedback/feedback",
     "pages/addressList/addressList",
     "pages/about/about",
-    "pages/recruit/recruit"
+    "pages/recruit/recruit",
+    "pages/allTypeForm/allTypeForm"
   ],
   "tabBar": {
     "list": [
@@ -45,7 +46,6 @@
     "selectedColor": "#34a853",
     "color": "#86909c"
   },
-  "usingComponents": {},
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
@@ -58,7 +58,7 @@
   ],
   "permission": {
     "scope.userFuzzyLocation": {
-      "desc": "小程序将要获取你的位置"
+      "desc": "你的位置信息将用于xxxxxxxx"
     }
   }
 }

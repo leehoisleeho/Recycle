@@ -1,0 +1,151 @@
+/* pages/recyclingForm/recyclingForm.wxss */
+.header{
+  display: flex;
+  justify-content: center;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  flex-direction: column;
+  align-items: center;
+  padding: 50rpx 0;
+}
+.header>text{
+  font-size: 28rpx;
+  font-weight: 800;
+  color: #34a853;
+}
+.header_title{
+  margin-top: 30rpx;
+  font-size: 34rpx;
+  color: rgb(85, 85, 85);
+  font-weight: 600;
+}
+.header > image{
+  width: 120rpx;
+  opacity: 0.8;
+}
+.alltype{
+  overflow: hidden;
+  transition: height 0.5s ease; /* 设置过渡效果 */
+}
+
+.more{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.more > text{
+  color:#666;
+  margin-left: 10rpx;
+}
+.list_alltype{
+  display: flex;
+  justify-content: space-between;
+  font-size: 25rpx;
+  color: rgb(54, 54, 54);
+  align-items: center;
+  height: 80rpx;
+  padding: 0 30rpx;
+}
+.alltype_name{
+  font-size: 30rpx;
+}
+.itme_list{
+  width: 700rpx;
+  margin: 30rpx auto;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 20rpx;
+  padding-bottom: 20rpx;
+  
+}
+.itme_list > h2{
+  text-align: center;
+  display: block;
+  padding: 30rpx 0;
+  color: rgb(54, 54, 54);
+  font-size: 35rpx;
+  font-weight: 600;
+}
+.list_1{
+  display: flex;
+  justify-content: space-between;
+  font-size: 25rpx;
+  color: rgb(54, 54, 54);
+  padding: 20rpx 30rpx;
+  align-items: center;
+}
+.list_2{
+  display: flex;
+  align-items: center;
+}
+.list_2>text{
+  font-weight: 600;
+}
+.list_2 > text:nth-child(1){
+  color: #ea4335;
+  margin-right: 10rpx;
+  font-size: 40rpx;
+  font-weight: 600;
+}
+.itme_list > .time{
+  font-size: 28rpx;
+  color: #34a853;
+  padding-left: 40rpx;
+  font-weight: 600;
+}
+.statement{
+  text-align: center;
+  font-size: 26rpx;
+  color: rgb(65, 65, 65);
+}
+.statement>text:nth-child(2){
+  color: #ea4335;
+  font-weight: 600;
+}
+.sub{
+  margin-top: 80rpx;
+  padding: 0 30rpx;
+}
+.container{
+  padding-bottom: 100rpx;
+}
+.d-container{
+  height: 96vh;
+  display: flex;
+  flex-direction: column;
+}
+.statementInfo{
+  height: 70vh;
+  
+  position: relative;
+}
+.scroll-view-container {
+  overflow-y: auto; /* 启用垂直滚动 */
+  height: 100%;
+  padding-bottom: 20rpx;
+}
+.statementInfo>h3{
+  display: flex;
+  justify-content: center;
+  padding: 15px 0;
+  font-size: 40rpx;
+  font-weight: 600;
+  color: rgb(46, 46, 46);
+}
+.btn{
+  margin-top: 50rpx;
+  width: 500rpx;
+}
+.xxx{
+  padding: 0 30rpx;
+}
+.cell{
+  --td-cell-title-font-size:30rpx;
+  --td-cell-note-font-size:28rpx;
+  --td-cell-line-height:20rpx;
+  --td-cell-border-right-space:20rpx;
+  --td-cell-description-font-size:22rpx;
+  --td-cell-vertical-padding:20rpx;
+}
+.box{
+  padding: 10rpx;
+}
+

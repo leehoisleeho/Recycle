@@ -29,7 +29,7 @@ Page({
     isIndex:false
   },
   onLoad() {
-    
+    this.getPageData()
   },
   onShow(){
     this.getPageData()
@@ -40,6 +40,8 @@ Page({
    * toRecyclingFrom 去预约订单页面
    * onTap 点击轮播图触发
    * onChange 滑动轮播图触发
+   * makePhoneCall 拨打电话
+   * allTypeForm去一键下单
    */
   // 获取页面所有数据 
   async getPageData() {
@@ -68,8 +70,18 @@ Page({
       url: "../recyclingForm/recyclingForm?id="+id,
     });
   },
+  allTypeForm(){
+    wx.navigateTo({
+      url: "/pages/allTypeForm/allTypeForm"
+    });
+  },
   // 点击轮播图
   onTap(e) {},
   // 滑动轮播图
   onChange(e) {},
+  makePhoneCall(){
+    wx.makePhoneCall({
+      phoneNumber: '15687308999', // 替换为要拨打的电话号码
+    });
+  },
 });

@@ -56,7 +56,7 @@ Page({
   },
   makePhoneCall(){
     wx.makePhoneCall({
-      phoneNumber: '18608735101', // 替换为要拨打的电话号码
+      phoneNumber: '15687308999', // 替换为要拨打的电话号码
     });
   },
   showDevelopment(){

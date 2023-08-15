@@ -30,21 +30,28 @@
   font-size: 32rpx;
   font-weight: 600;
 }
+/* 待接单 */
 .state_1{
-  color: #1e80ff;
-}
-.state_2{
   color: #fabc08;
+  font-weight: 600;
 }
+/* 上门中 */
+.state_2{
+  color:#34a853;
+  font-weight: 600;
+}
+/* 取消 */
 .state_3{
   color: #f53f3f;
+  font-weight: 600;
 }
+/* 完成 */
 .state_4{
-  color:#34a853;
+  color: #1e80ff;
+  font-weight: 600;
 }
 .userInfo_1 {
   padding: 0 20rpx;
-
 }
 .userInfo_1_item{
   display: flex;

@@ -7,9 +7,10 @@
   <view class="userInfo">
     <view class="userInfo_item">
       <view class="state">
+        <text class="state_1" wx:if="{{details.status_text==='待接单'}}">等待回收员接单</text>
         <text class="state_2" wx:if="{{details.status_text==='上门中'}}">上门中,请耐心等待...</text>
-        <text class="state_3" wx:if="{{details.status_text==='已取消'}}">取消</text>
-        <text class="state_4" wx:if="{{details.status_text==='已完成'}}">完成</text>
+        <text class="state_3" wx:if="{{details.status_text==='已取消'}}">订单取消</text>
+        <text class="state_4" wx:if="{{details.status_text==='已完成'}}">订单完成</text>
       </view>
     </view>
     <t-divider content="" />
@@ -88,7 +89,7 @@
   <t-dialog visible="{{showTextAndTitleWithInput}}" title="取消" content="确认取消当前订单吗？" confirm-btn="确定取消" cancel-btn="取消" bind:confirm="onConfirm" bind:cancel="closeDialog">
     <t-input bind:change="InputChange" value="{{reason}}" borderless class="dialog-input" clearable slot="content" placeholder="取消原因(选填)" placeholder-class="placeholder" />
   </t-dialog>
-  <view class="btnBox" wx:if="{{details.status_text==='上门中'}}">
+  <view class="btnBox" wx:if="{{details.status_text==='上门中' || details.status_text==='待接单'}}">
     <button type="warn" bind:tap="showDialog">取消订单</button>
   </view>
 </view>

@@ -89,6 +89,14 @@ const api = {
       data: params,
     });
   },
+  // 获取所有品类价格
+  getAllList:(params)=>{
+    return http({
+      url: "/api/rubbish/category/getAllList",
+      method: "GET",
+      data: params,
+    });
+  },
 }
 // 倒出接口
 export default api;

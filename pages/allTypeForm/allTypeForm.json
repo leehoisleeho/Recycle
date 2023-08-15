@@ -1,0 +1,19 @@
+{
+  "navigationBarTitleText": "预约订单",
+  "usingComponents": {
+    "AppointmentWeight": "/components/AppointmentWeight/AppointmentWeight",
+    "AppointmentTime": "/components/AppointmentTime/AppointmentTime",
+    "AppointmentAddress": "/components/AppointmentAddress/AppointmentAddress",
+    "UpdataImg": "/components/UpdataImg/UpdataImg",
+    "t-radio": "tdesign-miniprogram/radio/radio",
+    "t-radio-group": "tdesign-miniprogram/radio-group/radio-group",
+    "t-button": "tdesign-miniprogram/button/button",
+    "tui-drawer": "/components/tui-drawer/tui-drawer",
+    "DialogForm": "/components/DialogForm/DialogForm",
+    "t-icon": "tdesign-miniprogram/icon/icon",
+    "t-cell-group": "tdesign-miniprogram/cell-group/cell-group",
+    "t-cell": "tdesign-miniprogram/cell/cell",
+    "t-picker": "tdesign-miniprogram/picker/picker",
+    "t-picker-item": "tdesign-miniprogram/picker-item/picker-item"
+  }
+}

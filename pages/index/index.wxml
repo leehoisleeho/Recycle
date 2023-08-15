@@ -1,5 +1,5 @@
 <!-- index.wxml -->
-<view wx:if="{{isIndex}}">
+<view wx:if="{{isIndex}}" class="container">
   <!-- 轮播图 -->
   <view class="banner">
     <t-swiper current="{{current}}" autoplay="{{autoplay}}" duration="{{duration}}" interval="{{interval}}" navigation="{{ { type: 'dots' } }}" list="{{swiperList}}" bind:click="onTap" bind:change="onChange">
@@ -8,8 +8,26 @@
   <!-- 通知 -->
   <t-notice-bar visible="{{visible}}" marquee="{{marquee2}}" prefixIcon="sound" content="{{importantNotice}}">
   </t-notice-bar>
-  <!-- 列表 -->
+  <!-- 回收品类金刚区 -->
   <view class="listTitle">
+    <image src="../../static/img/recycle.png" mode="heightFix" />
+    回收品类
+  </view>
+  <view class="itemBox">
+    <view class="itemBoxList" bindtap="toRecyclingFrom" data-id="{{item.id}}" wx:for="{{categoryList}}" wx:key="index">
+      <image src="{{'https://recycleapi.hellochange.online'+ item.image }}" mode="widthFix"/>
+      <view class="itemBoxList_title">{{item.title}}</view>
+    </view>
+  </view>
+  <view class="btnBox">
+    <t-button theme="primary" icon="barcode" content="一键下单" size="large" class="margin" block bindtap="allTypeForm"></t-button>
+  </view>
+  <view class="phone" bindtap="makePhoneCall">
+    <t-icon name="call" size="48rpx" class="icon" />
+    <text>投诉电话:1568738999</text>
+  </view>
+  <!-- 回收品类列表 -->
+  <!-- <view class="listTitle">
     <image src="../../static/img/recycle.png" mode="heightFix" />
     回收品类
   </view>
@@ -23,5 +41,5 @@
         <t-icon name="chevron-right" size="24" />
       </view>
     </view>
-  </view>
+  </view> -->
 </view>

@@ -64,7 +64,7 @@
   font-weight: 600;
 }
 .listTitle>image{
-  height: 60rpx;
+  height: 50rpx;
   margin-right: 15rpx;
 }
 .list_1{
@@ -82,4 +82,53 @@
 }
 .banner{
   padding: 20rpx;
+}
+.itemBox{
+  width: 700rpx;
+  margin-left: auto;
+  margin-right: auto;
+}
+.itemBox{
+  display: flex;
+  margin-top: 30rpx;
+  flex-wrap: wrap;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding-top: 30rpx;
+  border-radius: 30rpx;
+}
+.itemBoxList{
+  width: 175rpx;
+  margin-bottom: 30rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.itemBoxList>image{
+  width: 80rpx;
+  margin-bottom: 20rpx;
+}
+.itemBoxList_title{
+  color: rgb(48, 48, 48);
+  font-size: 26rpx;
+}
+.btnBox{
+  width: 700rpx;
+  margin: 70rpx auto; 
+}
+.container{
+  height: 100vh;
+}
+.phone{
+  color: #999;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icon{
+  margin-right: 10rpx;
+}
+.margin{
+  
 }
