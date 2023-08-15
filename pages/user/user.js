@@ -26,8 +26,8 @@ Page({
    * makePhoneCall 点击拨打电话
    * showDevelopment 提示开发中
    * getPageData 获取页面所属数据
-   * 
-   * 
+   * toAbout 去关于们页面
+   * toRecruit 去招募合伙人页面
   */ 
   toFeedback() {
     wx.navigateTo({
@@ -42,6 +42,16 @@ Page({
   toOrderList(){
     wx.switchTab({
       url: '/pages/order/order',
+    })
+  },
+  toAbout(){
+    wx.navigateTo({
+      url: '/pages/about/about?id=1',
+    })
+  },
+  toRecruit(){
+    wx.navigateTo({
+      url: '/pages/recruit/recruit?id=3',
     })
   },
   makePhoneCall(){

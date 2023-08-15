@@ -11,7 +11,9 @@
     "pages/addAddress/addAddress",
     "pages/orderDetails/orderDetails",
     "pages/feedback/feedback",
-    "pages/addressList/addressList"
+    "pages/addressList/addressList",
+    "pages/about/about",
+    "pages/recruit/recruit"
   ],
   "tabBar": {
     "list": [

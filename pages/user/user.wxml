@@ -32,11 +32,11 @@
       <text>意见反馈</text>
     </view>
     <view class="item">
-      <image src="../../static/img/guanyu.png" alt="" mode="widthFix"/>
+      <image src="../../static/img/guanyu.png" alt="" mode="widthFix" bindtap="toAbout"/>
       <text>关于我们</text>
     </view>
     <view class="item">
-      <image src="../../static/img/zhaomu.png" alt="" mode="widthFix"/>
+      <image src="../../static/img/zhaomu.png" alt="" mode="widthFix" bindtap="toRecruit"/>
       <text>招募合伙人</text>
     </view>
     <view class="item">
