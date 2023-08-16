@@ -3,6 +3,7 @@ import map from '../../API/map';
 Page({
   /**
    * 页面的初始数据
+   * show 加载动画
    */
   data: {
     show: false
@@ -31,21 +32,26 @@ Page({
             wx.getFuzzyLocation({
               type: 'wgs84',
               success(res) {
-                console.log('成功')
                 let lat = res.latitude
                 let lng = res.longitude
-                let js_code =  code
+                let js_code = code
                 that.getToken({
-                  lat,lng,js_code
+                  lat,
+                  lng,
+                  js_code
                 })
               },
               fail() {
-                console.log('假装成功')
+                wx.showToast({
+                  title: '假装成功',
+                })
                 let lat = 23.369627442365566
                 let lng = 103.36702845886398
-                let js_code =  code
+                let js_code = code
                 that.getToken({
-                  lat,lng,js_code
+                  lat,
+                  lng,
+                  js_code
                 })
               }
             })
@@ -57,7 +63,7 @@ Page({
           fail(err) {
             wx.showToast({
               title: '获取地址失败',
-              icon:'error'
+              icon: 'error'
             })
             wx.reLaunch({
               url: '/pages/fail/fail',
@@ -67,20 +73,19 @@ Page({
       },
     })
   },
-  async getToken(data){
+  async getToken(data) {
     const that = this
     wx.request({
       url: 'https://recycleapi.hellochange.online/api/user/jscode2session',
       method: 'GET',
       data: {
-        lat:data.lat,
-        lng:data.lng,
-        js_code:data.code
+        lat: data.lat,
+        lng: data.lng,
+        js_code: data.code
       },
       success: (res) => {
-        console.log(res)
         that.setData({
-          show:true
+          show: true
         })
       },
       fail: (err) => {

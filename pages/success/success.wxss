@@ -1,0 +1,22 @@
+/* pages/success/success.wxss */
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 200rpx;
+}
+.container>image{
+  width: 220rpx;
+}
+.describe{
+  margin-top: 80rpx;
+  color: rgb(65, 65, 65);
+  padding-right: 45rpx;
+  font-size: 35rpx;
+  font-weight: 600;
+}
+.buttonBox{
+  margin-top: 280rpx;
+  width: 500rpx;
+}

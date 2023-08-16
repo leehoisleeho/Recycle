@@ -10,6 +10,20 @@
       "list": [
         {
           "name": "",
+          "pathName": "pages/error/error",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/success/success",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
           "pathName": "pages/fail/fail",
           "query": "",
           "launchMode": "default",

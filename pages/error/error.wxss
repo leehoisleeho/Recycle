@@ -1,0 +1,21 @@
+/* pages/success/success.wxss */
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 200rpx;
+}
+.container>image{
+  width: 320rpx;
+}
+.describe{
+  margin-top: 20rpx;
+  color: rgb(65, 65, 65);
+  font-size: 35rpx;
+  font-weight: 400;
+}
+.buttonBox{
+  margin-top: 280rpx;
+  width: 500rpx;
+}

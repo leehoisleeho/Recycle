@@ -16,7 +16,9 @@
     "pages/about/about",
     "pages/recruit/recruit",
     "pages/allTypeForm/allTypeForm",
-    "pages/fail/fail"
+    "pages/fail/fail",
+    "pages/success/success",
+    "pages/error/error"
   ],
   "tabBar": {
     "list": [

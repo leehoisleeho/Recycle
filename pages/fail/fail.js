@@ -63,7 +63,6 @@ Page({
   onShareAppMessage() {
 
   },
-
   /**
    * setLocation 引导客户打开位置
    */

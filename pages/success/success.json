@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "成功",
+  "usingComponents": {
+    "t-button": "tdesign-miniprogram/button/button"
+  }
+}
