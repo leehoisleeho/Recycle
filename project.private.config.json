@@ -10,6 +10,13 @@
       "list": [
         {
           "name": "",
+          "pathName": "pages/fail/fail",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
           "pathName": "pages/order/order",
           "query": "",
           "launchMode": "default",
@@ -112,9 +119,16 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/login/login",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }
   },
-  "libVersion": "2.32.3"
+  "libVersion": "2.27.3"
 }

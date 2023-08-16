@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "设置位置权限",
+  "usingComponents": {
+    "t-button": "tdesign-miniprogram/button/button"
+  }
+}

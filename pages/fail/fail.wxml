@@ -1,0 +1,13 @@
+<!--pages/fail/fail.wxml-->
+<view class="container">
+  <image src="/static/img/nogetLocation.png" mode="widthFix"/>
+  <text>我们必须获取你的位置才能为你提供相应的服务</text>
+  <text style="margin-top: 30rpx;">请重新设置位置权限</text>
+  <text style="margin-top: 30rpx;">
+    点击 <text style="color: #4285f4;">设置位置权限</text>,设置成<text style="color:#ea4335;"> 使用小程序时允许</text>
+  </text>
+  <view class="btnBox">
+    <t-button theme="primary" icon="" content="设置位置权限" size="large" class="margin" block bindtap="setLocation"></t-button>
+    <!-- <t-button theme="primary" size="large" variant="outline" block style="margin-top: 30rpx;" bindtap="toLogin">返回重新获取位置</t-button> -->
+  </view>
+</view>

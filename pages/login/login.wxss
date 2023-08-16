@@ -1,0 +1,58 @@
+/* pages/login/login.wxss */
+.box{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 100rpx;
+}
+.successBox{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.successBox > image{
+  width: 130rpx;
+  margin-bottom: 30rpx;
+}
+.successBox > text{
+  font-size: 35rpx;
+  color: #34a853;
+  margin-top: 10rpx;
+  font-weight: 400;
+}
+.failBox{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.failBox > image{
+  width: 130rpx;
+  margin-bottom: 30rpx;
+  animation: rotate  1.2s linear infinite; /* 使用 rotate 动画 */
+}
+
+.failBox > text{
+  font-size: 35rpx;
+  color: rgb(78, 78, 78);
+  margin-top: 10rpx;
+  font-weight: 400;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg); /* 初始角度 */
+  }
+  100% {
+    transform: rotate(360deg); /* 最终角度 */
+  }
+}
+.header{
+  margin-bottom: 50rpx;
+  display: flex;
+  width: 700rpx;
+  justify-content: space-evenly;
+}

@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/login/login",
     "pages/index/index",
     "pages/logs/logs",
     "pages/order/order",
@@ -14,7 +15,8 @@
     "pages/addressList/addressList",
     "pages/about/about",
     "pages/recruit/recruit",
-    "pages/allTypeForm/allTypeForm"
+    "pages/allTypeForm/allTypeForm",
+    "pages/fail/fail"
   ],
   "tabBar": {
     "list": [
@@ -49,16 +51,17 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "垃圾回收",
+    "navigationBarTitleText": "废预清资源回收平台",
     "navigationBarTextStyle": "black"
   },
-  "sitemapLocation": "sitemap.json",
-  "requiredPrivateInfos": [
-    "getFuzzyLocation"
-  ],
   "permission": {
     "scope.userFuzzyLocation": {
-      "desc": "你的位置信息将用于xxxxxxxx"
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
     }
-  }
+  },
+  "requiredPrivateInfos": [
+    "getFuzzyLocation",
+    "chooseLocation"
+  ],
+  "sitemapLocation": "sitemap.json"
 }

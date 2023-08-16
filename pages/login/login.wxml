@@ -1,0 +1,11 @@
+<!--pages/login/login.wxml-->
+<view class="box">
+  <view class="successBox" wx:if="{{show}}">
+    <image src="../../static/img/miniprogram.png" mode="widthFix"  />
+    <text>登录成功</text>
+  </view>
+  <view class="failBox" wx:if="{{!show}}">
+    <image src="../../static/img/miniprogram_1.png" mode="widthFix" />
+    <text>小程序登录中</text>
+  </view>
+</view>

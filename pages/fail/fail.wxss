@@ -1,0 +1,17 @@
+/* pages/fail/fail.wxss */
+.container{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.container > image{
+  width: 700rpx;
+}
+.container>text{
+  color: rgb(56, 56, 56);
+}
+.btnBox{
+  width: 600rpx;
+  margin-top: 80rpx;
+}
