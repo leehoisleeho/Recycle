@@ -18,7 +18,8 @@
     "pages/allTypeForm/allTypeForm",
     "pages/fail/fail",
     "pages/success/success",
-    "pages/error/error"
+    "pages/error/error",
+    "pages/getAvatar/getAvatar"
   ],
   "tabBar": {
     "list": [

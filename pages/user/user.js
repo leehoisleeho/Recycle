@@ -5,7 +5,7 @@ Page({
     userId:''
   },
   onLoad(options) {
-    this.getPageData()
+    
   },
   onReady() {
     
@@ -28,6 +28,7 @@ Page({
    * getPageData 获取页面所属数据
    * toAbout 去关于们页面
    * toRecruit 去招募合伙人页面
+   * toGetAvatar 去获取头像和昵称页面
   */ 
   toFeedback() {
     wx.navigateTo({
@@ -65,11 +66,9 @@ Page({
       icon:"none"
     })
   },
-  getPageData(){
-    getuserInfo().then(res=>{
-      this.setData({
-        userId:res.data.data.userinfo.id
-      })
+  toGetAvatar(){
+    wx.navigateTo({
+      url: '/pages/getAvatar/getAvatar',
     })
-  },
+  }
 });

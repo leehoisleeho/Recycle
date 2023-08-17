@@ -7,6 +7,7 @@
     <view class="nickName">
       微信用户
     </view>
+    <t-button theme="primary" variant="outline" bindtap='toGetAvatar'>获取头像和昵称</t-button>
     <!-- <text>用户ID:{{userId}}</text> -->
   </view>
   <!-- 功能区 -->

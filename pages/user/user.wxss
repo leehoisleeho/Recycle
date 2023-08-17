@@ -60,3 +60,6 @@
   margin-top: 15rpx;
   color: #999;
 }
+.t-button{
+  margin-top: 30rpx;
+}

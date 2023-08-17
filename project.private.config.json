@@ -10,6 +10,13 @@
       "list": [
         {
           "name": "",
+          "pathName": "pages/getAvatar/getAvatar",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
           "pathName": "pages/error/error",
           "query": "",
           "launchMode": "default",

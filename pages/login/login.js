@@ -32,13 +32,9 @@ Page({
             wx.getFuzzyLocation({
               type: 'wgs84',
               success(res) {
-                console.log(code)
                 let lat = res.latitude
                 let lng = res.longitude
                 let js_code = code
-                console.log("lat",lat)
-                console.log("lng",lng)
-                console.log("code",code)
                 that.getToken({
                   lat,
                   lng,
@@ -91,7 +87,15 @@ Page({
         that.setData({
           show: true
         })
-        console.log(res)
+        let data = res.data.data
+        console.log(data)
+        let id = data.area.id
+        let token = data.userinfo.token
+        wx.setStorageSync('id', id)
+        wx.setStorageSync('token', token)
+        wx.reLaunch({
+          url: '/pages/index/index',
+        })
       },
       fail: (err) => {
         console.log(err)

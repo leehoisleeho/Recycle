@@ -1,0 +1,26 @@
+/* pages/getAvatar/getAvatar.wxss */
+.avatar{
+  width: 80px;
+  height: 80px;
+  padding:0;
+  margin-top: 100rpx;
+}
+.avatar image{
+  width: 80px;
+  height: 80px;
+}
+.weui-input{
+  width: 600rpx;
+  height: 60px;
+  margin:20px auto;
+  background: #eee;
+  border-radius: 5px;
+  padding-left: 15px;
+}
+.btnBox{
+  display: flex;
+  justify-content:center;
+  width: 600rpx;
+  margin: 150rpx auto;
+}
+

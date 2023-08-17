@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "获取头像和昵称",
+  "usingComponents": {
+    "t-button": "tdesign-miniprogram/button/button",
+    "t-input": "tdesign-miniprogram/input/input"
+  }
+}
