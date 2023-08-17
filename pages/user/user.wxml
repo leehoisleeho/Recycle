@@ -50,5 +50,12 @@
       <text>一键举报</text>
     </view>
   </view>
+  <view class="staffLogin" bind:tap="tostaffLogin">
+    <view>
+      <image src="../../static/img/staffLogin.png" alt="" mode="widthFix" style="width:120rpx;"/>
+      <text>员工入口</text>
+    </view>
+    <t-icon name="swap-right" size="48rpx" data-name="swap-right" />
+  </view>
   <t-footer text="{{text}}" class="footer"></t-footer>
 </view>

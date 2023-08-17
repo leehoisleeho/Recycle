@@ -87,7 +87,7 @@ Page({
     let password = this.data.password
     console.log(account)
     console.log(password)
-    wx.navigateTo({
+    wx.redirectTo({
       url: '/pages/staffIndex/staffIndex',
     })
   }

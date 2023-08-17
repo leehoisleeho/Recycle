@@ -4,7 +4,7 @@
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   height: 120rpx;
   background: white;
-  position: absolute;
+  position: fixed;
   bottom: 0rpx;
   left: 0;
   right: 0;
@@ -22,5 +22,6 @@
 }
 
 .item.active {
-  color:#34a853 /* 选中字体颜色 */
+  color:#4285f4;
+  font-weight: 600;
 }

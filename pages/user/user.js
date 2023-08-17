@@ -83,5 +83,10 @@ Page({
         nickname,avatar
       })
     })
+  },
+  tostaffLogin(){
+    wx.redirectTo({
+      url: '/pages/staffLogin/staffLogin',
+    })
   }
 });
