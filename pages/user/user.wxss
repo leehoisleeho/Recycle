@@ -104,3 +104,6 @@
   margin-left: 10rpx;
 
 }
+.staffLogin>view:nth-child(1)>image{
+  width: 120rpx;
+}
