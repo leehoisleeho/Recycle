@@ -19,7 +19,9 @@
     "pages/fail/fail",
     "pages/success/success",
     "pages/error/error",
-    "pages/getAvatar/getAvatar"
+    "pages/getAvatar/getAvatar",
+    "pages/staffLogin/staffLogin",
+    "pages/staffIndex/staffIndex"
   ],
   "tabBar": {
     "list": [

@@ -1,0 +1,15 @@
+<!--pages/staffLogin/staffLogin.wxml-->
+<view class="header">
+  <image src="/static/img/staffLogin.png" mode="widthFix"/>
+</view>
+<view class="loginBox">
+  <t-input  label="账号" placeholder="电话号码" value="{{account}}" type="number" bind:change="accountchange" />
+  <t-input  label="密码" placeholder="请输入密码" value="{{password}}" type="password" bind:change="passwordchange" />
+</view>
+<view class="submit">
+  <t-button theme="primary" size="large" block bind:tap="submit">登录</t-button>
+</view>
+<view class="foot">
+  <t-footer text="{{text}}"></t-footer>
+</view>
+

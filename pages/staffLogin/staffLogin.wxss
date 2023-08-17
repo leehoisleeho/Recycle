@@ -1,0 +1,28 @@
+/* pages/staffLogin/staffLogin.wxss */
+.header{
+  /* background: linear-gradient(to bottom, blue, ); */
+  background: white;
+  /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+  display: flex;
+  justify-content: center;
+}
+.header>image{
+  width: 500rpx;
+}
+.loginBox{
+  width: 700rpx;
+  margin-top: 30rpx;
+  margin-left: auto;
+  margin-right: auto;
+}
+.submit{
+  width: 700rpx;
+  margin-top: 100rpx;
+  margin-left: auto;
+  margin-right: auto;
+}
+.foot{
+  position: absolute;
+  bottom: 50rpx;
+  width: 750rpx;
+}
