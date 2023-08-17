@@ -26,13 +26,13 @@ const api = {
     });
   },
   // 获取订单列表接口
-   getOrderList: (params) => {
+  getOrderList: (params) => {
     return http({
       url: "/api/rubbish/order/getOrderList",
       method: "GET",
       data: params,
     });
-   },
+  },
   // 提交订单页面 品类信息
   getCategoryInfo: (params) => {
     return http({
@@ -42,7 +42,7 @@ const api = {
     });
   },
   // 获取地址列表
-  getAddressList:(params)=>{
+  getAddressList: (params) => {
     return http({
       url: "/api/rubbish/Address/getList",
       method: "GET",
@@ -50,7 +50,7 @@ const api = {
     });
   },
   // 添加地址
-  addAddress:(params)=>{
+  addAddress: (params) => {
     return http({
       url: "/api/rubbish/Address/addAddress",
       method: "POST",
@@ -58,7 +58,7 @@ const api = {
     });
   },
   // 提交订单
-  submitOrder:(params)=>{
+  submitOrder: (params) => {
     return http({
       url: "/api/rubbish/order/addOrder",
       method: "POST",
@@ -66,7 +66,7 @@ const api = {
     });
   },
   // 获取订单详情
-  getOrderDetails:(params)=>{
+  getOrderDetails: (params) => {
     return http({
       url: "/api/rubbish/order/orderDetail",
       method: "POST",
@@ -74,7 +74,7 @@ const api = {
     });
   },
   // 取消订单
-  cancelOrder:(params)=>{
+  cancelOrder: (params) => {
     return http({
       url: "/api/rubbish/order/cancelOrder",
       method: "POST",
@@ -82,7 +82,7 @@ const api = {
     });
   },
   // 提交意见反馈
-  submitFeedBack:(params)=>{
+  submitFeedBack: (params) => {
     return http({
       url: "/api/rubbish/Suggestion/addSuggestion",
       method: "POST",
@@ -90,13 +90,68 @@ const api = {
     });
   },
   // 获取所有品类价格
-  getAllList:(params)=>{
+  getAllList: (params) => {
     return http({
       url: "/api/rubbish/category/getAllList",
       method: "GET",
       data: params,
     });
   },
+  // 更新用户昵称
+  updataUserName: (params) => {
+    return http({
+      url: "/api/user/updateUserName",
+      method: "POST",
+      data: params,
+    });
+  },
+  // 更新用户头像
+  updataUserAvatar: (params) => {
+    return http({
+      url: "/api/user/updateUserAvatar",
+      method: "POST",
+      data: params,
+    });
+  },
+  // 获取用户头像和昵称
+  getUserInfo: (params) => {
+    return http({
+      url: "/api/user/getUserInfo",
+      method: "GET",
+      data: params,
+    });
+  },
+  // 上传图片接口
+  upImg: (tempFile) => {
+    wx.showLoading({
+      title: '图片上传中', // 加载提示的文本
+      mask: false // 是否显示透明蒙层，防止用户操作 
+    });
+    let token = wx.getStorageSync("token")
+    let id = wx.getStorageSync("id")
+    return new Promise((resolve, reject) => {
+      wx.uploadFile({
+        url: 'https://recycleapi.hellochange.online/api/common/upload',
+        filePath: tempFile,
+        name: 'file',
+        header:{
+          token:token,
+          areaid: id
+        },
+        success(res) {
+          resolve(res)
+          wx.hideLoading()
+        },
+        fail(err){
+          reject(err)
+          wx.showToast({
+            title: '上传失败',
+            icon:'error'
+          })
+        }
+      })
+    })
+  }
 }
 // 倒出接口
 export default api;

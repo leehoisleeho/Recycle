@@ -13,10 +13,6 @@ async function http(param) {
     mask: false // 是否显示透明蒙层，防止用户操作 
   });
   wx.hideTabBar()
-  // console.log(1)
-  // const data = await getuserInfo()
-  // const token = data.userinfo.token
-  // const id = data.area.id
   let token = wx.getStorageSync("token")
   let id = wx.getStorageSync("id")
   return new Promise((resolve, reject) => {

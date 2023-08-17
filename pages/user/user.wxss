@@ -15,9 +15,12 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  position: relative;
 }
 .userImg>image{
-  width: 110rpx;
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
 }
 .nickName{
   font-weight: 600;
@@ -62,4 +65,20 @@
 }
 .t-button{
   margin-top: 30rpx;
+}
+.edit{
+  position: absolute;
+  top: 20rpx;
+  right: 30rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.edit>image{
+  width: 60rpx;
+}
+.edit>text{
+  font-size: 25rpx;
+  color: #999;
 }

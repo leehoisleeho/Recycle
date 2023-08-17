@@ -6,6 +6,7 @@
   "navigationBarTextStyle": "black",
   "usingComponents": {
     "t-footer": "tdesign-miniprogram/footer/footer",
-    "t-button": "tdesign-miniprogram/button/button"
+    "t-button": "tdesign-miniprogram/button/button",
+    "t-icon": "tdesign-miniprogram/icon/icon"
   }
 }

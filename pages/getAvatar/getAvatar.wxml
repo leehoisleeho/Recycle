@@ -2,9 +2,8 @@
   <button class="avatar" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
     <image src="{{avatarUrl}}"></image>
   </button>
-  <input type="nickname" class="weui-input" placeholder="请输入昵称" />
+  <input  class="weui-input" placeholder="请输入昵称" value="{{nickName}}" bindinput="changeInput"/>
   <view class="btnBox"> 
-    <t-button theme="primary" size="large" variant="outline" block>提交</t-button>
+    <t-button theme="primary" size="large" variant="outline" block bind:tap="submit">提交</t-button>
   </view>
-  
 </view>

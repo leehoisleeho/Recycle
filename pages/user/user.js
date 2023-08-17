@@ -1,8 +1,10 @@
+import api from '../../API/api';
 import getuserInfo from '../../API/getuserInfo'
 Page({
   data: {
     text: 'Copyright © 浩辰科技开发',
-    userId:''
+    nickname:'',
+    avatar:''
   },
   onLoad(options) {
     
@@ -11,7 +13,7 @@ Page({
     
   },
   onShow() {
-    
+    this.getUserInfo()
   },
   onHide() {
 
@@ -29,6 +31,7 @@ Page({
    * toAbout 去关于们页面
    * toRecruit 去招募合伙人页面
    * toGetAvatar 去获取头像和昵称页面
+   * getUserInfo 获取用户头像和昵称
   */ 
   toFeedback() {
     wx.navigateTo({
@@ -69,6 +72,17 @@ Page({
   toGetAvatar(){
     wx.navigateTo({
       url: '/pages/getAvatar/getAvatar',
+    })
+  },
+  getUserInfo(){
+    const that = this
+    api.getUserInfo().then(res=>{
+      let {nickname} = res.data.data.userinfo
+      let {avatar} = res.data.data.userinfo
+      that.setData({
+        nickname,avatar
+      })
+      console.log(this.data)
     })
   }
 });

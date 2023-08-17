@@ -2,13 +2,18 @@
   <!-- 头部 -->
   <view class="header">
     <view class="userImg">
-      <image src="../../static/img/userImg.png" mode="widthFix" />
+      <image src="../../static/img/userImg.png" mode="" wx:if="{{avatar===''}}"/>
+      <image src="{{avatar}}" mode="" />
     </view>
-    <view class="nickName">
+    <view class="nickName" wx:if="{{nickname===''}}">
       微信用户
     </view>
-    <t-button theme="primary" variant="outline" bindtap='toGetAvatar'>获取头像和昵称</t-button>
-    <!-- <text>用户ID:{{userId}}</text> -->
+    <view class="nickName">
+      {{nickname}}
+    </view>
+    <view class="edit">
+      <image src="/static/img/editor.png" mode="widthFix" bind:tap="toGetAvatar"/>
+    </view>
   </view>
   <!-- 功能区 -->
   <view class="ribbon">
