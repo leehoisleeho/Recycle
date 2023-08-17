@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "工作中心",
+  "navigationBarTitleText": "员工中心",
   "usingComponents": {
     "CustomTabBar":"/components/CustomTabBar/CustomTabBar"
   }

@@ -1,2 +1,4 @@
-<!--pages/staffIndex/staffIndex.wxml-->
-<text>pages/staffIndex/staffIndex.wxml</text>
+<view class="container">
+  <text>我的订单</text>
+  <CustomTabBar></CustomTabBar>
+</view>

@@ -1,0 +1,5 @@
+<!--components/CustomTabBar/CustomTabBar.wxml-->
+<view class="warpper">
+  <view class="item {{active === 0 ? 'active':' '}}" data-index="0" bind:tap="switchTab" >订单中心</view>
+  <view class="item {{active === 1 ? 'active':' '}}" data-index="1" bind:tap="switchTab" >员工中心</view>
+</view>

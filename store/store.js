@@ -48,5 +48,9 @@ export const store = observable({
   setAdd: action(async function (value) {
     this.add = value
   }),
-
+  // 员工tabbar状态切换
+  active:0,
+  setactive:action(function(value){
+    this.active = value
+  })
 });

@@ -1,0 +1,6 @@
+<!--pages/staffCenter/staffCenter.wxml-->
+<view class="container">
+  <CustomTabBar></CustomTabBar>
+</view>
+<text>员工中心</text>
+

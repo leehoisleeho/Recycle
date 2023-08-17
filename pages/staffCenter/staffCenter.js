@@ -1,15 +1,20 @@
-// pages/staffIndex/staffIndex.js
-
+// pages/staffCenter/staffCenter.js
 Page({
+
   /**
    * 页面的初始数据
    */
   data: {
 
   },
-  onLoad(){
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad(options) {
     
   },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -21,7 +26,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+  
   },
 
   /**

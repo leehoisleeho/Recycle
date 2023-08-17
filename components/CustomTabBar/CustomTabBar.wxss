@@ -1,0 +1,26 @@
+/* components/CustomTabBar/CustomTabBar.wxss */
+.warpper{
+  width: 100vw;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  height: 120rpx;
+  background: white;
+  position: absolute;
+  bottom: 0rpx;
+  left: 0;
+  right: 0;
+  display: flex;
+}
+.item{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #999;
+}
+.warpper > .item:nth-child(1){
+  border-right: 1px solid rgb(231, 231, 231);
+}
+
+.item.active {
+  color:#34a853 /* 选中字体颜色 */
+}

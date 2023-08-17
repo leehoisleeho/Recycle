@@ -21,7 +21,8 @@
     "pages/error/error",
     "pages/getAvatar/getAvatar",
     "pages/staffLogin/staffLogin",
-    "pages/staffIndex/staffIndex"
+    "pages/staffIndex/staffIndex",
+    "pages/staffCenter/staffCenter"
   ],
   "tabBar": {
     "list": [
