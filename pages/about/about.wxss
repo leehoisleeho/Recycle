@@ -1,1 +1,15 @@
 /* pages/about/about.wxss */
+.container{
+  padding: 30rpx 0;
+}
+ img{
+  width: 30px;
+}
+.box > img{
+  width: 40px;
+  display: block;
+  border: 1px solid red;
+}
+.box > p{
+  color: red;
+}

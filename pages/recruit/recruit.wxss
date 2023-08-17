@@ -1,1 +1,4 @@
 /* pages/recruit/recruit.wxss */
+.container{
+  padding: 50rpx 30rpx;
+}

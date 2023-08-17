@@ -1,2 +1,4 @@
-<!--pages/recruit/recruit.wxml-->
-<text>招募合伙人</text>
+<view class="container"> 
+  <rich-text nodes="{{content}}" />
+</view>
+

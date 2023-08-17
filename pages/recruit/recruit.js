@@ -1,11 +1,12 @@
 // pages/recruit/recruit.js
+import api from '../../API/api'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    content:''
   },
 
   /**
@@ -26,8 +27,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
-  },
+    this.getPageInfo()
+  },  
 
   /**
    * 生命周期函数--监听页面隐藏
@@ -62,5 +63,18 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+  /**
+   * getPageInfo 获取页面所需数据
+   * 
+   */
+  getPageInfo(){
+    const that = this
+    api.invite().then(res=>{
+      let {content} = res.data.data
+      that.setData({
+        content
+      })
+    })
   }
 })

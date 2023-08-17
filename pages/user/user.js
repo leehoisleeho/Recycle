@@ -82,7 +82,6 @@ Page({
       that.setData({
         nickname,avatar
       })
-      console.log(this.data)
     })
   }
 });

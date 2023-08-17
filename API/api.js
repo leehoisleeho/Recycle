@@ -134,23 +134,39 @@ const api = {
         url: 'https://recycleapi.hellochange.online/api/common/upload',
         filePath: tempFile,
         name: 'file',
-        header:{
-          token:token,
+        header: {
+          token: token,
           areaid: id
         },
         success(res) {
           resolve(res)
           wx.hideLoading()
         },
-        fail(err){
+        fail(err) {
           reject(err)
           wx.showToast({
             title: '上传失败',
-            icon:'error'
+            icon: 'error'
           })
         }
       })
     })
+  },
+  //招募合伙人
+  invite: (params) => {
+    return http({
+      url: "/api/rubbish/Article/invite",
+      method: "GET",
+      data: params,
+    });
+  },
+  //关于我们
+  getAbout: (params) => {
+    return http({
+      url: "/api/rubbish/Article/about",
+      method: "GET",
+      data: params,
+    });
   }
 }
 // 倒出接口

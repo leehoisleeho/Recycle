@@ -3,6 +3,7 @@
   <DialogForm bind:submit='submit'></DialogForm>
   <view class="header">
     <image src="{{imgurl}}" mode="widthFix" />
+    <text class="titleName" style="color: #333; margin-bottom: 20rpx;">{{CategoryInfo.list[0].title}}</text>
     <text>今日指导价：{{CategoryInfo.guidePriceMin}}元-{{CategoryInfo.guidePriceMax}}元/kg</text>
   </view>
   <!-- 类目价格 -->

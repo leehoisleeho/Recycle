@@ -1,2 +1,6 @@
 <!--pages/about/about.wxml-->
-<text>关于我们</text>
+<view class="container">
+  <div class="box">
+    <rich-text nodes="{{content}}" />
+  </div>
+</view>

@@ -1,7 +1,6 @@
 import { createStoreBindings } from "mobx-miniprogram-bindings";
 import { store } from "../../store/store";
 import api from "../../API/api";
-import getuserInfo from "../../API/getuserInfo";
 const updataUrl = "https://recycleapi.hellochange.online/api/common/upload";
 Page({
   data: {
