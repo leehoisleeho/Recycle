@@ -22,7 +22,8 @@
     "pages/getAvatar/getAvatar",
     "pages/staffLogin/staffLogin",
     "pages/staffIndex/staffIndex",
-    "pages/staffCenter/staffCenter"
+    "pages/staffCenter/staffCenter",
+    "pages/staffOrderDetails/staffOrderDetails"
   ],
   "tabBar": {
     "list": [
@@ -64,6 +65,11 @@
     "scope.userFuzzyLocation": {
       "desc": "你的位置信息将用于小程序位置接口的效果展示"
     }
+  },
+  "usingComponents": {
+    "t-divider": "tdesign-miniprogram/divider/divider",
+    "t-icon": "tdesign-miniprogram/icon/icon",
+    "t-button": "tdesign-miniprogram/button/button"
   },
   "requiredPrivateInfos": [
     "getFuzzyLocation",

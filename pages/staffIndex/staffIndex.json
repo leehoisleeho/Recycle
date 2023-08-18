@@ -1,8 +1,10 @@
 {
-  "navigationBarTitleText": "订单中心",
+  "navigationBarTitleText": "员工订单中心",
   "usingComponents": {
     "CustomTabBar":"/components/CustomTabBar/CustomTabBar",
     "t-tabs": "tdesign-miniprogram/tabs/tabs",
-    "t-tab-panel": "tdesign-miniprogram/tab-panel/tab-panel"
+    "t-tab-panel": "tdesign-miniprogram/tab-panel/tab-panel",
+    "t-input": "tdesign-miniprogram/input/input",
+    "Empty":"/components/Empty/Empty"
   }
 }

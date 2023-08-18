@@ -1,10 +1,4 @@
-// pages/staffCenter/staffCenter.js
-import {
-  createStoreBindings
-} from "mobx-miniprogram-bindings";
-import {
-  store
-} from "../../store/store";
+// pages/staffOrderDetails/staffOrderDetails.js
 Page({
 
   /**
@@ -18,12 +12,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    this.storeBindings = createStoreBindings(this, {
-      store,
-      fields: ['active'], // 数据 this.data.avtive
-      actions: ["setactive"], // 操作数据的方法 this.setactive()
-    });
-    this.setactive(1)
+
   },
 
   /**

@@ -1,6 +1,59 @@
 <!--pages/staffCenter/staffCenter.wxml-->
 <view class="container">
+  <view class="header">
+    <view class="staffInfo">
+      <view class="staffImg">
+        <image src="/static/img/staffImg.png" mode="heightFix" />
+      </view>
+      <view class="staffInfo_1">
+        <text>李建国</text>
+        <text>编号: 1</text>
+        <text>状态: 工作中</text>
+      </view>
+    </view>
+  </view>
+  <view class="staffList">
+    <t-divider content="" />
+    <view class="staffListItem">
+      <view class="staffListItem_1">
+        <image src="/static/img/zhaomu.png" mode="heightFix" />
+        <text>请假申请</text>
+      </view>
+      <t-icon name="chevron-right" size="45rpx" />
+    </view>
+    <t-divider content="" />
+    <view class="staffListItem">
+      <view class="staffListItem_1">
+        <image src="/static/img/zhaomu.png" mode="heightFix" />
+        <text>复工申请</text>
+      </view>
+      <t-icon name="chevron-right" size="45rpx" />
+    </view>
+    <t-divider content="" />
+    <view class="staffListItem">
+      <view class="staffListItem_1">
+        <image src="/static/img/zhaomu.png" mode="heightFix" />
+        <text>商家申请</text>
+      </view>
+      <t-icon name="chevron-right" size="45rpx" />
+    </view>
+    <t-divider content="" />
+    <view class="staffListItem">
+      <view class="staffListItem_1">
+        <image src="/static/img/zhaomu.png" mode="heightFix" />
+        <text>我的商家</text>
+      </view>
+      <t-icon name="chevron-right" size="45rpx" />
+    </view>
+    <t-divider content="" />
+    <view class="staffListItem">
+      <view class="staffListItem_1">
+        <image src="/static/img/zhaomu.png" mode="heightFix" />
+        <text>我的订单</text>
+      </view>
+      <t-icon name="chevron-right" size="45rpx" />
+    </view>
+    <t-divider content="" />
+  </view>
   <CustomTabBar></CustomTabBar>
 </view>
-<text>员工中心</text>
-

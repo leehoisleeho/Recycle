@@ -1,18 +1,31 @@
 // pages/staffIndex/staffIndex.js
-import { createStoreBindings } from "mobx-miniprogram-bindings";
-import { staffOrder } from "../../store/staffOrder";
+import {
+  createStoreBindings
+} from "mobx-miniprogram-bindings";
+import {
+  store
+} from "../../store/store";
 
 Page({
   /**
    * 页面的初始数据
+   * status假设的订单状态
+   * isShow加载页面时 隐藏页面
+   * isEmpty数据为空显示
    */
   data: {
-
+    orderList: [{}],
+    isShow: true,
+    status: 2,
+    isEmpty: true
   },
   onLoad() {
     this.storeBindings = createStoreBindings(this, {
-      staffOrder,
+      store,
+      fields: ['active'], // 数据 this.data.avtive,
+      actions: ["setactive"], // 操作数据的方法 this.setactive()
     });
+    this.setactive(0)
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -25,7 +38,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+    this.getOrderList()
   },
 
   /**
@@ -65,8 +78,26 @@ Page({
 
   /** 方法
    * onTabsChange 切换tab的回调
+   * getOrderList 获取订单数据
+   * toStaffOrderDetails
    */
   onTabsChange(event) {
-    console.log(event.detail.value)
+    let index = Number(event.detail.value)
+    console.log(index)
   },
+  getOrderList() {
+    const len = this.data.orderList.length
+    if (len === 0) {
+      this.setData({})
+    } else {
+      this.setData({
+        isEmpty: false
+      })
+    }
+  },
+  toStaffOrderDetails() {
+    wx.navigateTo({
+      url: '/pages/staffOrderDetails/staffOrderDetails'
+    })
+  }
 })

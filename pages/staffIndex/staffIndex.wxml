@@ -1,14 +1,64 @@
 <view class="container">
   <t-tabs defaultValue="{{0}}" bind:change="onTabsChange" t-class="custom-tabs">
-    <t-tab-panel label="待接单" value="0" />
-    <t-tab-panel label="服务中" value="1" />
-    <t-tab-panel label="已取消" value="2" />
-    <t-tab-panel label="完成" value="3" />
+    <t-tab-panel label="全部" value="0" />
+    <t-tab-panel label="待接单" value="1" />
+    <t-tab-panel label="服务中" value="2" />
+    <t-tab-panel label="已取消" value="3" />
+    <t-tab-panel label="完成" value="4" />
   </t-tabs>
-  <view class="orderBox">
+  <view class="orderBox" wx:if="{{isShow}}">
+    <Empty msg="暂无数据" wx:if="{{isEmpty}}"></Empty>
     <view class="item">
+      <view class="itemTitle">
+        <image src="/static/img/staffList.png" mode="widthFix"/>
+        <text>订单信息</text>
+      </view>
+      <t-divider/>
+      <view class="itemInfo">
+        <view class="itemInfo_1">
+          <text>订单状态：</text>
+          <text class="state_1" wx:if="{{status===1}}">待接单</text>
+          <text class="state_2" wx:if="{{status===2}}">服务中</text>
+          <text class="state_3" wx:if="{{status===3}}">取消</text>
+          <text class="state_4" wx:if="{{status===4}}">完成</text>
+        </view>
+        <view class="itemInfo_1">
+          <text>订单编号：</text>
+          <text>53252219870929</text>
+        </view>
+        <view class="itemInfo_1">
+          <text>回收类型：</text>
+          <text>废纸</text>
+        </view>
+        <view class="itemInfo_1">
+          <text>回收地址：</text>
+          <text>红河哈尼族彝族自治州蒙自市红竺园B区联8-1</text>
+        </view>
+        <view class="itemInfo_1">
+          <text>联系人：</text>
+          <text>哈利波特</text>
+        </view>
+        <view class="itemInfo_1">
+          <text>联系电话：</text>
+          <text>18608735101</text>
+        </view>
+        <view class="itemInfo_1">
+          <text>预约时间：</text>
+          <text>2023-08-22 09:30</text>
+        </view>
+      </view>
+      <t-divider/>
+      <view class="operateBox">
+        <view>
+          <t-button theme="primary" size="small" wx:if="{{status===1}}">接单</t-button>
+          <t-button theme="light" size="small" wx:if="{{status===1}}">转单</t-button>
+        </view>
+        <view>
+          <t-button theme="danger" size="small" wx:if="{{status===1}}">取消订单</t-button>
+          <t-button theme="light" size="small" wx:if="{{status!== 1}}" bind:tap="toStaffOrderDetails">进入订单</t-button>
+        </view>
+      </view>
     </view>
-    <button bind:tap="onchange">改变</button>
   </view>
   <!-- 底部导航组件 -->
   <CustomTabBar></CustomTabBar>
