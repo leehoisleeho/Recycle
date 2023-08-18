@@ -1,2 +1,106 @@
 <!--pages/staffOrderDetails/staffOrderDetails.wxml-->
-<text>pages/staffOrderDetails/staffOrderDetails.wxml</text>
+<view class="container">
+  <view class="orderInfo">
+  <view class="orderInfo_title">
+    <!-- <image src="/static/img/staffList.png" mode="widthFix" /> -->
+    <text>订单信息</text>
+  </view>
+  <t-divider content="" />
+  <view class="orderInfo_1">
+    <view class="orderInfo_1_item">
+      <text>订单状态: </text>
+      <text>服务中</text>
+    </view>
+    <view class="orderInfo_1_item">
+      <text>订单编号: </text>
+      <text>532522198709290015</text>
+    </view>
+    <view class="orderInfo_1_item">
+      <text>回收类型: </text>
+      <text>废纸</text>
+    </view>
+    <view class="orderInfo_1_item">
+      <text>预约重量: </text>
+      <text>20kg-50kg</text>
+    </view>
+    <view class="orderInfo_1_item">
+      <text>预约时间: </text>
+      <text>尽快上门</text>
+    </view>
+    <view class="orderInfo_1_item imgbox">
+      <text>图片: </text>
+      <!-- <view class="imgdes">
+      暂无图片
+     </view> -->
+      <view class="imgboxItem">
+        <image src="../../static/img/staffIcon.png" mode="widthFix" />
+        <image src="../../static/img/staffImg.png" mode="widthFix" />
+        <image src="../../static/img/staffList.png" mode="widthFix" />
+        <image src="../../static/img/success.png" mode="widthFix" />
+        <image src="../../static/img/workerIcon.png" mode="widthFix" />
+      </view>
+    </view>
+  </view>
+</view>
+<view class="userInfo">
+  <view class="orderInfo_title">
+    <!-- <image src="/static/img/staffIcon.png" mode="widthFix" /> -->
+    <text>联系人信息</text>
+  </view>
+  <t-divider content="" />
+  <view class="userInfo_1">
+    <view class="userInfo_item">
+      <view class="userInfo_item_title">
+        联系人姓名:
+      </view>
+      <view class="userInfo_item_info">
+        李浩
+      </view>
+    </view>
+    <view class="userInfo_item">
+      <view class="userInfo_item_title">
+        联系人地址:
+      </view>
+      <view class="userInfo_item_info">
+        <view class="userInfo_item_info_1">
+          <view>
+            <text>云南省红河哈尼族彝族自治州蒙自市红竺园B区联8-1</text>
+            <view class="userInfo_item_info_img">
+              <image src="/static/img/location.png" mode="widthFix" />
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="userInfo_item">
+      <view class="userInfo_item_title">
+        联系人电话:
+      </view>
+      <view class="userInfo_item_info">
+        <view class="userInfo_item_info_1">
+          <view>
+            <text>18608735101</text>
+            <view class="userInfo_item_info_img">
+              <image src="/static/img/phone.png" mode="widthFix" />
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="userInfo">
+  <view class="orderInfo_title">
+    <!-- <image src="/static/img/staffIcon.png" mode="widthFix" /> -->
+    <text>称重信息</text>
+  </view>
+  <t-divider content="" />
+  <view>
+    暂无
+  </view>
+</view>
+<view class="btnBox">
+  <t-button theme="primary" size="large" variant="outline" block>称重</t-button>
+  <t-button theme="primary" size="large" block>完成</t-button>
+</view>
+</view>

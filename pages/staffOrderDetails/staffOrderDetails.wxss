@@ -1,1 +1,109 @@
 /* pages/staffOrderDetails/staffOrderDetails.wxss */
+.container{
+  padding-bottom: 120rpx;
+}
+.orderInfo{
+  width: 640rpx;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  margin: 30rpx auto;
+  border-radius: 20rpx;
+  padding-top: 25rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  padding-bottom: 20rpx;
+}
+.orderInfo_title{
+  display: flex;
+  align-items: center;
+}
+.orderInfo_title>image{
+  width: 50rpx;
+  margin-right: 10rpx;
+}
+.orderInfo_title>text{
+  font-size: 35rpx;
+  color: #333;
+  font-weight: 600;
+}
+.orderInfo_1{
+  
+}
+.orderInfo_1_item{
+  display: flex;
+}
+.orderInfo_1_item > text{
+  color: #333;
+  margin-top: 10rpx;
+  font-size: 28rpx;
+}
+.orderInfo_1_item > text:nth-child(1){
+  margin-right: 15rpx;
+}
+.imgbox{
+  display: block;
+  margin-top: 10rpx;
+}
+.orderInfo_1_item  > .imgdes{
+  color: #333;
+  margin-top: 10rpx;
+  font-size: 26rpx;
+}
+.imgboxItem>image{
+  width: 175rpx;
+  margin-top: 30rpx;
+  margin-right: 30rpx;
+}
+.userInfo{
+  width: 640rpx;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  margin: 30rpx auto;
+  padding: 20rpx;
+  border-radius: 20rpx;
+}
+.userInfo_1{
+  margin-top: 20rpx;
+}
+.userInfo_item{
+  display: flex;
+  margin-bottom: 15rpx;
+}
+.userInfo_item>view:nth-child(1){
+  width: 200rpx;
+}
+.userInfo_item>view:nth-child(2){
+  width: 470rpx;
+ 
+}
+.usericon{
+  height: 40rpx;
+}
+.t-icon{
+  display: inline;
+}
+.userInfo_item_info_img > image{
+  width: 40rpx;
+  vertical-align:middle;
+  margin-bottom: 8rpx;
+}
+.userInfo_item_info_img{
+  display: inline-block;
+  padding-top: 20rpxs;
+  padding-left:10rpx;
+}
+.userInfo_item_info_1{
+  display: flex;
+  align-items:flex-start;
+}
+.userInfo_item{
+  color: #333;
+  font-size: 28rpx;
+}
+.btnBox{
+  width: 700rpx;
+  margin-top: 30rpx;
+  margin-left: auto;
+  margin-right: auto;
+}
+.btnBox > .t-button{
+  margin-top: 50rpx;
+}

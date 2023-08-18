@@ -10,6 +10,13 @@
       "list": [
         {
           "name": "",
+          "pathName": "pages/staffOrderDetails/staffOrderDetails",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
           "pathName": "pages/staffCenter/staffCenter",
           "query": "",
           "launchMode": "default",
