@@ -55,7 +55,7 @@
       <image src="../../static/img/staffLogin.png" alt="" mode="widthFix"/>
       <text>员工入口</text>
     </view>
-    <t-icon name="swap-right" size="48rpx" data-name="swap-right" />
+    <t-icon name="login" size="48rpx" data-name="swap-right" />
   </view>
   <t-footer text="{{text}}" class="footer"></t-footer>
 </view>

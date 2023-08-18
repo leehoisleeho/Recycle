@@ -6,9 +6,9 @@
     <t-tab-panel label="完成" value="3" />
   </t-tabs>
   <view class="orderBox">
-    <view class="item" wx:for="{{20}}">
-      1
+    <view class="item">
     </view>
+    <button bind:tap="onchange">改变</button>
   </view>
   <!-- 底部导航组件 -->
   <CustomTabBar></CustomTabBar>

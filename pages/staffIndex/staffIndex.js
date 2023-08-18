@@ -1,4 +1,6 @@
 // pages/staffIndex/staffIndex.js
+import { createStoreBindings } from "mobx-miniprogram-bindings";
+import { staffOrder } from "../../store/staffOrder";
 
 Page({
   /**
@@ -8,7 +10,9 @@ Page({
 
   },
   onLoad() {
-
+    this.storeBindings = createStoreBindings(this, {
+      staffOrder,
+    });
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -60,9 +64,9 @@ Page({
   },
 
   /** 方法
-   * 
+   * onTabsChange 切换tab的回调
    */
   onTabsChange(event) {
-    console.log(1)
+    console.log(event.detail.value)
   },
 })

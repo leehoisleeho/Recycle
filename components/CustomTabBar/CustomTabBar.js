@@ -17,7 +17,7 @@ Component({
   },
   /**
    * 组件的初始数据
-   * active 被选中的
+   * 
    */
   data: {
     
@@ -36,7 +36,6 @@ Component({
         })
       }else if(index === 1){
         this.setactive(index)
-        console.log(this.data.active)
         wx.reLaunch({
           url: '/pages/staffCenter/staffCenter',
         });
