@@ -1,6 +1,5 @@
 /* pages/addAddress/addAddress.wxss */
 .container{
-  width: 100vw;
   height: 100vh;
   position: relative;
 }
@@ -11,3 +10,37 @@
   left: 50%;
   transform: translate(-350rpx);
 }
+.addressBox{
+ display: flex;
+ font-size: 32rpx;
+ padding-top: 30rpx;
+ padding-left: 30rpx;
+ padding-bottom: 30rpx;
+ padding-right: 30rpx;
+}
+.addressBox>view:nth-child(1){
+  width: 100rpx;
+}
+.addressBox_1{
+  width: 600rpx;
+}
+.cellplaceholder{
+  color: #999;
+}
+.dividerBox{
+  padding-left: 30rpx;
+}
+.addressBoxItem{
+  padding: 20rpx 0;
+}
+
+.addressBoxItem_1{
+  font-size: 25rpx;
+  color: #666;
+  margin-top: 10rpx;
+}
+
+
+/* .inputBox{
+  padding-right: 20rpx;
+} */

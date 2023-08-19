@@ -5,6 +5,7 @@
     "t-input": "tdesign-miniprogram/input/input",
     "t-cascader": "tdesign-miniprogram/cascader/cascader",
     "t-cell": "tdesign-miniprogram/cell/cell",
-    "Dialog":"/components/Dialog/Dialog"
+    "Dialog":"/components/Dialog/Dialog",
+    "t-textarea": "tdesign-miniprogram/textarea/textarea"
   }
 }

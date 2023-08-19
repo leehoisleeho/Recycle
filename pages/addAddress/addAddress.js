@@ -24,7 +24,11 @@ Page({
     name: "",
     mobile: "",
     address: "",
-    detailAddress: ""
+    detailAddress: "",
+    addressName:'',
+    lat:"",
+    lng:"",
+    iscellplaceholder:true
   },
   onLoad() {
     this.storeBindings = createStoreBindings(this, {
@@ -40,6 +44,28 @@ Page({
     this.setData({
       [`${dataVal}`]: val,
     });
+  },
+  addressOnchange(e){
+    const that = this
+    let val = e.detail.value
+    let url = `https://apis.map.qq.com/ws/place/v1/suggestion/?region=蒙自&keyword=${val}&key=DLBBZ-FUQLP-ITYDD-L6FWM-2AU7E-Z3F6I`
+    wx.request({
+      url: url,
+      success:function(res){
+        console.log(res.data)
+        that.setData({
+          addressList:res.data.data
+        })
+        if(that.data.addressList.length!==0){
+          that.setData({
+            isAddressBox:true
+          })
+        }
+      },
+      fail(err){
+        console.log(err)
+      }
+    })
   },
   showCascader() {
     this.setData({
@@ -107,5 +133,26 @@ Page({
         duration: 2000
       })
     }
+  },
+  loaction(){
+    const that = this
+    wx.chooseLocation({
+      success:function(res){
+        console.log(res)
+        let address = res.address
+        let addressName = res.name
+        that.setData({
+          lat:res.latitude,
+          lng:res.longitude,
+          address:address,
+          addressName,
+          iscellplaceholder:false
+        })
+  
+      },
+      fail:function(err){
+        console.log(err)
+      }
+    })
   }
 });

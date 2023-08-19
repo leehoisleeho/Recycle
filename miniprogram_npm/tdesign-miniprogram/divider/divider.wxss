@@ -44,8 +44,8 @@
 }
 .t-divider--horizontal {
   align-items: center;
-  margin-top: 20rpx;
-  margin-bottom: 20rpx;
+  margin-top: 0rpx;
+  margin-bottom: 0rpx;
 }
 .t-divider--horizontal::before,
 .t-divider--horizontal::after {
