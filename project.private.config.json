@@ -10,6 +10,13 @@
       "list": [
         {
           "name": "",
+          "pathName": "pages/weighing/weighing",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
           "pathName": "pages/weightInfo/weightInfo",
           "query": "",
           "launchMode": "default",

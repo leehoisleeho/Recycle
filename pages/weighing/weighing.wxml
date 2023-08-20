@@ -1,0 +1,26 @@
+<!--pages/weighing/weighing.wxml-->
+<t-tabs defaultValue="{{0}}" bind:change="onTabsChange" t-class="custom-tabs">
+  <t-tab-panel label="{{item.title}}" value="{{index}}" wx:for="{{tabList}}" wx:key="id"/>
+</t-tabs>
+<view class="info">
+  <view class="item" wx:for="{{tabInfo}}" wx:key="id">
+    <view class="item_title">{{item.title}}</view>
+    <view class="item_info">
+      <view>
+        <text style="color: brown; font-size: 38rpx;font-weight: 500; margin-right: 10rpx;">¥</text>
+        <text>{{item.price}}/kg</text>
+      </view>
+      <view>
+        <t-stepper defaultValue="{{item.n}}" theme="outline" step='0.1' data-id="{{item.id}}" bind:change="inputN" />
+        <text style="margin-left:15rpx; font-weight: 600;">kg</text>
+      </view>
+      <view>
+        <text style="color: brown; font-size: 38rpx;font-weight: 500; margin-right: 10rpx;">¥</text>
+        <text>{{item.m}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="btnBox">
+  <t-button theme="primary" size="large" block bind:tap="generateToweightInfo">生成称重信息</t-button>
+</view>

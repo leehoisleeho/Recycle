@@ -24,7 +24,8 @@
     "pages/staffIndex/staffIndex",
     "pages/staffCenter/staffCenter",
     "pages/staffOrderDetails/staffOrderDetails",
-    "pages/weightInfo/weightInfo"
+    "pages/weightInfo/weightInfo",
+    "pages/weighing/weighing"
   ],
   "tabBar": {
     "list": [
