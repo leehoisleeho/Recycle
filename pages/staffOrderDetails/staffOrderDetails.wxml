@@ -10,7 +10,10 @@
     <view class="orderInfo_1">
       <view class="orderInfo_1_item">
         <text>订单状态: </text>
-        <text>服务中</text>
+        <text class="state_1" wx:if="{{orderInfo.status===1}}">待接单</text>
+        <text class="state_2" wx:if="{{orderInfo.status===2}}">服务中</text>
+        <text class="state_3" wx:if="{{orderInfo.status===3}}">取消</text>
+        <text class="state_4" wx:if="{{orderInfo.status===4}}">完成</text>
       </view>
       <view class="orderInfo_1_item">
         <text>订单编号: </text>
@@ -35,7 +38,7 @@
         </view>
         <t-image-viewer closeBtn="{{closeBtn}}" showIndex="{{showIndex}}" visible="{{visible}}" images="{{images}}" bind:change="onChange" bind:delete="onDelete" bind:close="onClose"></t-image-viewer>
         <view class="imgboxItem" bind:tap="onClick" wx:if="{{orderInfo.image!==''}}">
-          <image src="{{item}}" mode="" wx:for="{{images}}" wx:key="index"/>
+          <image src="{{item}}" mode="" wx:for="{{images}}" wx:key="index" />
         </view>
       </view>
     </view>

@@ -120,3 +120,23 @@
 .weightInfo_none{
   color:#666;
 }
+/* 待接单 */
+.orderInfo_1_item > .state_1{
+  color: #fabc08;
+  font-weight: 600;
+}
+/* 上门中 */
+.orderInfo_1_item > .state_2{
+  color:#34a853;
+  font-weight: 600;
+}
+/* 取消 */
+.orderInfo_1_item > .state_3{
+  color: #f53f3f;
+  font-weight: 600;
+}
+/* 完成 */
+.orderInfo_1_item > .state_4{
+  color: #1e80ff;
+  font-weight: 600;
+}
