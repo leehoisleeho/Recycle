@@ -5,7 +5,7 @@ import {
 import {
   store
 } from "../../store/store";
-
+import api from '../../API/api'
 Page({
   /**
    * 页面的初始数据
@@ -14,7 +14,7 @@ Page({
    * isEmpty数据为空显示
    */
   data: {
-    orderList: [{}],
+    orderList: [],
     isShow: true,
     status: 2,
     isEmpty: true
@@ -38,7 +38,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-    this.getOrderList()
+    this.getOrderList(0)
   },
 
   /**
@@ -83,21 +83,39 @@ Page({
    */
   onTabsChange(event) {
     let index = Number(event.detail.value)
-    console.log(index)
+    this.getOrderList(index)
   },
-  getOrderList() {
+  async getOrderList(index) {
+    let data = await api.staffOrderList(
+      {
+        status:index
+      }
+    )
+    let orderList = data.data.data.data
+    this.setData({
+      orderList
+    })
     const len = this.data.orderList.length
     if (len === 0) {
-      this.setData({})
+      this.setData({
+        isEmpty: true
+      })
     } else {
       this.setData({
         isEmpty: false
       })
     }
   },
-  toStaffOrderDetails() {
+  toStaffOrderDetails(e) {
     wx.navigateTo({
-      url: '/pages/staffOrderDetails/staffOrderDetails'
+      url: '/pages/staffOrderDetails/staffOrderDetails?id=' + e.currentTarget.dataset.orderid
+    })
+  },
+  takeOrder(e){
+    api.takeOrder({
+      order_id:e.currentTarget.dataset.orderid
+    }).then(res=>{
+      this.getOrderList(0)
     })
   }
 })

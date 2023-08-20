@@ -1,8 +1,9 @@
 <view class="container">
+  <view class="header"></view>
+  <view class="margin"></view>
   <!-- 订单信息 -->
   <view class="orderInfo">
     <view class="orderInfo_title">
-      <!-- <image src="/static/img/staffList.png" mode="widthFix" /> -->
       <text>订单信息</text>
     </view>
     <t-divider content="" />
@@ -13,40 +14,35 @@
       </view>
       <view class="orderInfo_1_item">
         <text>订单编号: </text>
-        <text>532522198709290015</text>
+        <text>{{orderInfo.out_trade_no}}</text>
       </view>
       <view class="orderInfo_1_item">
         <text>回收类型: </text>
-        <text>废纸</text>
+        <text>{{orderInfo.category.title}}</text>
       </view>
       <view class="orderInfo_1_item">
         <text>预约重量: </text>
-        <text>20kg-50kg</text>
+        <text>{{orderInfo.weight}}</text>
       </view>
       <view class="orderInfo_1_item">
         <text>预约时间: </text>
-        <text>尽快上门</text>
+        <text>{{orderInfo.appointment_time}}</text>
       </view>
       <view class="orderInfo_1_item imgbox">
         <text>图片: </text>
-        <view class="imgdes">
+        <view class="imgdes" wx:if="{{orderInfo.image ===''}}">
           暂无图片
         </view>
         <t-image-viewer closeBtn="{{closeBtn}}" showIndex="{{showIndex}}" visible="{{visible}}" images="{{images}}" bind:change="onChange" bind:delete="onDelete" bind:close="onClose"></t-image-viewer>
-        <view class="imgboxItem" bind:tap="onClick">
-          <image src="../../static/img/staffIcon.png" mode="widthFix" />
-          <image src="../../static/img/staffImg.png" mode="widthFix" />
-          <image src="../../static/img/staffList.png" mode="widthFix" />
-          <image src="../../static/img/success.png" mode="widthFix" />
-          <image src="../../static/img/workerIcon.png" mode="widthFix" />
+        <view class="imgboxItem" bind:tap="onClick" wx:if="{{orderInfo.image!==''}}">
+          <image src="{{item}}" mode="" wx:for="{{images}}" wx:key="index"/>
         </view>
       </view>
     </view>
   </view>
   <!-- 联系人信息 -->
-  <view class="userInfo">
+  <view class="orderInfo">
     <view class="orderInfo_title">
-      <!-- <image src="/static/img/staffIcon.png" mode="widthFix" /> -->
       <text>联系人信息</text>
     </view>
     <t-divider content="" />
@@ -56,7 +52,7 @@
           联系人姓名:
         </view>
         <view class="userInfo_item_info">
-          李浩
+          {{orderInfo.address.linkman}}
         </view>
       </view>
       <view class="userInfo_item">
@@ -66,8 +62,8 @@
         <view class="userInfo_item_info">
           <view class="userInfo_item_info_1">
             <view>
-              <text>云南省红河哈尼族彝族自治州蒙自市红竺园B区联8-1</text>
-              <view class="userInfo_item_info_img" bind:tap="toLocation">
+              <text>{{orderInfo.address.addressdetail}}</text>
+              <view class="userInfo_item_info_img" data-address="{{orderInfo.address}}" bind:tap="toLocation">
                 <image src="/static/img/location.png" mode="widthFix" />
               </view>
             </view>
@@ -81,8 +77,8 @@
         <view class="userInfo_item_info">
           <view class="userInfo_item_info_1">
             <view>
-              <text>18608735101</text>
-              <view class="userInfo_item_info_img" bind:tap="call">
+              <text>{{orderInfo.address.mobile}}</text>
+              <view class="userInfo_item_info_img" data-phone="{{orderInfo.address.mobile}}" bind:tap="call">
                 <image src="/static/img/phone.png" mode="widthFix" />
               </view>
             </view>
@@ -92,19 +88,18 @@
     </view>
   </view>
   <!-- 称重信息 -->
-  <view class="userInfo">
+  <view class="orderInfo">
     <view class="orderInfo_title">
-      <!-- <image src="/static/img/staffIcon.png" mode="widthFix" /> -->
       <text>称重信息</text>
     </view>
     <t-divider content="" />
-    <view>
-      暂无
+    <view class="weightInfo">
+      <view class="weightInfo_none">暂无</view>
     </view>
   </view>
   <!-- 操作 -->
   <view class="btnBox">
     <t-button theme="primary" size="large" variant="outline" block>称重</t-button>
-    <t-button theme="primary" size="large" block>完成</t-button>
+    <t-button theme="danger" size="large" block>取消订单</t-button>
   </view>
 </view>

@@ -91,15 +91,13 @@ Page({
       password: password
     }).then(res => {
       let code = res.data.code
-      console.log(res.data)
-      console.log(res.data.msg)
       /**
        * code = 0 账号密码错误
        * code = 1 登录成功
        */
       if (code === 0) {
         wx.showToast({
-          title: '账号密码错误',
+          title: res.data.msg,
           icon:'error'
         })
       } else if (code === 1) {

@@ -169,13 +169,37 @@ const api = {
     });
   },
   // 员工登录接口
-  staffLogin:(params)=>{
+  staffLogin: (params) => {
     return http({
       url: "/api/user/workerLogin",
       method: "POST",
       data: params,
     });
-  }
+  },
+  //获取员工订单列表
+  staffOrderList: (params) => {
+    return http({
+      url: "/api/rubbish/worker/getWorkerList",
+      method: "GET",
+      data: params,
+    });
+  },
+  //员工接单
+  takeOrder: (params) => {
+    return http({
+      url: "/api/rubbish/worker/takeOrder",
+      method: "GET",
+      data: params,
+    });
+  },
+  // 获取员工订单详情
+  getStaffOrderDetails: (params) => {
+    return http({
+      url: "/api/rubbish/worker/getOrderDetail",
+      method: "GET",
+      data: params,
+    });
+  },
 }
 // 倒出接口
 export default api;

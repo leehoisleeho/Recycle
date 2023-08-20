@@ -8,7 +8,7 @@
   </t-tabs>
   <view class="orderBox" wx:if="{{isShow}}">
     <Empty msg="暂无数据" wx:if="{{isEmpty}}"></Empty>
-    <view class="item">
+    <view class="item" wx:if="{{!isEmpty}}" wx:for="{{orderList}}" wx:key="index">
       <view class="itemTitle">
         <image src="/static/img/staffList.png" mode="widthFix"/>
         <text>订单信息</text>
@@ -17,45 +17,50 @@
       <view class="itemInfo">
         <view class="itemInfo_1">
           <text>订单状态：</text>
-          <text class="state_1" wx:if="{{status===1}}">待接单</text>
-          <text class="state_2" wx:if="{{status===2}}">服务中</text>
-          <text class="state_3" wx:if="{{status===3}}">取消</text>
-          <text class="state_4" wx:if="{{status===4}}">完成</text>
+          <text class="state_1" wx:if="{{item.status===1}}">待接单</text>
+          <text class="state_2" wx:if="{{item.status===2}}">服务中</text>
+          <text class="state_3" wx:if="{{item.status===3}}">取消</text>
+          <text class="state_4" wx:if="{{item.status===4}}">完成</text>
         </view>
         <view class="itemInfo_1">
           <text>订单编号：</text>
-          <text>53252219870929</text>
+          <text>{{item.out_trade_no}}</text>
         </view>
         <view class="itemInfo_1">
           <text>回收类型：</text>
-          <text>废纸</text>
+          <text>{{item.category.title}}</text>
+        </view>
+        <view class="itemInfo_1">
+          <text>回收重量：</text>
+          <text>{{item.weight}}</text>
         </view>
         <view class="itemInfo_1">
           <text>回收地址：</text>
-          <text>红河哈尼族彝族自治州蒙自市红竺园B区联8-1</text>
+          <text>{{item.address.addressdetail}}</text>
         </view>
-        <view class="itemInfo_1">
+        <!-- <view class="itemInfo_1">
           <text>联系人：</text>
-          <text>哈利波特</text>
+          <text>{{item.address.linkman}}</text>
         </view>
         <view class="itemInfo_1">
           <text>联系电话：</text>
-          <text>18608735101</text>
-        </view>
+          <text>{{item.address.mobile}}</text>
+        </view> -->
         <view class="itemInfo_1">
           <text>预约时间：</text>
-          <text>2023-08-22 09:30</text>
+          <text>{{item.appointment_time}}</text>
         </view>
       </view>
       <t-divider/>
       <view class="operateBox">
         <view>
-          <t-button theme="primary" size="small" wx:if="{{status===1}}">接单</t-button>
-          <t-button theme="light" size="small" wx:if="{{status===1}}">转单</t-button>
+         
+          
         </view>
         <view>
-          <t-button theme="danger" size="small" wx:if="{{status===1}}">取消订单</t-button>
-          <t-button theme="light" size="small" wx:if="{{status!== 1}}" bind:tap="toStaffOrderDetails">进入订单</t-button>
+          <t-button theme="primary" size="small" wx:if="{{item.status===1}}" data-orderId="{{item.id}}" bind:tap="takeOrder">接单</t-button>
+          <t-button theme="light" size="small" wx:if="{{item.status===1}}">转单</t-button>
+          <t-button theme="light" size="small" wx:if="{{item.status!== 1}}" data-orderId="{{item.id}}" bind:tap="toStaffOrderDetails">进入订单</t-button>
         </view>
       </view>
     </view>

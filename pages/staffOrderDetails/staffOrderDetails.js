@@ -1,6 +1,7 @@
+import api from "../../API/api";
+
 // pages/staffOrderDetails/staffOrderDetails.js
 Page({
-
   /**
    * 页面的初始数据
    * visible 显示录播图片
@@ -13,13 +14,26 @@ Page({
     showIndex: true,
     closeBtn: true,
     images: [],
+    orderInfo: {}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    let id = options.id
+    api.getStaffOrderDetails({
+      order_id: id
+    }).then(res => {
+      let data = res.data.data
+      console.log(data.image)
+      let images = data.image.split(',')
+      console.log(images)
+      this.setData({
+        orderInfo: data,
+        images: images
+      })
+    })
   },
 
   /**
@@ -43,10 +57,6 @@ Page({
    */
   onClick() {
     this.setData({
-      images: [
-        'https://tdesign.gtimg.com/miniprogram/images/swiper1.png',
-        'https://tdesign.gtimg.com/miniprogram/images/swiper2.png',
-      ],
       showIndex: true,
       visible: true,
     });
@@ -59,38 +69,25 @@ Page({
       visible: false,
     });
   },
-  call() {
+  call(e) {
     wx.makePhoneCall({
-      phoneNumber: '18608735101',
+      phoneNumber: e.currentTarget.dataset.phone,
     });
   },
-  toLocation() {
-    let address = '蒙自市'
-    let key = '2d65fb54172705ad72f9d69ee4631b7f'
-    let url = `https://restapi.amap.com/v3/geocode/geo?address=${address}&output=JSON&key=${key}`
-    console.log(url)
-    wx.request({
-      url: url,
-      success: function (res) {
-        let location = res.data.geocodes[0].location
-        let locationArr = location.split(",");
-        let lng = Number(locationArr[0])
-        let lat = Number(locationArr[1])
-        wx.openLocation({
-          latitude: lat,
-          longitude: lng,
-          address: address,
-          scale: 18,
-          success: function () {
-            console.log("打开地图成功！");
-          },
-          fail: function (err) {
-            console.error("打开地图失败：", err);
-          }
-        });
+  toLocation(e) {
+    console.log(e.currentTarget.dataset.address)
+    let addressInfo = e.currentTarget.dataset.address
+    wx.openLocation({
+      latitude: Number(addressInfo.lat),
+      longitude: Number(addressInfo.lng),
+      name:addressInfo.addressdetail,
+      address: addressInfo.address,
+      scale: 18,
+      success: function () {
+        console.log("打开地图成功！");
       },
       fail: function (err) {
-        console.error("获取坐标失败：", err);
+        console.error("打开地图失败：", err);
       }
     });
   }
