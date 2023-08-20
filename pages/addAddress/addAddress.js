@@ -1,14 +1,3 @@
-const data = {
-  areaList: [{
-    label: "云南省",
-    children: [{
-      label: "红河哈尼彝族自治州",
-      children: [{
-        label: "蒙自市",
-      }, ],
-    }, ],
-  }, ],
-};
 import api from "../../API/api";
 import {
   createStoreBindings
@@ -18,14 +7,11 @@ import {
 } from "../../store/store";
 Page({
   data: {
-    options: data.areaList,
-    note: "请选择地址",
     visible: false,
     name: "",
     mobile: "",
     address: "",
     detailAddress: "",
-    addressName:'',
     lat:"",
     lng:"",
     iscellplaceholder:true
@@ -46,25 +32,9 @@ Page({
     });
   },
   addressOnchange(e){
-    const that = this
     let val = e.detail.value
-    let url = `https://apis.map.qq.com/ws/place/v1/suggestion/?region=蒙自&keyword=${val}&key=DLBBZ-FUQLP-ITYDD-L6FWM-2AU7E-Z3F6I`
-    wx.request({
-      url: url,
-      success:function(res){
-        console.log(res.data)
-        that.setData({
-          addressList:res.data.data
-        })
-        if(that.data.addressList.length!==0){
-          that.setData({
-            isAddressBox:true
-          })
-        }
-      },
-      fail(err){
-        console.log(err)
-      }
+    this.setData({
+      detailAddress:val
     })
   },
   showCascader() {
@@ -78,29 +48,24 @@ Page({
     const res = await api.addAddress({
       linkman: this.data.name,
       mobile: this.data.mobile,
-      address: this.data.address + this.data.detailAddress,
+      address: this.data.address,
       province_id: 2670,
       city_id: 2761,
       area_id: 2764,
       is_default: 0,
+      lat:this.data.lat,
+      lng:this.data.lng,
+      addressdetail:this.data.detailAddress
     })
     wx.navigateBack()
-  },
-  onChange(e) {
-    const {
-      selectedOptions
-    } = e.detail;
-    this.setData({
-      note: selectedOptions.map((item) => item.label).join("/"),
-      address: selectedOptions.map((item) => item.label).join(""),
-    });
   },
   showDialog() {
     if (this.data.name && this.data.mobile && this.data.address && this.data.detailAddress) {
       let info = {
         linkman: this.data.name,
         mobile: this.data.mobile,
-        address: this.data.address + this.data.detailAddress,
+        address: this.data.address,
+        addressdetail:this.data.addressdetail,
         is_default: 0,
         province_id: 2670,
         city_id: 2761,
@@ -122,13 +87,13 @@ Page({
       })
     } else if (this.data.address === '') {
       wx.showToast({
-        title: '请选择省市区',
+        title: '请选择地址',
         icon: 'error',
         duration: 2000
       })
     } else if (this.data.detailAddress === '') {
       wx.showToast({
-        title: '请输入详细地址',
+        title: '请输入门牌号',
         icon: 'error',
         duration: 2000
       })
@@ -145,10 +110,10 @@ Page({
           lat:res.latitude,
           lng:res.longitude,
           address:address,
-          addressName,
+          detailAddress:addressName,
           iscellplaceholder:false
         })
-  
+        console.log(that.data)
       },
       fail:function(err){
         console.log(err)

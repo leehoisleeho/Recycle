@@ -7,6 +7,7 @@
       </view>
       <view class="info">
         <view>{{item.linkman}} {{item.mobile}}</view>
+        <view>{{item.addressdetail}} </view>
         <view>{{item.address}}</view>
       </view>
     </view>  

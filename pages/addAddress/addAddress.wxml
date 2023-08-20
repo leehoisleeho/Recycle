@@ -4,7 +4,6 @@
   <view class="inputBox">
     <t-input label="联系人" placeholder="请输入文字" type="test" data-val="name" bind:change="handleInputChange"></t-input>
     <t-input label="电话" placeholder="请输入手机号码" type="number" data-val="mobile" bind:change="handleInputChange"></t-input>
-    <!-- <t-cell title="省市区" note="{{note}}" bind:tap="showCascader" arrow /> -->
     <view class="addressBox" bind:tap="loaction">
       <view>地址</view>
       <view class="cellplaceholder" wx:if="{{iscellplaceholder}}">请选择地址</view>
@@ -13,7 +12,7 @@
     <view class="dividerBox">
       <t-divider content=""/>
     </view>  
-    <t-input label="门牌号" placeholder="请输入详细地址" bind:change="addressOnchange" value="{{addressName}}"></t-input>
+    <t-input label="门牌号" placeholder="请输入详细地址" bind:change="addressOnchange" value="{{detailAddress}}"></t-input>
   </view>
   <view class="subBtn">
     <t-button theme="primary" size="large" block bindtap="showDialog">新增地址</t-button>

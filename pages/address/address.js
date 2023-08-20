@@ -45,9 +45,9 @@ Page({
   },
   // 选择地址后 返回表单页面
   toFrom(e) {
-    let address = e.currentTarget.dataset.info.address
+    let addressdetail = e.currentTarget.dataset.info.addressdetail
     let addressId = e.currentTarget.dataset.info.id
-    this.setAddress(address.substring(12))
+    this.setAddress(addressdetail)
     this.setaddressId(addressId)
     wx.navigateBack()
   }
