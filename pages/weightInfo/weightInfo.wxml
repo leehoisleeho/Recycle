@@ -1,0 +1,54 @@
+<view class="container">
+  <view class="weightInfoBox">
+    <view class="weightInfoTitle">
+      称重明细(单位:公斤)
+    </view>
+    <view class="weightInfo">
+      <view class="title">
+        <view>品类</view>
+        <view>单价</view>
+        <view>斤数</view>
+        <view>价格</view>
+      </view>
+      <view class="weightInfoItem" wx:for="{{10}}" wx:key="1">
+        <view>黄花纸</view>
+        <view>
+          <!-- <text style="color: #ea4336; font-size: 35rpx; font-weight: 600; margin-right: 10rpx;">¥</text> -->
+          <text>3.5元</text>
+        </view>
+        <view>
+          2公斤
+        </view>
+        <view>
+          <text style="color: #ea4336; font-size: 35rpx; font-weight: 600; margin-right: 10rpx;">¥</text>
+          <text>7元</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="total">
+    <view>合计</view>
+    <view class="total_1">
+      <text style="color: #ea4336; font-size: 35rpx; font-weight: 600; margin-right: 10rpx;">¥</text>
+      <text>196元</text>
+    </view>
+  </view>
+  <view class="total" bind:tap="onPicker">
+    <view>付款方式</view>
+    <view class="total_1" wx:if="{{value===''}}">
+      {{note}}
+    </view>
+    <view class="total_2" wx:if="{{value!==''}}">
+      <view wx:if="{{value == '微信'}}" style="color: #3ba934; font-weight: 500;">微信</view>
+      <view wx:if="{{value == '支付宝'}}" style="color: #3475f7; font-weight: 500;">支付宝</view>
+      <view wx:if="{{value == '现金'}}" style="color: #333; font-weight: 500;">现金</view>
+    </view>
+  </view>
+  <t-picker visible="{{Visible}}" title="选择付款方式" cancelBtn="取消" confirmBtn="确认" bindcancel="onPickerCancel" bind:confirm="onConfirm"
+  value="{{value}}">
+    <t-picker-item options="{{arr}}" />
+  </t-picker>
+  <view class="btnBox">
+    <t-button theme="primary" size="large" block>完成</t-button>
+  </view>
+</view>

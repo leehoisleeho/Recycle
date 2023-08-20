@@ -23,7 +23,8 @@
     "pages/staffLogin/staffLogin",
     "pages/staffIndex/staffIndex",
     "pages/staffCenter/staffCenter",
-    "pages/staffOrderDetails/staffOrderDetails"
+    "pages/staffOrderDetails/staffOrderDetails",
+    "pages/weightInfo/weightInfo"
   ],
   "tabBar": {
     "list": [

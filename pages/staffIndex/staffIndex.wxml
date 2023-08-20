@@ -53,10 +53,7 @@
       </view>
       <t-divider />
       <view class="operateBox">
-        <view>
-
-
-        </view>
+        <view></view>
         <view>
           <t-button theme="primary" size="small" wx:if="{{item.status===1}}" data-orderId="{{item.id}}" bind:tap="takeOrder">接单</t-button>
           <!-- 转单选择器 -->

@@ -102,7 +102,7 @@
   </view>
   <!-- 操作 -->
   <view class="btnBox">
-    <t-button theme="primary" size="large" variant="outline" block>称重</t-button>
+    <t-button theme="primary" size="large" variant="outline" block bind:tap="toWeightInfo">称重</t-button>
     <t-button theme="danger" size="large" block>取消订单</t-button>
   </view>
 </view>

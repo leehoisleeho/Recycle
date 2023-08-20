@@ -49,6 +49,7 @@ Page({
    * onClose 关闭轮播
    * call 拨打电话
    * toLocation 导航
+   * toWeightInfo 去称重页面
    */
   onClick() {
     this.setData({
@@ -85,5 +86,10 @@ Page({
         console.error("打开地图失败：", err);
       }
     });
+  },
+  toWeightInfo(){
+    wx.navigateTo({
+      url: '/pages/weightInfo/weightInfo',
+    })
   }
 })

@@ -1,0 +1,53 @@
+.weightInfoBox{
+  width: 700rpx;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  margin: 30rpx auto;
+  border-radius: 10rpx;
+  padding-bottom: 30rpx;
+}
+.weightInfoTitle{
+  text-align: center;
+  padding: 20rpx 0 ;
+}
+.weightInfo{
+  padding: 0 30rpx;
+}
+.title{
+  display: flex;
+}
+.title >view{
+  flex: 1;
+  text-align: center;
+  font-size: 30rpx;
+  font-weight: 600;
+}
+.weightInfoItem{
+  display: flex;
+  margin-top: 10rpx;
+  align-items: center;
+}
+.weightInfoItem >view{
+  flex: 1;
+  text-align: center;
+  font-size: 27rpx;
+  font-weight: 400;
+}
+.total{
+  width: 620rpx;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  margin: 20rpx auto;
+  border-radius: 10rpx;
+  display: flex;
+  align-items: center;
+  padding: 40rpx 40rpx;
+  justify-content: space-between;
+}
+.total_1{
+  display: flex;
+  align-items: center;
+  color: #666;
+}
+.btnBox{
+  width: 700rpx;
+  margin: 80rpx auto;
+}

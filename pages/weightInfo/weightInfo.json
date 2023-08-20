@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "称重信息",
+  "usingComponents": {
+    "t-picker": "tdesign-miniprogram/picker/picker",
+    "t-picker-item": "tdesign-miniprogram/picker-item/picker-item"
+  }
+}
