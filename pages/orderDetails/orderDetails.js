@@ -104,13 +104,7 @@ Page({
   call(e){
     let phoneNumber = e.currentTarget.dataset.mobile
     wx.makePhoneCall({
-      phoneNumber: phoneNumber, // 要拨打的电话号码
-      success: function() {
-        
-      },
-      fail: function() {
-        
-      }
+      phoneNumber: phoneNumber, 
     });
   }
 });

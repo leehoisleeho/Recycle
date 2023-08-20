@@ -79,7 +79,6 @@
 }
 .userInfo_item>view:nth-child(2){
   width: 470rpx;
- 
 }
 .usericon{
   height: 40rpx;

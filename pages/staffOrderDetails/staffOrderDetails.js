@@ -2,12 +2,12 @@ import api from "../../API/api";
 
 // pages/staffOrderDetails/staffOrderDetails.js
 Page({
-  /**
-   * 页面的初始数据
+  /** 页面的初始数据
    * visible 显示录播图片
    * showIndex 是否显示有几张图片
    * closeBtn 是否有关闭按钮
    * images 图片的数组
+   * orderInfo 订单的详细信息
    */
   data: {
     visible: false,
@@ -16,7 +16,6 @@ Page({
     images: [],
     orderInfo: {}
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
@@ -26,23 +25,19 @@ Page({
       order_id: id
     }).then(res => {
       let data = res.data.data
-      console.log(data.image)
       let images = data.image.split(',')
-      console.log(images)
       this.setData({
         orderInfo: data,
         images: images
       })
     })
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady() {
 
   },
-
   /**
    * 生命周期函数--监听页面显示
    */

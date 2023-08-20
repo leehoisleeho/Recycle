@@ -12,12 +12,21 @@ Page({
    * status假设的订单状态
    * isShow加载页面时 隐藏页面
    * isEmpty数据为空显示
+   * transferVisible 转单选择器
+   * workers可选员工
    */
   data: {
     orderList: [],
     isShow: true,
     status: 2,
-    isEmpty: true
+    isEmpty: true,
+    transferVisible:false,
+    workers:[
+      { label: '李建国', value: '李建国' },
+      { label: '张建国', value: '张建国' },
+      { label: '马建国', value: '马建国' },
+      { label: '王建国', value: '王建国' },
+    ]
   },
   onLoad() {
     this.storeBindings = createStoreBindings(this, {
@@ -28,58 +37,20 @@ Page({
     this.setactive(0)
   },
   /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
-  },
-
-  /**
    * 生命周期函数--监听页面显示
    */
   onShow() {
     this.getOrderList(0)
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
-  },
-
   /** 方法
    * onTabsChange 切换tab的回调
    * getOrderList 获取订单数据
-   * toStaffOrderDetails
+   * toStaffOrderDetails 
+   * takeOrder 接受订单
+   * onSeasonPicker 转单选择器
+   * onPickerCancel 取消选择器
+   * onConfirm 确认选择
    */
   onTabsChange(event) {
     let index = Number(event.detail.value)
@@ -116,6 +87,21 @@ Page({
       order_id:e.currentTarget.dataset.orderid
     }).then(res=>{
       this.getOrderList(0)
+    })
+  },
+  onSeasonPicker(){
+    this.setData({
+      transferVisible:true
+    })
+  },
+  onPickerCancel(){
+    this.setData({
+      transferVisible:false
+    })
+  },
+  onConfirm(){
+    this.setData({
+      transferVisible:false
     })
   }
 })

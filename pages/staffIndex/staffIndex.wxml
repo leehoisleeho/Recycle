@@ -10,10 +10,10 @@
     <Empty msg="暂无数据" wx:if="{{isEmpty}}"></Empty>
     <view class="item" wx:if="{{!isEmpty}}" wx:for="{{orderList}}" wx:key="index">
       <view class="itemTitle">
-        <image src="/static/img/staffList.png" mode="widthFix"/>
+        <image src="/static/img/staffList.png" mode="widthFix" />
         <text>订单信息</text>
       </view>
-      <t-divider/>
+      <t-divider />
       <view class="itemInfo">
         <view class="itemInfo_1">
           <text>订单状态：</text>
@@ -51,15 +51,19 @@
           <text>{{item.appointment_time}}</text>
         </view>
       </view>
-      <t-divider/>
+      <t-divider />
       <view class="operateBox">
         <view>
-         
-          
+
+
         </view>
         <view>
           <t-button theme="primary" size="small" wx:if="{{item.status===1}}" data-orderId="{{item.id}}" bind:tap="takeOrder">接单</t-button>
-          <t-button theme="light" size="small" wx:if="{{item.status===1}}">转单</t-button>
+          <!-- 转单选择器 -->
+          <t-picker visible="{{transferVisible}}" title="选择" cancelBtn="取消" confirmBtn="确认" bindcancel="onPickerCancel" bindconfirm="onConfirm">
+            <t-picker-item options="{{workers}}" />
+          </t-picker>
+          <t-button theme="light" size="small" wx:if="{{item.status===1}}" bind:tap="onSeasonPicker">转单</t-button>
           <t-button theme="light" size="small" wx:if="{{item.status!== 1}}" data-orderId="{{item.id}}" bind:tap="toStaffOrderDetails">进入订单</t-button>
         </view>
       </view>
