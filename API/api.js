@@ -167,6 +167,14 @@ const api = {
       method: "GET",
       data: params,
     });
+  },
+  // 员工登录接口
+  staffLogin:(params)=>{
+    return http({
+      url: "/api/user/workerLogin",
+      method: "POST",
+      data: params,
+    });
   }
 }
 // 倒出接口

@@ -35,7 +35,7 @@
           </view>
           <view class="itemList_1">
             <text>上门地址:</text>
-            <text>{{item.address.address}}</text>
+            <text>{{item.address.addressdetail}}</text>
           </view>
           <view class="itemList_1">
             <text>下单时间:</text>

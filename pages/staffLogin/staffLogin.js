@@ -1,4 +1,5 @@
 // pages/staffLogin/staffLogin.js
+import api from '../../API/api'
 Page({
 
   /**
@@ -7,9 +8,9 @@ Page({
    * password 密码
    */
   data: {
-    account:'',
-    password:'',
-    text:'Copyright © 2021-2031 废预清再生资源回收平台'
+    account: '',
+    password: '',
+    text: 'Copyright © 2021-2031 废预清再生资源回收平台'
   },
 
   /**
@@ -72,23 +73,43 @@ Page({
    * passwordchange 监听密码
    * submit 登录
    */
-  accountchange(e){
+  accountchange(e) {
     this.setData({
-      account:e.detail.value
+      account: e.detail.value
     })
   },
-  passwordchange(e){
+  passwordchange(e) {
     this.setData({
-      password:e.detail.value
+      password: e.detail.value
     })
   },
-  submit(){
+  submit() {
     let account = this.data.account
     let password = this.data.password
-    console.log(account)
-    console.log(password)
-    wx.redirectTo({
-      url: '/pages/staffIndex/staffIndex',
+    api.staffLogin({
+      username: account,
+      password: password
+    }).then(res => {
+      let code = res.data.code
+      console.log(res.data)
+      console.log(res.data.msg)
+      /**
+       * code = 0 账号密码错误
+       * code = 1 登录成功
+       */
+      if (code === 0) {
+        wx.showToast({
+          title: '账号密码错误',
+          icon:'error'
+        })
+      } else if (code === 1) {
+        wx.redirectTo({
+          url: '/pages/staffIndex/staffIndex',
+        })
+      }
+    }).catch(err => {
+      console.log(err)
     })
+
   }
 })

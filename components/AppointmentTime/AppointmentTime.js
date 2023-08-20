@@ -101,7 +101,7 @@ Component({
       let year = newDate.getFullYear()
       let month = newDate.getMonth() + 1
       let date = newDate.getDate()
-      for (let i = 0; i < 5; i++) {
+      for (let i = 1; i < 5; i++) {
         let obj = {}
         let newDay = date + i
         obj.label = `${year}年${month}月${newDay}日`

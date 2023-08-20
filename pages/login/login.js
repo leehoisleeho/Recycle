@@ -88,7 +88,6 @@ Page({
           show: true
         })
         let data = res.data.data
-        console.log(data)
         let id = data.area.id
         let token = data.userinfo.token
         wx.setStorageSync('id', id)

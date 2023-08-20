@@ -6,7 +6,7 @@
 }
 .itemBox{
   width: 700rpx;
-  margin-top: 50rpx;
+  margin-top: 30rpx;
   margin-left: auto;
   margin-right: auto;
   border-radius: 20rpx;
@@ -15,8 +15,7 @@
 .title{
   display: flex;
   align-items: center;
-  padding: 0 20rpx ;
-  padding-top: 25rpx;
+  padding: 20rpx 20rpx ;
 }
 .title > image{
   width: 63rpx;
@@ -28,9 +27,10 @@
   font-weight: 600;
 }
 .itemList{
-  padding: 0 20rpx;
+  padding-top: 22rpx;
 }
 .todetails{
+  padding-top: 25rpx;
   padding-bottom: 25rpx;
   padding-right: 25rpx;
   padding-left: 25rpx;
@@ -42,13 +42,12 @@
   margin-bottom: 20rpx;
   display: flex;
   align-items: flex-start;
-
 }
 .itemList_1>text:nth-child(1){
   margin-left: 20rpx;
   color: rgb(41, 41, 41);
   display: block;
-  width: 20%;
+  width: 17%;
 }
 .itemList_1>text:nth-child(2){
   margin-left: 25rpx;

@@ -1,21 +1,21 @@
 /* pages/orderDetails/orderDetails.wxss */
 .container{
   padding-bottom: 80rpx;
+}
+.margin{
+  height: 60rpx;
   
 }
-.header>image{
-  width: 130rpx;
- 
-}
 .header{
-  height: 400rpx;
+  height: 700rpx;
   background: linear-gradient(to bottom, #34a853,white);
   display: flex;
   justify-content: center;
-  padding-top: 50rpx;
+  width: 100vw;
+  position: absolute;
+  z-index: -1;
 }
 .userInfo{
-  margin-top: -180rpx;
   width: 700rpx;
   margin-left: auto;
   margin-right: auto;
@@ -26,6 +26,7 @@
 }
 .state{
   padding-top: 20rpx;
+  padding-bottom: 20rpx;
   padding-left: 20rpx;
   font-size: 32rpx;
   font-weight: 600;
@@ -85,6 +86,7 @@
 .Info_title{
   padding-top: 20rpx;
   padding-left: 20rpx;
+  padding-bottom: 20rpx;
   font-size: 32rpx;
   font-weight: 600;
   color: rgb(54, 54, 54);
@@ -123,29 +125,30 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-top: 20rpx;
 }
 .worker_item_1>text{
   font-size: 28rpx;
   color: #666;
-
 }
 .worker_item_1>text:nth-child(2){
   font-size: 28rpx;
-  margin-right: 8rpx;
 }
 .worker_item_1{
   display: flex;
   align-items: center;
-
 }
+
 .worker_item_2{
   padding-right: 20rpx;
+}
+.worker_item_2>image{
+  width: 60rpx;
 }
 .btnBox{
   margin-top: 30rpx;
   padding: 20rpx 130rpx;
 }
-
 .workerInfo_1 > text{
   display: block;
 }

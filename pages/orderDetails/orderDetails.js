@@ -14,7 +14,6 @@ Page({
   },
   onLoad(options) {
     let order_id = Number(options.id)
-    console.log(typeof(order_id))
     this.setData({
       order_id
     })
@@ -33,7 +32,6 @@ Page({
       })
     })
   },
-  
   showSuccessToast() {
     Toast({
       context: this,
@@ -82,12 +80,12 @@ Page({
   showDialog() {
     this.setData({ showTextAndTitleWithInput:true });
   },
+  // 取消 取消订单 😂
   async closeDialog() {
-    console.log("qx")
     this.setData({ showTextAndTitleWithInput:false });
   },
   async onConfirm(){
-    console.log('qr')
+    // 取消订单
     const res = await api.cancelOrder({
       reason:this.data.reason,
       order_id:this.data.order_id
@@ -102,4 +100,17 @@ Page({
       reason:e.detail.value
     })
   },
+  // 拨打电话
+  call(e){
+    let phoneNumber = e.currentTarget.dataset.mobile
+    wx.makePhoneCall({
+      phoneNumber: phoneNumber, // 要拨打的电话号码
+      success: function() {
+        
+      },
+      fail: function() {
+        
+      }
+    });
+  }
 });

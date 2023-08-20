@@ -1,16 +1,15 @@
 <!--pages/orderDetails/orderDetails.wxml-->
 <view class='container'>
-  <view class="header">
-    <image src="../../static/img/dingdan.png" mode="widthFix" />
-  </view>
+  <view class="header"></view>
+  <view class="margin"></view>
   <!-- 用户信息 -->
   <view class="userInfo">
     <view class="userInfo_item">
       <view class="state">
-        <text class="state_1" wx:if="{{details.status_text==='待接单'}}">等待回收员接单</text>
-        <text class="state_2" wx:if="{{details.status_text==='上门中'}}">上门中,请耐心等待...</text>
-        <text class="state_3" wx:if="{{details.status_text==='已取消'}}">订单取消</text>
-        <text class="state_4" wx:if="{{details.status_text==='已完成'}}">订单完成</text>
+        <text class="state_1" wx:if="{{details.status===1}}">等待回收员接单</text>
+        <text class="state_2" wx:if="{{details.status===2}}">上门中,请耐心等待</text>
+        <text class="state_3" wx:if="{{details.status===3}}">订单取消</text>
+        <text class="state_4" wx:if="{{details.status===4}}">订单完成</text>
       </view>
     </view>
     <t-divider content="" />
@@ -21,7 +20,7 @@
       </view>
       <view class="userInfo_1_item">
         <text>回收地址:</text>
-        <text>{{details.address.address}}</text>
+        <text>{{details.address.addressdetail}}</text>
       </view>
       <view class="userInfo_1_item">
         <text>联系电话:</text>
@@ -32,7 +31,7 @@
   <!-- 信息 -->
   <view class="Info">
     <view class="Info_title">
-      信息
+      订单信息
     </view>
     <t-divider content="" />
     <view class="userInfo_1">
@@ -77,12 +76,12 @@
       <view class="worker_item_1">
         <image src="/static/img/workerIcon.png" mode="heightFix" />
         <view class="workerInfo_1">
-          <text>哈利波特</text>
-          <text>18608735101</text>
+          <text>{{details.worker.name}}</text>
+          <text>{{details.worker.mobile}}</text>
         </view>
       </view>
       <view class="worker_item_2">
-        <t-icon name="call" size="48rpx" bind:click="onIconTap" />
+        <image src="/static/img/phone.png" mode="widthFix" data-mobile="{{details.worker.mobile}}" bind:tap="call" />
       </view>
     </view>
   </view>
