@@ -1,0 +1,45 @@
+<view class="container">
+  <view class="infoBox">
+    <view class="item">
+      <view class="item_1">
+        <text>状态:</text>
+        <text style="color: #ea4335;font-weight: 600;">请假</text> 
+      </view>
+      <view class="item_1">
+        <text>创建时间:</text>
+        <text>2023-08-21</text>
+      </view>
+      <view class="item_1">
+        <text>请假原因</text>
+        <view style="margin-top: 10rpx; color: #666;font-size: 25rpx;">
+          老板画饼，我拉肚子了.
+        </view>
+      </view>
+      <t-divider content="" align="left" />
+      <view class="item_1" style="padding-top: 20rpx; display:flex; flex-direction: row-reverse;">
+        <t-button theme="primary" size="extra-small">申请复工</t-button>
+      </view>
+    </view>
+
+    <view class="item">
+      <view class="item_1">
+        <text>状态:</text>
+        <text style="color: #34a853;font-weight: 600;">复工完成</text> 
+      </view>
+      <view class="item_1">
+        <text>创建时间:</text>
+        <text>2023-08-21</text>
+      </view>
+      <view class="item_1">
+        <text>请假原因</text>
+        <view style="margin-top: 10rpx; color: #666;font-size: 25rpx;">
+          老板画饼，我拉肚子了.
+        </view>
+      </view>
+      <t-divider content="" align="left" />
+      <view class="item_1" style="padding-top: 20rpx; display:flex; flex-direction: row-reverse;">
+        <t-button theme="primary" size="extra-small" disabled>申请复工</t-button>
+      </view>
+    </view>
+  </view>
+</view>

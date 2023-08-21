@@ -85,6 +85,42 @@
       </view>
     </view>
   </view>
+  <!-- 称重信息 -->
+  <view class="orderInfo">
+    <view class="orderInfo_title">
+      <text>称重信息</text>
+    </view>
+    <t-divider content="" />
+    <view class="weightInfo">
+      <view class="weightInfo_none" style="margin-top: 20rpx;" wx:if="{{details.status !== 4}}">暂无</view>
+      <view wx:if="{{details.status === 4}}">
+        <view class="weightInfo_1">
+          <view class="weightInfo_item" wx:for="{{details.ordercategory}}">
+            <view>
+              {{item.category.title}}
+            </view>
+            <view>
+              {{item.price}}元/kg
+            </view>
+            <view>{{item.weight}}kg</view>
+            <view>
+              {{item.totalprice}}元
+            </view>
+          </view>
+        </view>
+        <t-divider content="" />
+        <view class="totalBox">
+          <view>
+            <text>
+              <text style="color: #ea4335; font-size: 40rpx; font-weight: 600; margin-right: 10rpx;">¥</text>
+              <text>{{details.alltotalprice}}元</text>
+            </text>
+          </view>
+        </view>
+      </view>
+
+    </view>
+  </view>
   <t-dialog visible="{{showTextAndTitleWithInput}}" title="取消" content="确认取消当前订单吗？" confirm-btn="确定取消" cancel-btn="取消" bind:confirm="onConfirm" bind:cancel="closeDialog">
     <t-input bind:change="InputChange" value="{{reason}}" borderless class="dialog-input" clearable slot="content" placeholder="取消原因(选填)" placeholder-class="placeholder" />
   </t-dialog>

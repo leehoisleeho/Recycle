@@ -18,7 +18,7 @@ Page({
     orderInfo: {},
     orderId:'',
     showTextAndTitleWithInput:false,
-    inputVal:''
+    inputVal:'',
   },
   /**
    * 生命周期函数--监听页面加载
@@ -123,7 +123,7 @@ Page({
       this.setData({
         showTextAndTitleWithInput:false
       })
-      wx.navigateTo({
+      wx.reLaunch({
         url: '/pages/staffIndex/staffIndex',
       })
     })

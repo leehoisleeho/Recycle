@@ -69,7 +69,6 @@ Page({
       status:index
     })
     orderList = orderList.data.data.data.reverse()
-    console.log(orderList)
     if(orderList.length == 0 ){
       this.setData({
         orderList,

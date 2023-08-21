@@ -44,8 +44,8 @@
   display: flex;
   justify-content: space-between;
   padding: 0 30rpx;
-  padding-top: 20rpx;
-  padding-bottom: 10rpx;
+  padding-top: 25rpx;
+  padding-bottom: 25rpx;
   align-items: center;
 }
 

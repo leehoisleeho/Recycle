@@ -1,0 +1,20 @@
+/* pages/askForLeave/askForLeave.wxss */
+.container{
+  
+}
+.title{
+  padding: 30rpx 0; 
+  font-size: 45rpx;
+  font-weight: 600;
+  text-align: center;
+}
+.t-textarea{
+  border-bottom: 1rpx solid rgb(202, 202, 202);
+}
+.textareaBox{
+  padding: 0 30rpx;
+}
+.btnBox{
+  margin-top: 150rpx;
+  padding: 0 30rpx;
+}

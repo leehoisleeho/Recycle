@@ -124,7 +124,6 @@ Page({
         avatarUrl:avatar,
         nickName:nickname
       })
-      console.log(this.data)
     })
   }
 })

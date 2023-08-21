@@ -25,7 +25,9 @@
     "pages/staffCenter/staffCenter",
     "pages/staffOrderDetails/staffOrderDetails",
     "pages/weightInfo/weightInfo",
-    "pages/weighing/weighing"
+    "pages/weighing/weighing",
+    "pages/askForLeave/askForLeave",
+    "pages/returnToWork/returnToWork"
   ],
   "tabBar": {
     "list": [

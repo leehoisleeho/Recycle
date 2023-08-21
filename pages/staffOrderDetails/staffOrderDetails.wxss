@@ -113,9 +113,7 @@
 .btnBox > .t-button{
   margin-top: 40rpx;
 }
-.weightInfo{
-  padding-top: 20rpx;
-}
+
 .weightInfo_none{
   color:#666;
 }
@@ -153,4 +151,32 @@
 .placeholder {
   color: rgba(0, 0, 0, 0.4);
   line-height: 96rpx;
+}
+.weightInfo_item{
+  display: flex;
+  align-items: center;
+}
+.weightInfo_item > view{
+  flex: 1;
+  text-align: center;
+  font-size: 26rpx;
+  color: #666;
+  padding: 20rpx 0;
+}
+.weightInfo_item > view:nth-child(1){
+  flex: 1;
+  text-align: center;
+  font-size: 26rpx;
+  color: #666;
+}
+.totalBox{
+  padding-top: 20rpx;
+  padding-right: 30rpx;
+  display: flex;
+  flex-direction: row-reverse;
+  color: #333;
+}
+.totalBox>view{
+  display: flex;
+  align-items: center;
 }

@@ -1,0 +1,10 @@
+<!--pages/askForLeave/askForLeave.wxml-->
+<view class="container">
+  <view class="title">请假申请</view>
+  <view class="textareaBox">
+    <t-textarea t-class="external-class" label="" placeholder="请输入请假原因" disableDefaultPadding="{{true}}" />
+  </view>
+  <view class="btnBox">
+    <t-button theme="primary" size="large" variant="outline" block>提交</t-button>
+  </view>
+</view> 

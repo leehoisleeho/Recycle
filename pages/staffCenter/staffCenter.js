@@ -73,5 +73,26 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+  /**
+   * 
+   * toAskForLeave 去请假页面 
+   * showDevelop提示开发中
+   */
+  showDevelop(){
+    wx.showToast({
+      title: '开发中',
+      icon:'error'
+    })
+  },
+  toAskForLeave(){
+    wx.navigateTo({
+      url: '/pages/askForLeave/askForLeave',
+    })
+  },
+  toReturnToWork(){
+    wx.navigateTo({
+      url: '/pages/returnToWork/returnToWork',
+    })
   }
 })
