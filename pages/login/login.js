@@ -30,7 +30,6 @@ Page({
           scope: 'scope.userFuzzyLocation',
           success() {
             wx.getFuzzyLocation({
-              type: 'wgs84',
               success(res) {
                 let lat = res.latitude
                 let lng = res.longitude

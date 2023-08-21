@@ -14,19 +14,18 @@ Page({
    * isEmpty数据为空显示
    * transferVisible 转单选择器
    * workers可选员工
+   * ordreId 订单id
+   * tabIndex 订单的index
    */
   data: {
     orderList: [],
     isShow: true,
     status: 2,
     isEmpty: true,
-    transferVisible:false,
-    workers:[
-      { label: '李建国', value: '李建国' },
-      { label: '张建国', value: '张建国' },
-      { label: '马建国', value: '马建国' },
-      { label: '王建国', value: '王建国' },
-    ]
+    transferVisible: false,
+    workers: [],
+    ordreId:'',
+    tabIndex:0
   },
   onLoad() {
     this.storeBindings = createStoreBindings(this, {
@@ -34,7 +33,7 @@ Page({
       fields: ['active'], // 数据 this.data.avtive,
       actions: ["setactive"], // 操作数据的方法 this.setactive()
     });
-    this.setactive(0)
+    this.setactive(this.data.tabIndex)
   },
   /**
    * 生命周期函数--监听页面显示
@@ -54,14 +53,15 @@ Page({
    */
   onTabsChange(event) {
     let index = Number(event.detail.value)
-    this.getOrderList(index)
+    this.setData({
+      tabIndex:index
+    })
+    this.getOrderList(this.data.tabIndex)
   },
   async getOrderList(index) {
-    let data = await api.staffOrderList(
-      {
-        status:index
-      }
-    )
+    let data = await api.staffOrderList({
+      status: index
+    })
     let orderList = data.data.data.data
     this.setData({
       orderList
@@ -82,26 +82,48 @@ Page({
       url: '/pages/staffOrderDetails/staffOrderDetails?id=' + e.currentTarget.dataset.orderid
     })
   },
-  takeOrder(e){
+  takeOrder(e) {
     api.takeOrder({
-      order_id:e.currentTarget.dataset.orderid
+      order_id: e.currentTarget.dataset.orderid
+    }).then(res => {
+      this.getOrderList(this.data.tabIndex)
+    })
+  },
+  onSeasonPicker(e) {
+    this.setData({
+      ordreId:e.currentTarget.dataset.orderid
+    })
+    api.getStaffList().then(res => {
+      let data = res.data.data
+      let arr = []
+      data.forEach(item => {
+        arr.push({
+          label:item.name,
+          value:item.id
+        })
+      });
+      this.setData({
+        transferVisible: true,
+        workers:arr
+      })
+    })
+  },
+  onPickerCancel() {
+    this.setData({
+      transferVisible: false
+    })
+  },
+  onConfirm(e) {
+    let id = e.detail.value[0]
+    api.transferOrder({
+      order_id:this.data.ordreId,
+      to_id:id
     }).then(res=>{
-      this.getOrderList(0)
+      this.getOrderList(this.data.tabIndex)
+      this.setData({
+        transferVisible: false
+      })
     })
-  },
-  onSeasonPicker(){
-    this.setData({
-      transferVisible:true
-    })
-  },
-  onPickerCancel(){
-    this.setData({
-      transferVisible:false
-    })
-  },
-  onConfirm(){
-    this.setData({
-      transferVisible:false
-    })
+    
   }
 })

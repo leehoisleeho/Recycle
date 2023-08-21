@@ -146,7 +146,7 @@ Page({
       paytype: this.data.value[0],
       data: this.data.data
     }).then(res => {
-      wx.navigateTo({
+      wx.reLaunch({
         url: '/pages/staffIndex/staffIndex',
       })
     })

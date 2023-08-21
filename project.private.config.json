@@ -3,7 +3,8 @@
   "projectname": "Recycle",
   "setting": {
     "compileHotReLoad": false,
-    "urlCheck": false
+    "urlCheck": true,
+    "preloadBackgroundData": false
   },
   "condition": {
     "miniprogram": {
@@ -207,5 +208,5 @@
       ]
     }
   },
-  "libVersion": "2.27.3"
+  "libVersion": "2.33.0"
 }

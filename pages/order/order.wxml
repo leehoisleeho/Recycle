@@ -19,10 +19,10 @@
           <view class="itemList_1">
             <text>订单状态:</text>
             <text>
-              <text class="state_1" wx:if="{{item.status_text === '待接单'}}">待接单</text>
-              <text class="state_2" wx:if="{{item.status_text === '上门中'}}">上门中</text>
-              <text class="state_3" wx:if="{{item.status_text === '已取消'}}">取消</text>
-              <text class="state_4" wx:if="{{item.status_text === '完成'}}">完成</text>
+              <text class="state_1" wx:if="{{item.status === 1}}">待接单</text>
+              <text class="state_2" wx:if="{{item.status === 2}}">上门中</text>
+              <text class="state_3" wx:if="{{item.status === 3}}">取消</text>
+              <text class="state_4" wx:if="{{item.status === 4}}">订单完成</text>
             </text>
           </view>
           <view class="itemList_1">

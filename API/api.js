@@ -215,7 +215,23 @@ const api = {
       method: "POST",
       data: params,
     });
-  }
+  },
+  // 获取员工列表
+  getStaffList:(params)=>{
+    return http({
+      url: "/api/rubbish/worker/getWorkerUserList",
+      method: "GET",
+      data: params,
+    });
+  },
+  // 员工转单
+  transferOrder:(params)=>{
+    return http({
+      url: "/api/rubbish/worker/transferOrder",
+      method: "POST",
+      data: params,
+    });
+  },
 }
 // 倒出接口
 export default api;

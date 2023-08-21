@@ -1,5 +1,5 @@
 <view class="container">
-  <t-tabs defaultValue="{{0}}" bind:change="onTabsChange" t-class="custom-tabs">
+  <t-tabs value="{{tabIndex}}" bind:change="onTabsChange" t-class="custom-tabs">
     <t-tab-panel label="全部" value="0" />
     <t-tab-panel label="待接单" value="1" />
     <t-tab-panel label="服务中" value="2" />
@@ -57,10 +57,10 @@
         <view>
           <t-button theme="primary" size="small" wx:if="{{item.status===1}}" data-orderId="{{item.id}}" bind:tap="takeOrder">接单</t-button>
           <!-- 转单选择器 -->
-          <t-picker visible="{{transferVisible}}" title="选择" cancelBtn="取消" confirmBtn="确认" bindcancel="onPickerCancel" bindconfirm="onConfirm">
-            <t-picker-item options="{{workers}}" />
+          <t-picker visible="{{transferVisible}}" title="选择" cancelBtn="取消" confirmBtn="确认" bindchange="onPickerChange" bindcancel="onPickerCancel" bindconfirm="onConfirm">
+            <t-picker-item options="{{workers}}"  />
           </t-picker>
-          <t-button theme="light" size="small" wx:if="{{item.status===1}}" bind:tap="onSeasonPicker">转单</t-button>
+          <t-button theme="light" size="small" wx:if="{{item.status===1}}" bind:tap="onSeasonPicker" data-orderId="{{item.id}}">转单</t-button>
           <t-button theme="light" size="small" wx:if="{{item.status!== 1}}" data-orderId="{{item.id}}" bind:tap="toStaffOrderDetails">进入订单</t-button>
         </view>
       </view>
