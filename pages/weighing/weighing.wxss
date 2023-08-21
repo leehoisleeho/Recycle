@@ -8,6 +8,7 @@
   border-radius: 10rpx;
   height: 888rpx;
   overflow-y: scroll;
+  padding-bottom: 1rpx;
 }
 .item_title{
   padding-left: 15rpx;
@@ -17,12 +18,6 @@
   display: flex;
   align-items: center;
   margin-top: 20rpx;
-}
-.item_info >view:nth-child(2){
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
 }
 .item_info >view:nth-child(3){
   display: flex;
@@ -34,12 +29,14 @@
   flex: 1;
   display: flex;
   align-items:center;
-  height: 80rpx;
 }
 .item{
   padding: 20rpx;
   border-bottom: 1rpx solid rgb(230, 230, 230);
 }
+/* .info>.item:nth-last-child{
+  margin-bottom: 20rpx;
+} */
 .btnBox{
   width: 700rpx;
   margin: 80rpx auto;

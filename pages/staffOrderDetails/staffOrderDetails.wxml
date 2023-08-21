@@ -101,8 +101,13 @@
     </view>
   </view>
   <!-- 操作 -->
-  <view class="btnBox">
+  <view class="btnBox" wx:if="{{orderInfo.status===2}}">
     <t-button theme="primary" size="large" variant="outline" block bind:tap="toWeightInfo">称重</t-button>
-    <t-button theme="danger" size="large" block>取消订单</t-button>
+    <t-dialog visible="{{showTextAndTitleWithInput}}" title="" content="请简单输入取消原因" confirm-btn="确定" cancel-btn="取消" bind:confirm="onConfirm" bind:cancel="closeDialog">
+      <t-input borderless class="dialog-input" clearable slot="content" placeholder="请输入取消原因(必填)" placeholder-class="placeholder" value="{{inputVal}}"
+      bind:change="inputchange"
+      />
+    </t-dialog>
+    <t-button theme="danger" size="large" block bind:tap="showDialog">取消订单</t-button>
   </view>
 </view>

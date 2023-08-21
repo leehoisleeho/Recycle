@@ -200,6 +200,22 @@ const api = {
       data: params,
     });
   },
+  // 完成订单
+  finishOrder:(params)=>{
+    return http({
+      url: "/api/rubbish/worker/complete",
+      method: "POST",
+      data: params,
+    });
+  },
+  // 员工取消订单
+  staffCanceOrder: (params)=>{
+    return http({
+      url: "/api/rubbish/worker/cancelOrder",
+      method: "POST",
+      data: params,
+    });
+  }
 }
 // 倒出接口
 export default api;

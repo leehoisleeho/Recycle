@@ -7,16 +7,16 @@
     <view class="item_title">{{item.title}}</view>
     <view class="item_info">
       <view>
-        <text style="color: brown; font-size: 38rpx;font-weight: 500; margin-right: 10rpx;">¥</text>
+        <text style="color: #ea4335; font-size: 38rpx;font-weight: 500; margin-right: 10rpx;">¥</text>
         <text>{{item.price}}/kg</text>
       </view>
       <view>
-        <t-stepper defaultValue="{{item.n}}" theme="outline" step='0.1' data-id="{{item.id}}" bind:change="inputN" />
-        <text style="margin-left:15rpx; font-weight: 600;">kg</text>
+        <tui-numberbox value="{{item.n}}" bindchange="change" data-id="{{item.id}}" max='1000' min='0' step='0.1'></tui-numberbox>
+        <!-- <text style="margin-left:15rpx; font-weight: 600;">kg</text> -->
       </view>
       <view>
-        <text style="color: brown; font-size: 38rpx;font-weight: 500; margin-right: 10rpx;">¥</text>
-        <text>{{item.m}}</text>
+        <text style="color: #ea4335; font-size: 38rpx;font-weight: 500; margin-right: 10rpx;">¥</text>
+        <text>{{item.m}}元</text>
       </view>
     </view>
   </view>

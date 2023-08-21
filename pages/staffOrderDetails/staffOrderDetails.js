@@ -8,23 +8,33 @@ Page({
    * closeBtn 是否有关闭按钮
    * images 图片的数组
    * orderInfo 订单的详细信息
+   * showTextAndTitleWithInput 显示对话框
    */
   data: {
     visible: false,
     showIndex: true,
     closeBtn: true,
     images: [],
-    orderInfo: {}
+    orderInfo: {},
+    orderId:'',
+    showTextAndTitleWithInput:false,
+    inputVal:''
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
     let id = options.id
+    this.setData(
+      {
+        orderId:id
+      }
+    )
     api.getStaffOrderDetails({
       order_id: id
     }).then(res => {
       let data = res.data.data
+      console.log(data)
       let images = data.image.split(',')
       this.setData({
         orderInfo: data,
@@ -89,7 +99,44 @@ Page({
   },
   toWeightInfo(){
     wx.navigateTo({
-      url: '/pages/weightInfo/weightInfo',
+      url: '/pages/weighing/weighing?id=' + this.data.orderId,
+    })
+  },
+  showDialog(){
+    this.setData({
+      showTextAndTitleWithInput:true
+    })
+  },
+  onConfirm(){
+    console.log(this.data.inputVal)
+    if(this.data.inputVal===""){
+      wx.showToast({
+        title: '请输入取消原因',
+        icon:'error'
+      })
+      return
+    }
+    api.staffCanceOrder({
+      reason:this.data.inputVal,
+      order_id:this.data.orderId
+    }).then(res=>{
+      this.setData({
+        showTextAndTitleWithInput:false
+      })
+      wx.navigateTo({
+        url: '/pages/staffIndex/staffIndex',
+      })
+    })
+  },
+  closeDialog(){
+    console.log('qx')
+    this.setData({
+      showTextAndTitleWithInput:false
+    })
+  },
+  inputchange(e){
+    this.setData({
+      inputVal:e.detail.value
     })
   }
 })

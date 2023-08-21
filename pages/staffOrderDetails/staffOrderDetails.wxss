@@ -139,3 +139,18 @@
   color: #1e80ff;
   font-weight: 600;
 }
+
+.dialog-input {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  margin-top: 32rpx;
+  border-radius: 8rpx;
+  box-sizing: border-box;
+  border: 1rpx solid rgb(226, 226, 226);
+}
+
+.placeholder {
+  color: rgba(0, 0, 0, 0.4);
+  line-height: 96rpx;
+}

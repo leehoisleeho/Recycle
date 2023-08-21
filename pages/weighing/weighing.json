@@ -3,6 +3,7 @@
   "usingComponents": {
     "t-tabs": "tdesign-miniprogram/tabs/tabs",
     "t-tab-panel": "tdesign-miniprogram/tab-panel/tab-panel",
-    "t-stepper": "tdesign-miniprogram/stepper/stepper"
+    "t-stepper": "tdesign-miniprogram/stepper/stepper",
+    "tui-numberbox": "/components/tui-numberbox/tui-numberbox"
   }
 }

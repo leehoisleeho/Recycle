@@ -9,13 +9,17 @@ Page({
   data: {
     tabList: [],
     tabInfo: [],
-    generate: []
+    generate: [],
+    orderId:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+    this.setData({
+      orderId:options.id
+    })
     this.getAll()
   },
 
@@ -68,9 +72,10 @@ Page({
 
   },
   /** 方法
-   * inputN 监听数值改变
+   * 
+   * change 监听数值变化 thorui
    */
-  inputN(e) {
+  change(e) {
     let id = e.currentTarget.dataset.id
     let n = e.detail.value
     let list = this.data.tabInfo
@@ -134,15 +139,12 @@ Page({
       }
       LIST.push(obj)
     }
-    let generate = []
-    for (let i = 0; i < LIST.length; i++) {
-      if (LIST[i].categoryList.length !== 0) {
-        generate.push(LIST[i])
-      }
-    }
     this.setData({
-      generate: generate
+      generate: LIST
     })
-    console.log(this.data.generate)
+    let info = JSON.stringify(this.data.generate)
+    wx.navigateTo({
+      url: '/pages/weightInfo/weightInfo?info='+info+"&id="+this.data.orderId,
+    })
   }
 })

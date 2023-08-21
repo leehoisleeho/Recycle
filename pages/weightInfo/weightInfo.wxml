@@ -5,23 +5,23 @@
     </view>
     <view class="weightInfo">
       <view class="title">
-        <view>品类</view>
+        <view>子类</view>
         <view>单价</view>
         <view>斤数</view>
         <view>价格</view>
       </view>
-      <view class="weightInfoItem" wx:for="{{10}}" wx:key="1">
-        <view>黄花纸</view>
+      <view class="weightInfoItem" wx:for="{{infoList}}" wx:key="index">
+        <view>{{item.title}}</view>
         <view>
           <!-- <text style="color: #ea4336; font-size: 35rpx; font-weight: 600; margin-right: 10rpx;">¥</text> -->
-          <text>3.5元</text>
+          <text>{{item.price}}元/kg</text>
         </view>
         <view>
-          2公斤
+          {{item.n}} kg
         </view>
         <view>
           <text style="color: #ea4336; font-size: 35rpx; font-weight: 600; margin-right: 10rpx;">¥</text>
-          <text>7元</text>
+          <text>{{item.m}}元</text>
         </view>
       </view>
     </view>
@@ -30,7 +30,7 @@
     <view>合计</view>
     <view class="total_1">
       <text style="color: #ea4336; font-size: 35rpx; font-weight: 600; margin-right: 10rpx;">¥</text>
-      <text>196元</text>
+      <text>{{M}}元</text>
     </view>
   </view>
   <view class="total" bind:tap="onPicker">
@@ -49,6 +49,6 @@
     <t-picker-item options="{{arr}}" />
   </t-picker>
   <view class="btnBox">
-    <t-button theme="primary" size="large" block>完成</t-button>
+    <t-button theme="primary" size="large" block bind:tap="submit">提交</t-button>
   </view>
 </view>

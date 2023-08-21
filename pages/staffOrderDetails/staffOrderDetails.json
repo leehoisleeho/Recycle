@@ -1,6 +1,8 @@
 {
   "navigationBarTitleText": "订单详情",
   "usingComponents": {
-    "t-image-viewer": "tdesign-miniprogram/image-viewer/image-viewer"
+    "t-image-viewer": "tdesign-miniprogram/image-viewer/image-viewer",
+    "t-dialog": "tdesign-miniprogram/dialog/dialog",
+    "t-input": "tdesign-miniprogram/input/input"
   }
 }
