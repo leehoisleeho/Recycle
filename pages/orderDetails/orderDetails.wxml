@@ -95,7 +95,7 @@
       <view class="weightInfo_none" style="margin-top: 20rpx;" wx:if="{{details.status !== 4}}">暂无</view>
       <view wx:if="{{details.status === 4}}">
         <view class="weightInfo_1">
-          <view class="weightInfo_item" wx:for="{{details.ordercategory}}">
+          <view class="weightInfo_item" wx:for="{{details.ordercategory}}" wx:key="id">
             <view>
               {{item.category.title}}
             </view>

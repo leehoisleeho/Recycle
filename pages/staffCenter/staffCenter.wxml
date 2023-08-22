@@ -47,7 +47,7 @@
       <t-icon name="chevron-right" size="45rpx" />
     </view>
     <t-divider content="" />
-    <view class="staffListItem">
+    <view class="staffListItem" bind:tap="toMyOrder">
       <view class="staffListItem_1">
         <text>我的订单</text>
       </view>

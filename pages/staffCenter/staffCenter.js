@@ -87,9 +87,9 @@ Page({
 
   },
   /**
-   * 
    * toAskForLeave 去请假页面 
    * showDevelop提示开发中
+   * toMyOrder 去我的订单页面
    */
   showDevelop() {
     wx.showToast({
@@ -116,6 +116,11 @@ Page({
         title: '复工申请已提交,等待审核',
         icon:'success'
       })
+    })
+  },
+  toMyOrder(){
+    wx.navigateTo({
+      url: '/pages/staffMyOrder/staffMyOrder',
     })
   }
 })

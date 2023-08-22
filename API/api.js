@@ -266,6 +266,16 @@ const api = {
       workerId:workerId
     });
   },
+  // 员工端根据时间获取订单列表
+  staffGetOrderListByTime: (params) => {
+    let workerId = wx.getStorageSync("workerId")
+    return http({
+      url: "/api/rubbish/worker/getWorkerListByTime",
+      method: "GET",
+      data: params,
+      workerId:workerId
+    });
+  }
 }
 // 倒出接口
 export default api;

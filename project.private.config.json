@@ -11,6 +11,13 @@
       "list": [
         {
           "name": "",
+          "pathName": "pages/staffMyOrder/staffMyOrder",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
           "pathName": "pages/returnToWork/returnToWork",
           "query": "",
           "launchMode": "default",

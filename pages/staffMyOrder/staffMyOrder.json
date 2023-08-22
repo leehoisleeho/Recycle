@@ -1,0 +1,8 @@
+{ 
+  "navigationBarTitleText": "我的订单",
+  "usingComponents": {
+    "t-date-time-picker": "tdesign-miniprogram/date-time-picker/date-time-picker",
+    "t-cell": "tdesign-miniprogram/cell/cell",
+    "Empty": "/components/Empty/Empty"
+  }
+}

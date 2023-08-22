@@ -27,7 +27,8 @@
     "pages/weightInfo/weightInfo",
     "pages/weighing/weighing",
     "pages/askForLeave/askForLeave",
-    "pages/returnToWork/returnToWork"
+    "pages/returnToWork/returnToWork",
+    "pages/staffMyOrder/staffMyOrder"
   ],
   "tabBar": {
     "list": [

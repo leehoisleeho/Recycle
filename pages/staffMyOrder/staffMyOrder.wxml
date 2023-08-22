@@ -1,0 +1,50 @@
+<!-- pages/staffMyOrder/staffMyOrder.wxml -->
+<view class="container">
+  <view class="time-picker">
+    <t-cell title="选择日期" hover note="{{dateText || ''}}" arrow data-mode="date" bindtap="showPicker" class="test" t-class="panel-item" />
+    <!-- 年月日 -->
+    <t-date-time-picker title="选择日期" visible="{{dateVisible}}" mode="date" defaultValue="{{date}}" format="YYYY-MM-DD" bindchange="onConfirm" bindcancel="hidePicker" start="{{start}}" end="{{end}}" />
+  </view>
+  <view class="OrderInfo">
+    <view class="OrderInfo_item">
+      <view>订单总数</view>
+      <view>{{orderList.length}}</view>
+    </view>
+  </view>
+  <view class="oerderList">
+    <Empty msg='没有订单信息' wx:if="{{orderList.length===0}}"></Empty>
+    <view class="oerderList_item" bind:tap="showInfo" wx:if="{{orderList.length!==0}}" wx:for="{{orderList}}" wx:key="index">
+      <view class="oerderList_item_1">
+        <text>订单状态:</text>
+        <text class="state_1" wx:if="{{item.status===1}}">待接单</text>
+        <text class="state_2" wx:if="{{item.status===2}}">服务中</text>
+        <text class="state_3" wx:if="{{item.status===4}}">已取消</text>
+        <text class="state_4" wx:if="{{item.status===3}}">已完成</text>
+      </view>
+      <view class="oerderList_item_1">
+        <text>订单编号:</text>
+        <text>{{item.out_trade_no}}</text>
+      </view>
+      <view class="oerderList_item_1">
+        <text>回收类型:</text>
+        <text>{{item.category.title}}</text>
+      </view>
+      <view class="oerderList_item_1">
+        <text>回收重量:</text>
+        <text>{{item.weight}}</text>
+      </view>
+      <view class="oerderList_item_1">
+        <text>预约时间:</text>
+        <text>{{item.appointment_time_text}}</text>
+      </view>
+      <view class="oerderList_item_1">
+        <text>下单时间:</text>
+        <text>{{item.createtime}}</text>
+      </view>
+      <view class="oerderList_item_1">
+        <text>回收地址:</text>
+        <text>{{item.address.addressdetail}}</text>
+      </view>
+    </view>
+  </view>
+</view>
