@@ -62,4 +62,15 @@
   font-size: 30rpx;
   color: #333;
 }
+.status{
+  display: flex;
+}
+.workBtn{
+ margin-left: 10rpx;
+ background: #34a853;
+ color: white;
+ border-radius: 10rpx;
+ font-size: 25rpx;
+ padding: 10rpx 10rpx;
+}
 

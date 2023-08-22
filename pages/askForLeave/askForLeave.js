@@ -1,11 +1,12 @@
 // pages/askForLeave/askForLeave.js
+import api from '../../API/api'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    reason:null
   },
 
   /**
@@ -62,5 +63,37 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+  /**
+   * submit 提交请假申请
+   * textareaChange 监听文本变化
+   */
+  submit(){
+    if(this.data.reason===null){
+      wx.showToast({
+        title: '请填写请假原因',
+        icon:'error'
+      })
+    }else{
+      api.staffLeave({
+        reason:this.data.reason
+      }).then(res=>{
+        wx.showToast({
+          title: '提交成功，等待审核',
+          icon:'success',
+          duration: 2000,
+          success:()=>{
+            wx.reLaunch({
+              url: '/pages/staffCenter/staffCenter',
+            })
+          },
+        })
+      })
+    }
+  },
+  textareaChange(e){
+    this.setData({
+      reason:e.detail.value
+    })
   }
 })

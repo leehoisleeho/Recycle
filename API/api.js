@@ -178,30 +178,37 @@ const api = {
   },
   //获取员工订单列表
   staffOrderList: (params) => {
+    let workerId = wx.getStorageSync("workerId")
+    console.log(workerId)
     return http({
       url: "/api/rubbish/worker/getWorkerList",
       method: "GET",
       data: params,
+      workerId:workerId
     });
   },
   //员工接单
   takeOrder: (params) => {
+    let workerId = wx.getStorageSync("workerId")
     return http({
       url: "/api/rubbish/worker/takeOrder",
       method: "GET",
       data: params,
+      workerId:workerId
     });
   },
   // 获取员工订单详情
   getStaffOrderDetails: (params) => {
+    let workerId = wx.getStorageSync("workerId")
     return http({
       url: "/api/rubbish/worker/getOrderDetail",
       method: "GET",
       data: params,
+      workerId:workerId
     });
   },
   // 完成订单
-  finishOrder:(params)=>{
+  finishOrder: (params) => {
     return http({
       url: "/api/rubbish/worker/complete",
       method: "POST",
@@ -209,27 +216,53 @@ const api = {
     });
   },
   // 员工取消订单
-  staffCanceOrder: (params)=>{
+  staffCanceOrder: (params) => {
+    let workerId = wx.getStorageSync("workerId")
     return http({
       url: "/api/rubbish/worker/cancelOrder",
       method: "POST",
       data: params,
+      workerId:workerId
     });
   },
   // 获取员工列表
-  getStaffList:(params)=>{
+  getStaffList: (params) => {
+    let workerId = wx.getStorageSync("workerId")
     return http({
       url: "/api/rubbish/worker/getWorkerUserList",
       method: "GET",
       data: params,
+      workerId:workerId
     });
   },
   // 员工转单
-  transferOrder:(params)=>{
+  transferOrder: (params) => {
+    let workerId = wx.getStorageSync("workerId")
     return http({
       url: "/api/rubbish/worker/transferOrder",
       method: "POST",
       data: params,
+      workerId:workerId
+    });
+  },
+  // 员工请假
+  staffLeave: (params) => {
+    let workerId = wx.getStorageSync("workerId")
+    return http({
+      url: "/api/rubbish/worker/leave",
+      method: "POST",
+      data: params,
+      workerId:workerId
+    });
+  },
+  // 员工复工
+  staffReturnWork: (params) => {
+    let workerId = wx.getStorageSync("workerId")
+    return http({
+      url: "/api/rubbish/worker/work",
+      method: "POST",
+      data: params,
+      workerId:workerId
     });
   },
 }

@@ -39,7 +39,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-    this.getOrderList(0)
+    this.getOrderList(this.data.tabIndex)
   },
 
   /** 方法
@@ -62,6 +62,7 @@ Page({
     let data = await api.staffOrderList({
       status: index
     })
+    console.log(data)
     let orderList = data.data.data.data
     this.setData({
       orderList

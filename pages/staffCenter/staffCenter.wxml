@@ -6,30 +6,35 @@
         <image src="/static/img/staffImg.png" mode="heightFix" />
       </view>
       <view class="staffInfo_1">
-        <text>李建国</text>
-        <text>编号: 1</text>
-        <text>状态: 工作中</text>
+        <text>{{workerInfo.name}}</text>
+        <text>编号: {{workerInfo.id}}</text>
+        <text>
+          <text>状态:</text>
+          <text style="color: #34a853; font-weight: 500;" wx:if="{{workerInfo.is_leave==1}}">工作中</text>
+          <text style="color: #ea4335; font-weight: 500;" wx:if="{{workerInfo.is_leave==2}}">请假中</text>
+          <text class="workBtn" wx:if="{{workerInfo.is_leave==2}}" bind:tap="toReturnToWork">申请复工</text>
+        </text>
       </view>
     </view>
   </view>
   <view class="staffList">
     <t-divider content="" />
     <view class="staffListItem" bind:tap="toAskForLeave">
-      <view class="staffListItem_1" >
+      <view class="staffListItem_1">
         <text>请假申请</text>
       </view>
       <t-icon name="chevron-right" size="45rpx" />
     </view>
-    <t-divider content="" />
+    <!-- <t-divider content="" />
     <view class="staffListItem" bind:tap="toReturnToWork">
       <view class="staffListItem_1">
         <text>复工申请</text>
       </view>
       <t-icon name="chevron-right" size="45rpx" />
-    </view>
+    </view> -->
     <t-divider content="" />
-    <view class="staffListItem">
-      <view class="staffListItem_1" bind:tap="showDevelop">
+    <view class="staffListItem" bind:tap="showDevelop">
+      <view class="staffListItem_1">
         <text>商家申请</text>
       </view>
       <t-icon name="chevron-right" size="45rpx" />

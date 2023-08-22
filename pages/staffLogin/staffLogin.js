@@ -83,7 +83,7 @@ Page({
       password: e.detail.value
     })
   },
-  submit() {
+  async submit() {
     let account = this.data.account
     let password = this.data.password
     api.staffLogin({
@@ -98,16 +98,19 @@ Page({
       if (code === 0) {
         wx.showToast({
           title: res.data.msg,
-          icon:'error'
+          icon: 'error'
         })
       } else if (code === 1) {
-        wx.redirectTo({
+        let workerId = res.data.data.id
+        let workerInfo = res.data.data
+        wx.setStorageSync('workerId', workerId)
+        wx.setStorageSync('workerInfo', workerInfo)
+        wx.reLaunch({
           url: '/pages/staffIndex/staffIndex',
         })
       }
     }).catch(err => {
       console.log(err)
     })
-
   }
 })

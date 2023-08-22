@@ -2,9 +2,11 @@
 <view class="container">
   <view class="title">请假申请</view>
   <view class="textareaBox">
-    <t-textarea t-class="external-class" label="" placeholder="请输入请假原因" disableDefaultPadding="{{true}}" />
+    <t-textarea t-class="external-class" label="" placeholder="请输入请假原因" disableDefaultPadding="{{true}}" value="{{reason}}" 
+      bind:change="textareaChange"
+    />
   </view>
   <view class="btnBox">
-    <t-button theme="primary" size="large" variant="outline" block>提交</t-button>
+    <t-button theme="primary" size="large" variant="outline" block bind:tap="submit">提交</t-button>
   </view>
 </view> 

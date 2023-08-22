@@ -1,5 +1,4 @@
 const Base_URL = "https://recycleapi.hellochange.online";
-import getuserInfo from './getuserInfo';
 /**
  * @param {Object} 
  * data.url: 请求地址
@@ -21,7 +20,8 @@ async function http(param) {
       method: param.method,
       header: {
         token,
-        areaid: id
+        areaid: id,
+        workerid: param.workerId ? param.workerId : ''
       },
       data: param.data,
       success(res) {

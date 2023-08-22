@@ -1,4 +1,5 @@
 // pages/staffCenter/staffCenter.js
+import api from '../../API/api'
 import {
   createStoreBindings
 } from "mobx-miniprogram-bindings";
@@ -11,7 +12,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    workerInfo: undefined
   },
 
   /**
@@ -24,6 +25,7 @@ Page({
       actions: ["setactive"], // 操作数据的方法 this.setactive()
     });
     this.setactive(1)
+    
   },
 
   /**
@@ -37,7 +39,17 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+    let workerInfo = wx.getStorageSync("workerInfo")
+    api.staffLogin({
+      username: workerInfo.mobile,
+      password: workerInfo.password
+    }).then(res => {
+      let workerInfo = res.data.data
+      wx.setStorageSync('workerInfo', workerInfo)
+      this.setData({
+        workerInfo
+      })
+    })
   },
 
   /**
@@ -79,20 +91,31 @@ Page({
    * toAskForLeave 去请假页面 
    * showDevelop提示开发中
    */
-  showDevelop(){
+  showDevelop() {
     wx.showToast({
       title: '开发中',
-      icon:'error'
+      icon: 'error'
     })
   },
-  toAskForLeave(){
-    wx.navigateTo({
-      url: '/pages/askForLeave/askForLeave',
-    })
+  toAskForLeave() {
+    if (this.data.workerInfo.is_leave === 2) {
+      wx.showToast({
+        title: '你已经在请假了',
+        icon: 'error'
+      })
+    } else if (this.data.workerInfo.is_leave === 1) {
+      wx.navigateTo({
+        url: '/pages/askForLeave/askForLeave',
+      })
+    }
   },
-  toReturnToWork(){
-    wx.navigateTo({
-      url: '/pages/returnToWork/returnToWork',
+  toReturnToWork() {
+   api.staffReturnWork()
+    .then(res=>{
+      wx.showToast({
+        title: '复工申请已提交,等待审核',
+        icon:'success'
+      })
     })
   }
 })
