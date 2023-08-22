@@ -1,4 +1,5 @@
 {
+  "navigationBarTitleText": "请假",
   "usingComponents": {
     "t-textarea": "tdesign-miniprogram/textarea/textarea"
   }
