@@ -27,6 +27,10 @@
           <text>{{item.out_trade_no}}</text>
         </view>
         <view class="itemInfo_1">
+          <text>下单时间：</text>
+          <text>{{item.createtime}}</text>
+        </view>
+        <view class="itemInfo_1">
           <text>回收类型：</text>
           <text>{{item.category.title}}</text>
         </view>
@@ -47,7 +51,6 @@
           <text>{{item.address.mobile}}</text>
         </view> -->
         <view class="itemInfo_1">
-          <text>预约时间：</text>
           <text>{{item.appointment_time}}</text>
         </view>
       </view>
@@ -55,17 +58,23 @@
       <view class="operateBox">
         <view></view>
         <view>
-          <t-button theme="primary" size="small" wx:if="{{item.status===1}}" data-orderId="{{item.id}}" bind:tap="takeOrder">接单</t-button>
-          <!-- 转单选择器 -->
-          <t-picker visible="{{transferVisible}}" title="选择" cancelBtn="取消" confirmBtn="确认" bindchange="onPickerChange" bindcancel="onPickerCancel" bindconfirm="onConfirm">
-            <t-picker-item options="{{workers}}"  />
-          </t-picker>
-          <t-button theme="light" size="small" wx:if="{{item.status===1}}" bind:tap="onSeasonPicker" data-orderId="{{item.id}}">转单</t-button>
-          <t-button theme="light" size="small" wx:if="{{item.status!== 1}}" data-orderId="{{item.id}}" bind:tap="toStaffOrderDetails">进入订单</t-button>
+          <t-button theme="primary" size="small" wx:if="{{item.status===1}}" data-orderId="{{item.id}}" bind:tap="takeOrder">
+            接单
+          </t-button>
+          <t-button theme="light" size="small" wx:if="{{item.status===1}}" bind:tap="onSeasonPicker" data-orderId="{{item.id}}">
+            转单
+          </t-button>
+          <t-button theme="light" size="small" wx:if="{{item.status!== 1}}" data-orderId="{{item.id}}" bind:tap="toStaffOrderDetails">
+            进入订单
+          </t-button>
         </view>
       </view>
     </view>
   </view>
+    <!-- 转单选择器 -->
+  <t-picker visible="{{transferVisible}}" title="选择转单人员" cancelBtn="取消" confirmBtn="确认" bindchange="onPickerChange" bindcancel="onPickerCancel" bindconfirm="onConfirm">
+    <t-picker-item options="{{workers}}" />
+  </t-picker>
   <!-- 底部导航组件 -->
   <CustomTabBar></CustomTabBar>
 </view>

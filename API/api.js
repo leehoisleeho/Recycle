@@ -179,7 +179,6 @@ const api = {
   //获取员工订单列表
   staffOrderList: (params) => {
     let workerId = wx.getStorageSync("workerId")
-    console.log(workerId)
     return http({
       url: "/api/rubbish/worker/getWorkerList",
       method: "GET",
@@ -209,10 +208,12 @@ const api = {
   },
   // 完成订单
   finishOrder: (params) => {
+    let workerId = wx.getStorageSync("workerId")
     return http({
       url: "/api/rubbish/worker/complete",
       method: "POST",
       data: params,
+      workerId:workerId
     });
   },
   // 员工取消订单

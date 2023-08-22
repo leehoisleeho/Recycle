@@ -6,6 +6,9 @@ import {
   store
 } from "../../store/store";
 import api from '../../API/api'
+import {
+  TimestampToTime
+} from '../../utils/util'
 Page({
   /**
    * 页面的初始数据
@@ -24,8 +27,8 @@ Page({
     isEmpty: true,
     transferVisible: false,
     workers: [],
-    ordreId:'',
-    tabIndex:0
+    ordreId: '',
+    tabIndex: 0
   },
   onLoad() {
     this.storeBindings = createStoreBindings(this, {
@@ -54,7 +57,7 @@ Page({
   onTabsChange(event) {
     let index = Number(event.detail.value)
     this.setData({
-      tabIndex:index
+      tabIndex: index
     })
     this.getOrderList(this.data.tabIndex)
   },
@@ -62,8 +65,10 @@ Page({
     let data = await api.staffOrderList({
       status: index
     })
-    console.log(data)
     let orderList = data.data.data.data
+    orderList.forEach( item => {
+       item.createtime = TimestampToTime(item.createtime)
+    })
     this.setData({
       orderList
     })
@@ -92,20 +97,25 @@ Page({
   },
   onSeasonPicker(e) {
     this.setData({
-      ordreId:e.currentTarget.dataset.orderid
+      transferVisible: true
+    })
+    
+    this.setData({
+      ordreId: e.currentTarget.dataset.orderid,
     })
     api.getStaffList().then(res => {
       let data = res.data.data
+      let me = wx.getStorageSync('workerInfo')
       let arr = []
       data.forEach(item => {
+        if (item.id === me.id) return
         arr.push({
-          label:item.name,
-          value:item.id
+          label: item.name,
+          value: item.id
         })
       });
       this.setData({
-        transferVisible: true,
-        workers:arr
+        workers: arr
       })
     })
   },
@@ -117,14 +127,14 @@ Page({
   onConfirm(e) {
     let id = e.detail.value[0]
     api.transferOrder({
-      order_id:this.data.ordreId,
-      to_id:id
-    }).then(res=>{
+      order_id: this.data.ordreId,
+      to_id: id
+    }).then(res => {
       this.getOrderList(this.data.tabIndex)
       this.setData({
         transferVisible: false
       })
     })
-    
+
   }
 })

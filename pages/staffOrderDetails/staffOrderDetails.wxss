@@ -1,18 +1,18 @@
 /* pages/staffOrderDetails/staffOrderDetails.wxss */
-.container{
+.container {
   padding-bottom: 120rpx;
 }
-.header{
+.header {
   height: 700rpx;
   width: 100vw;
-  background: linear-gradient(to bottom, #34a853,white);
+  background: linear-gradient(to bottom, #34a853, white);
   position: absolute;
   z-index: -1;
 }
-.margin{
+.margin {
   height: 30rpx;
 }
-.orderInfo{
+.orderInfo {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   margin: 0rpx auto;
   margin-top: 30rpx;
@@ -23,117 +23,117 @@
   width: 680rpx;
   background: white;
 }
-.orderInfo_title{
+.orderInfo_title {
   display: flex;
   align-items: center;
   padding: 20rpx 0;
 }
-.orderInfo_title>image{
+.orderInfo_title > image {
   width: 50rpx;
   margin-right: 10rpx;
 }
-.orderInfo_title>text{
+.orderInfo_title > text {
   font-size: 30rpx;
   color: #333;
   font-weight: 600;
 }
-.orderInfo_1{
+.orderInfo_1 {
   padding-top: 10rpx;
 }
-.orderInfo_1_item{
+.orderInfo_1_item {
   display: flex;
 }
-.orderInfo_1_item > text{
+.orderInfo_1_item > text {
   color: #333;
   margin-top: 10rpx;
   font-size: 28rpx;
 }
-.orderInfo_1_item > text:nth-child(1){
+.orderInfo_1_item > text:nth-child(1) {
   margin-right: 15rpx;
 }
-.imgbox{
+.imgbox {
   display: block;
   margin-top: 10rpx;
 }
-.orderInfo_1_item  > .imgdes{
+.orderInfo_1_item > .imgdes {
   color: #666;
   margin-top: 10rpx;
   font-size: 26rpx;
 }
-.imgboxItem>image{
+.imgboxItem > image {
   width: 175rpx;
   height: 175rpx;
   margin-top: 30rpx;
   margin-right: 30rpx;
 }
 
-.userInfo_1{
+.userInfo_1 {
   margin-top: 20rpx;
 }
-.userInfo_item{
+.userInfo_item {
   display: flex;
   margin-bottom: 15rpx;
 }
-.userInfo_item>view:nth-child(1){
+.userInfo_item > view:nth-child(1) {
   width: 200rpx;
 }
-.userInfo_item>view:nth-child(2){
+.userInfo_item > view:nth-child(2) {
   width: 470rpx;
 }
-.usericon{
+.usericon {
   height: 40rpx;
 }
-.t-icon{
+.t-icon {
   display: inline;
 }
-.userInfo_item_info_img > image{
+.userInfo_item_info_img > image {
   width: 40rpx;
-  vertical-align:middle;
+  vertical-align: middle;
   margin-bottom: 8rpx;
 }
-.userInfo_item_info_img{
+.userInfo_item_info_img {
   display: inline-block;
   padding-top: 20rpxs;
-  padding-left:10rpx;
+  padding-left: 10rpx;
 }
-.userInfo_item_info_1{
+.userInfo_item_info_1 {
   display: flex;
-  align-items:flex-start;
+  align-items: flex-start;
 }
-.userInfo_item{
+.userInfo_item {
   color: #333;
   font-size: 28rpx;
 }
-.btnBox{
-  width:700rpx;
+.btnBox {
+  width: 700rpx;
   margin-top: 50rpx;
   margin-left: auto;
   margin-right: auto;
 }
-.btnBox > .t-button{
+.btnBox > .t-button {
   margin-top: 40rpx;
 }
 
-.weightInfo_none{
-  color:#666;
+.weightInfo_none {
+  color: #666;
 }
 /* 待接单 */
-.orderInfo_1_item > .state_1{
+.orderInfo_1_item > .state_1 {
   color: #fabc08;
   font-weight: 600;
 }
 /* 上门中 */
-.orderInfo_1_item > .state_2{
-  color:#34a853;
+.orderInfo_1_item > .state_2 {
+  color: #34a853;
   font-weight: 600;
 }
 /* 取消 */
-.orderInfo_1_item > .state_3{
+.orderInfo_1_item > .state_3 {
   color: #f53f3f;
   font-weight: 600;
 }
 /* 完成 */
-.orderInfo_1_item > .state_4{
+.orderInfo_1_item > .state_4 {
   color: #1e80ff;
   font-weight: 600;
 }
@@ -152,31 +152,32 @@
   color: rgba(0, 0, 0, 0.4);
   line-height: 96rpx;
 }
-.weightInfo_item{
+.weightInfo_item {
   display: flex;
   align-items: center;
 }
-.weightInfo_item > view{
+.weightInfo_item > view {
   flex: 1;
   text-align: center;
   font-size: 26rpx;
   color: #666;
   padding: 20rpx 0;
 }
-.weightInfo_item > view:nth-child(1){
-  flex: 1;
-  text-align: center;
-  font-size: 26rpx;
-  color: #666;
+.weightInfo_item > view:nth-child(1) {
+  /* 文本溢出显示省略号 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  
 }
-.totalBox{
+.totalBox {
   padding-top: 20rpx;
   padding-right: 30rpx;
   display: flex;
   flex-direction: row-reverse;
   color: #333;
 }
-.totalBox>view{
+.totalBox > view {
   display: flex;
   align-items: center;
 }

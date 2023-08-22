@@ -1,4 +1,5 @@
 import api from "../../API/api";
+import {TimestampToTime} from '../../utils/util'
 
 // pages/staffOrderDetails/staffOrderDetails.js
 Page({
@@ -35,6 +36,7 @@ Page({
     }).then(res => {
       let data = res.data.data
       console.log(data)
+      data.createtime = TimestampToTime(data.createtime)
       let images = data.image.split(',')
       this.setData({
         orderInfo: data,
@@ -97,7 +99,7 @@ Page({
       }
     });
   },
-  toWeightInfo(){
+  toWeightIng(){
     wx.navigateTo({
       url: '/pages/weighing/weighing?id=' + this.data.orderId,
     })
