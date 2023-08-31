@@ -18,8 +18,8 @@
         <text>订单状态:</text>
         <text class="state_1" wx:if="{{item.status===1}}">待接单</text>
         <text class="state_2" wx:if="{{item.status===2}}">服务中</text>
-        <text class="state_3" wx:if="{{item.status===4}}">已取消</text>
-        <text class="state_4" wx:if="{{item.status===3}}">已完成</text>
+        <text class="state_3" wx:if="{{item.status===3}}">已取消</text>
+        <text class="state_4" wx:if="{{item.status===4}}">已完成</text>
       </view>
       <view class="oerderList_item_1">
         <text>订单编号:</text>

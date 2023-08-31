@@ -1,6 +1,6 @@
 {
   "component": true,
-  "navigationBarTitleText": "雷次购再生资源回收",
+  "navigationBarTitleText": "雷次购再生资源回收平台",
   "usingComponents": {
     "t-icon": "tdesign-miniprogram/icon/icon",
     "t-notice-bar": "tdesign-miniprogram/notice-bar/notice-bar",
