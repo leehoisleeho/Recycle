@@ -1,26 +1,21 @@
-/* pages/recyclingForm/recyclingForm.wxss */
+/* pages/scanCodePage/scanCodePage.wxss */
 .header{
+  height: 200rpx;
+  background: white(56, 55, 55);
+  margin-bottom: 10rpx;
   display: flex;
   justify-content: center;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  flex-direction: column;
   align-items: center;
-  padding: 50rpx 0;
+  /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+  padding: 10rpx 0;
+  border-bottom: 1rpx solid rgb(235, 235, 235);
 }
 .header>text{
-  font-size: 28rpx;
-  font-weight: 800;
-  color: #34a853;
+  color: #666666;
+  font-size: 25rpx;
 }
-.header_title{
-  margin-top: 30rpx;
-  font-size: 34rpx;
-  color: rgb(85, 85, 85);
-  font-weight: 600;
-}
-.header > image{
-  width: 120rpx;
-  opacity: 0.8;
+.header>image{
+  width: 130rpx;
 }
 .alltype{
   overflow: hidden;
@@ -102,6 +97,7 @@
 .sub{
   margin-top: 80rpx;
   padding: 0 30rpx;
+  padding-bottom: 100rpx;
 }
 .container{
   padding-bottom: 100rpx;
@@ -147,4 +143,14 @@
 .box{
   padding: 10rpx;
 }
-
+.orderInfo > text:nth-child(1){
+  margin-right: 10rpx;
+}
+.orderInfo{
+  padding: 10rpx 20rpx;
+  font-size: 25rpx;
+  color: #666666;
+}
+.btnBox{
+  padding: 20rpx;
+}

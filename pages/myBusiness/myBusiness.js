@@ -67,6 +67,6 @@ Page({
    * downerweima 下载二维码
    */
   downerweima(){
-    console.log(123)
+    
   }
 })

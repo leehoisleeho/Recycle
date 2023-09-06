@@ -25,5 +25,5 @@
   </t-upload>
 </view>
 <view class="btnBox">
-  <t-button theme="primary" size="large" block>提交申请</t-button>
+  <t-button theme="primary" size="large" block bind:tap="submit">提交申请</t-button>
 </view>

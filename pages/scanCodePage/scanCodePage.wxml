@@ -1,0 +1,68 @@
+<!--pages/scanCodePage/scanCodePage.wxml-->
+<view class="header">
+  <image src="/static/img/scanCode.png" mode="widthFix" />
+</view>
+
+<!-- 类目价格 -->
+<view class="itme_list">
+  <h2>类目价格</h2>
+  <view class="list alltype" style="height: {{moreHeight}}rpx;">
+    <view class="list_alltype" wx:for="{{list}}" wx:key="index">
+      <view class="alltype_name">{{item.title}}</view>
+      <view class="list_2">
+        <text>¥</text>
+        <text>{{item.price}}元/</text>
+        <text>kg</text>
+      </view>
+    </view>
+  </view>
+  <view class="more" wx:if="{{isMore}}" bindtap="showMore">
+    <t-icon name="chevron-up" bind:click="onIconTap" wx:if="{{!isDonw}}" />
+    <t-icon name="chevron-down" bind:click="onIconTap" wx:if="{{isDonw}}" />
+    <text>查看更多</text>
+  </view>
+</view>
+<!-- 预约表单 -->
+<view class="itme_list">
+  <h2>预约上门</h2>
+  <view class="reserve">
+    <!-- 选择回收品类 -->
+    <view class="box">
+      <t-cell class="cell" title="回收品类" hover note="{{recyclingTypeText}}" bind:click="onCityPicker" description='{{description}}' required />
+      <t-picker visible="{{recyclingTypeVisible}}" value="{{recyclingTypeValue}}" title="选择回收品类" cancelBtn="取消" confirmBtn="确认" bindcancel="onPickerCancel" bindconfirm="onconfirm">
+        <t-picker-item options="{{recyclingTypes}}" />
+      </t-picker>
+    </view>
+    <AppointmentWeight></AppointmentWeight>
+    <AppointmentTime></AppointmentTime>
+  </view>
+</view>
+<!-- 预约表单 -->
+<view class="itme_list">
+  <h2>上传图片(选填)</h2>
+  <UpdataImg></UpdataImg>
+</view>
+<!-- 免责申明 -->
+<view class="statement">
+  <text>下单即同意</text>
+  <text bindtap="statement"> 《上门回收免责声明》 </text>
+</view>
+<!-- 免责申明内容 -->
+<tui-drawer mode="bottom" visible="{{visible}}">
+  <view class="d-container">
+    <view class="statementInfo">
+      <h3>上门回收免责声明 </h3>
+      <scroll-view class="scroll-view-container" scroll-y="true">
+        <view class="xxx">
+          10. 除非本免责声明另有注明，一站通内的资讯均以「现况」形式提供，并无任何种类的明示或暗示的保证，以及只作一般性质及说明用途。尤其是，对于该等内容的准确性、可靠性、安全性及时间性，政府概不作任何明示或默示的保证，政府亦不作出任何明示或暗示保证该等内容适合使用，并无侵权或不含电脑病毒。对该等资料，政府不会就任何错误、遗漏、或错误陈述或失实陈述（不论明示或默示的）承担任何责任。对任何因使用或不当使用或依据一站通所载的或经一站通的任何资料或不能使用一站通而引致或所涉及的任何损失、毁坏或损害（包括但不限于相应而生的损失、毁坏或损害），政府概不承担任何法律责任、义务或责任。11. 对于任何因使用或不当使用或依据局／部门透过一站通所提供的电子服务而引致或所涉及的任何损失、毁坏或损害（包括但不限于相应而生的损失、损毁或损害），政府概不承担任何法律责任、义务或责任。12. 一站通或会载有由第三者提供的材料。为方便查阅由第三者或通过第三者提供的资讯，一站通可透过其网页提供或协助提供超连结至外界网站。政府声明其并没有核准或认可第三者在一站通提供的材料或与一站通连结的任何外界网站。一站通提供的任何该等材料或外界网站的超连结均不构成任何第三者或外界网站与政府的任何形式的合作或联系。提供或协助提供该等由第三者所给予的材料或外界网站超连结，并不构成政府赞同或没有不赞同任何该等材料之内容或外界网站之内容的任何明示或暗示的声明、陈述或保证；对任何因使用或不当使用或不能使用或依据由或通过一站通传递或提供的任何该等材料之内容或外界网站的材料之内容而引致或所涉及的损失、毁坏或损害（包括但不限于相应而生的损失、毁坏或损害），政府概不承担任何法律责任、义务或责任。13. 对任何由一站通所载资料所产生或与之相关的损失或损害，政府概不承担任何责任。政府保留权利按其独有酌情权及在毋须给予任何理由或事先通知的情况下随时删除、暂时停载或编辑政府在一站通编撰的一切资料。你有责任自行评估一站通包含的所有资料，并须加以核实，例如参阅原本发布的版本，以及在根据该等资料行事之前征询独立意见。14. 当你一旦使用一站通（www.gov.hk）或其任何网页，即表示你无条件接受上述所载的免责条款，以及政府在毋须事先通知你的情况下而可随时对上述条款作出的修改及／或增补。请定期浏览此网页查阅任何可作出的修改及／或增补。
+          10. 除非本免责声明另有注明，一站通内的资讯均以「现况」形式提供，并无任何种类的明示或暗示的保证，以及只作一般性质及说明用途。尤其是，对于该等内容的准确性、可靠性、安全性及时间性，政府概不作任何明示或默示的保证，政府亦不作出任何明示或暗示保证该等内容适合使用，并无侵权或不含电脑病毒。对该等资料，政府不会就任何错误、遗漏、或错误陈述或失实陈述（不论明示或默示的）承担任何责任。对任何因使用或不当使用或依据一站通所载的或经一站通的任何资料或不能使用一站通而引致或所涉及的任何损失、毁坏或损害（包括但不限于相应而生的损失、毁坏或损害），政府概不承担任何法律责任、义务或责任。11. 对于任何因使用或不当使用或依据局／部门透过一站通所提供的电子服务而引致或所涉及的任何损失、毁坏或损害（包括但不限于相应而生的损失、损毁或损害），政府概不承担任何法律责任、义务或责任。12. 一站通或会载有由第三者提供的材料。为方便查阅由第三者或通过第三者提供的资讯，一站通可透过其网页提供或协助提供超连结至外界网站。政府声明其并没有核准或认可第三者在一站通提供的材料或与一站通连结的任何外界网站。一站通提供的任何该等材料或外界网站的超连结均不构成任何第三者或外界网站与政府的任何形式的合作或联系。提供或协助提供该等由第三者所给予的材料或外界网站超连结，并不构成政府赞同或没有不赞同任何该等材料之内容或外界网站之内容的任何明示或暗示的声明、陈述或保证；对任何因使用或不当使用或不能使用或依据由或通过一站通传递或提供的任何该等材料之内容或外界网站的材料之内容而引致或所涉及的损失、毁坏或损害（包括但不限于相应而生的损失、毁坏或损害），政府概不承担任何法律责任、义务或责任。13. 对任何由一站通所载资料所产生或与之相关的损失或损害，政府概不承担任何责任。政府保留权利按其独有酌情权及在毋须给予任何理由或事先通知的情况下随时删除、暂时停载或编辑政府在一站通编撰的一切资料。你有责任自行评估一站通包含的所有资料，并须加以核实，例如参阅原本发布的版本，以及在根据该等资料行事之前征询独立意见。14. 当你一旦使用一站通（www.gov.hk）或其任何网页，即表示你无条件接受上述所载的免责条款，以及政府在毋须事先通知你的情况下而可随时对上述条款作出的修改及／或增补。请定期浏览此网页查阅任何可作出的修改及／或增补。
+        </view>
+      </scroll-view>
+      <button type="primary" bindtap="closeDrawer" class="btn">确认</button>
+    </view>
+  </view>
+</tui-drawer>
+<!-- 提交 -->
+<view class="sub">
+  <t-button theme="primary" size="large" block bindtap='isShowDialog'>提交订单</t-button>
+</view>

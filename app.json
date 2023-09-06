@@ -31,7 +31,8 @@
     "pages/staffMyOrder/staffMyOrder",
     "pages/myBusiness/myBusiness",
     "pages/addBusiness/addBusiness",
-    "pages/businessDetails/businessDetails"
+    "pages/businessDetails/businessDetails",
+    "pages/scanCodePage/scanCodePage"
   ],
   "tabBar": {
     "list": [

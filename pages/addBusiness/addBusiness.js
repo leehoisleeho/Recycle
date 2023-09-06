@@ -1,4 +1,7 @@
 // pages/addBusiness/addBusiness.js
+import {
+  judge
+} from '../../utils/util'
 Page({
 
   /**
@@ -6,10 +9,10 @@ Page({
    */
   data: {
     fileList: [],
-    address:'',
-    addressName:'',
-    name:'',
-    phone:''
+    address: '',
+    addressName: '',
+    name: '',
+    phone: ''
   },
 
   /**
@@ -72,6 +75,7 @@ Page({
    * handleRemove 移除图片
    * openMap 打开地图选择位置
    * inputChange input输入时触发
+   * submit 提价表单
    */
   handleAdd(e) {
     const {
@@ -104,7 +108,8 @@ Page({
         let addressName = res.name
         console.log(addressName)
         that.setData({
-          address,addressName
+          address,
+          addressName
         })
       },
       fail: function (err) {
@@ -112,12 +117,35 @@ Page({
       }
     })
   },
-  inputChange(e){
+  inputChange(e) {
     let dataVal = e.currentTarget.dataset.val;
     console.log(dataVal)
     let value = e.detail.value
     this.setData({
-      [dataVal]:value
+      [dataVal]: value
     })
+  },
+  submit() {
+    let arr = [{
+        field: this.data.name,
+        msg: '商家名称不能为空'
+      },
+      {
+        field: this.data.phone,
+        msg: '商家电话不能为空'
+      },
+      {
+        field: this.data.address,
+        msg: '商家地址不能为空'
+      },
+      {
+        field:this.data.fileList.length ? this.data.fileList.length : '',
+        msg: '商家图片不能为空'
+      }
+    ]
+    let res = judge(arr)
+    if (res === 1) {
+      console.log('submit')
+    }
   }
 })
