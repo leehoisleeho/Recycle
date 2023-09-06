@@ -1,0 +1,29 @@
+<!--pages/addBusiness/addBusiness.wxml-->
+<view class="header">
+  <image src="/static/img/addBusiness.png" mode="widthFix"/>
+</view>
+<view class="addressBox_1">
+  <text>商家名称</text>
+  <input type="text" placeholder="请输入名称" value="{{name}}" bindinput="inputChange" data-val="name"/>
+</view>
+<view class="addressBox_1">
+  <text>商家电话</text>
+  <input type="number" placeholder="请输入电话" value="{{phone}}" bindinput="inputChange" data-val="phone" />
+</view>
+<view class="addressBox" bind:tap="openMap">
+  <text>商家地址</text>
+  <text wx:if="{{address===''}}">选择地址</text>
+  <text wx:if="{{address!==''}}" style="color: #333;">{{address}}</text>
+</view>
+<view class="addressBox_1">
+  <text>详细地址</text>
+  <input type="text" placeholder="" value="{{addressName}}" bindinput="inputChange" data-val="addressName" disabled="{{address===''}}" />
+</view>
+<view class="addressBox_2">
+  <text>商家图片(最多三张)</text>
+  <t-upload mediaType="{{['image']}}" max="{{3}}" files="{{fileList}}" bind:add="handleAdd" bind:remove="handleRemove">
+  </t-upload>
+</view>
+<view class="btnBox">
+  <t-button theme="primary" size="large" block>提交申请</t-button>
+</view>

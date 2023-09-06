@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "t-input": "tdesign-miniprogram/input/input",
+    "t-upload": "tdesign-miniprogram/upload/upload"
+  }
+}

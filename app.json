@@ -28,7 +28,10 @@
     "pages/weighing/weighing",
     "pages/askForLeave/askForLeave",
     "pages/returnToWork/returnToWork",
-    "pages/staffMyOrder/staffMyOrder"
+    "pages/staffMyOrder/staffMyOrder",
+    "pages/myBusiness/myBusiness",
+    "pages/addBusiness/addBusiness",
+    "pages/businessDetails/businessDetails"
   ],
   "tabBar": {
     "list": [

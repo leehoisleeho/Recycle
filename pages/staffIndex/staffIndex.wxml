@@ -31,6 +31,10 @@
           <text>{{item.createtime}}</text>
         </view>
         <view class="itemInfo_1">
+          <text>预约时间：</text>
+          <text>{{item.appointment_time_text}}</text>
+        </view>
+        <view class="itemInfo_1">
           <text>回收类型：</text>
           <text>{{item.category.title}}</text>
         </view>
@@ -41,17 +45,6 @@
         <view class="itemInfo_1">
           <text>回收地址：</text>
           <text>{{item.address.addressdetail}}</text>
-        </view>
-        <!-- <view class="itemInfo_1">
-          <text>联系人：</text>
-          <text>{{item.address.linkman}}</text>
-        </view>
-        <view class="itemInfo_1">
-          <text>联系电话：</text>
-          <text>{{item.address.mobile}}</text>
-        </view> -->
-        <view class="itemInfo_1">
-          <text>{{item.appointment_time}}</text>
         </view>
       </view>
       <t-divider />

@@ -90,6 +90,7 @@ Page({
    * toAskForLeave 去请假页面 
    * showDevelop提示开发中
    * toMyOrder 去我的订单页面
+   * toAddBusiness 去添加商家
    */
   showDevelop() {
     wx.showToast({
@@ -121,6 +122,11 @@ Page({
   toMyOrder(){
     wx.navigateTo({
       url: '/pages/staffMyOrder/staffMyOrder',
+    })
+  },
+  toAddBusiness(){
+    wx.navigateTo({
+      url: '/pages/addBusiness/addBusiness',
     })
   }
 })

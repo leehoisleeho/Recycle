@@ -12,7 +12,7 @@
       <view class="item">
         <view class="title">
           <image src="/static/img/logo.jpg" mode="widthFix" />
-          <text>废预清订单信息</text>
+          <text>雷次购订单信息</text>
         </view>
         <t-divider />
         <view class="itemList">

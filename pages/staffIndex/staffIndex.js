@@ -66,6 +66,7 @@ Page({
       status: index
     })
     let orderList = data.data.data.data
+    console.log(orderList)
     orderList.forEach( item => {
        item.createtime = TimestampToTime(item.createtime)
     })

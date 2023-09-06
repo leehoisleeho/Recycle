@@ -1,0 +1,57 @@
+/* pages/addBusiness/addBusiness.wxss */
+.header{
+  height: 200rpx;
+  background: white(56, 55, 55);
+  margin-bottom: 10rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+  padding: 20rpx 0;
+}
+.header>image{
+  width: 200rpx;
+}
+.addressBox{
+  font-size: 33rpx;
+  padding: 30rpx 20rpx;
+  margin: 0 auto;
+  border-bottom: 1px solid rgb(241, 241, 241);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.addressBox>text:nth-child(2){
+  font-size: 30rpx;
+  color: #999999;
+  width: 80%;
+}
+.addressBox_1{
+  font-size: 33rpx;
+  padding: 30rpx 20rpx;
+  margin: 0 auto;
+  border-bottom: 1px solid rgb(241, 241, 241);
+  display: flex;
+  align-items: center;
+}
+.addressBox_1>input{
+  width: 80%;
+  color: #333333;
+  font-size: 30rpx;
+}
+.addressBox_1>text{
+  width: 20%;
+}
+.addressBox_2{
+  font-size: 33rpx;
+  padding: 30rpx 20rpx;
+  margin: 0 auto;
+  width: 680rpx;
+}
+.addressBox_2>text{
+  margin-bottom: 20rpx;
+  display: flex;
+}
+.btnBox{
+  padding: 20rpx;
+}

@@ -1,0 +1,33 @@
+<!--pages/myBusiness/myBusiness.wxml-->
+<view class="header">
+  <image src="/static/img/list.png" mode="widthFix"/>
+</view>
+<view class="itemBox">
+  <view class="code" bind:tap="downerweima">
+    <!-- <image src="/static/img/erweimaDown.png" mode=""/> -->
+    <image src="/static/img/erweimaDown_1.png" mode=""/>
+  </view>
+  <view class="item">
+    <image src="/static/img/1.png" mode=""/>
+    <view class="info"> 
+      <view>
+        <text>商家名称</text>
+        <text>隐安设计事务所</text>
+      </view>
+      <view>
+        <text>状态</text>
+        <text class="state_1">审核中</text>
+        <text class="state_2">通过</text>
+        <text class="state_3">拒绝</text>
+      </view>
+      <view>
+        <text>地址</text>
+        <text>云南省红河哈尼族彝族自治州蒙自市银河路79号</text>
+      </view>
+      <view>
+        <text>联系电话</text>
+        <text>18608735101</text>
+      </view>
+    </view>
+  </view>
+</view>

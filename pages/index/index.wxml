@@ -24,7 +24,7 @@
   </view>
   <view class="phone" bindtap="makePhoneCall">
     <t-icon name="call" size="48rpx" class="icon" />
-    <text>投诉电话:1568738999</text>
+    <text>投诉电话:15687308999</text>
   </view>
   <!-- 回收品类列表 -->
   <!-- <view class="listTitle">

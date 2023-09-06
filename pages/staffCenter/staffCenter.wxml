@@ -33,7 +33,7 @@
       <t-icon name="chevron-right" size="45rpx" />
     </view> -->
     <t-divider content="" />
-    <view class="staffListItem" bind:tap="showDevelop">
+    <view class="staffListItem" bind:tap="toAddBusiness">
       <view class="staffListItem_1">
         <text>商家申请</text>
       </view>
